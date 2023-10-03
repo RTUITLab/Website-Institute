@@ -1,0 +1,37 @@
+.Transition
+{
+  display: grid;
+  justify-content: flex-start;
+  align-content: flex-start;
+  grid-gap: 10px;
+  width: 80vw;
+  height: 80vw;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "cell-1 cell-2 cell-2 cell-3"
+                        "cell-4 cell-4 cell-5 cell-5"
+                        "cell-6 cell-7 cell-7 cell-8"
+                        "cell-9 cell-10 cell-11 cell-12";
+  @media screen and (max-width: 1280px){
+    height: 160vw;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "cell-1 cell-2 cell-2"
+                        "cell-4 cell-4 cell-3"
+                        "cell-6 cell-5 cell-5"
+                        "cell-7 cell-7 cell-8"
+                        "cell-9 cell-10 cell-10"
+                        "cell-12 cell-12 cell-11";
+  }
+  @media screen and (max-width: 1024px){
+    height: 240vw;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "cell-1 cell-2"
+                        "cell-3 cell-4"
+                        "cell-5 cell-6"
+                        "cell-7 cell-8"
+                        "cell-9 cell-10"
+                        "cell-11 cell-12";
+  }
+}
