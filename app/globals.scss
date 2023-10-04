@@ -17,11 +17,18 @@ p,a
 :root {
   --backdrop-50: rgba(0,0,0,0.5);
   --text-white: #FFFFFF;
+  --background-gray: #F3F4F6;
 }
 
 main
 {
-  padding: 10%;
+  padding: 0 10%;
+  background: var(--background-gray);
+}
+
+section
+{
+  padding: 75px 0;
 }
 
 img

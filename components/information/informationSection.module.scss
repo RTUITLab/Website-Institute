@@ -1,0 +1,33 @@
+.Information
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  > div
+  {
+    width: 50%;
+  }
+}
+
+.Text1H2T
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+  > h2
+  {
+    text-transform: uppercase;
+  }
+  > div
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}

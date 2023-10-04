@@ -1,0 +1,14 @@
+.helloSection
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 48px;
+  > h2, > p
+  {
+    width: 100%;
+    text-align: center;
+  }
+}
