@@ -1,0 +1,17 @@
+.DirectionsSVG
+{
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  > div
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 56px;
+  }
+}

@@ -1,6 +1,7 @@
-import './globals.scss'
-import type { Metadata } from 'next'
-import { Ubuntu } from 'next/font/google'
+import './globals.scss';
+import type { Metadata } from 'next';
+import { Ubuntu } from 'next/font/google';
+import classNames from "classnames";
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],

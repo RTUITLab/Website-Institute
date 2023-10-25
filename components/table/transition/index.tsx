@@ -16,8 +16,8 @@ export default function Transition()
     return (
         <section>
             <div className={Style.Transition}>
-                <CellTransition linkImage={Infrastructure} text={"Инфраструктура"} linkPage={"/Infrastructure"} alt={"Инфраструктура"} gridAreaNumber={1}/>
-                <CellTransition linkImage={Directions} text={"ПРОГРАММЫ ОБУЧЕНИЯ"} linkPage={"./"} alt={"Направления"} gridAreaNumber={2}/>
+                <CellTransition linkImage={Infrastructure} text={"Инфраструктура"} linkPage={"/infrastructure"} alt={"Инфраструктура"} gridAreaNumber={1}/>
+                <CellTransition linkImage={Directions} text={"НАПРАВЛЕНИЯ И ПРОФИЛИ ОБУЧЕНИЯ"} linkPage={"/directions"} alt={"Направления"} gridAreaNumber={2}/>
                 <CellTransition linkImage={Directorate} text={"СТРУКТУРА И РУКОВОДСТВО"} linkPage={"./"} alt={"Руководство"} gridAreaNumber={3}/>
                 <CellTransition linkImage={Events} text={"Мероприятия и ВНЕУЧЕБНАЯ ДЕЯТЕЛЬНОСТЬ"} linkPage={"./"} alt={"Мероприятия"} gridAreaNumber={4}/>
                 <CellTransition linkImage={Equipment} text={"Уникальное оборудование"} linkPage={"./"} alt={"Оборудование"} gridAreaNumber={5}/>

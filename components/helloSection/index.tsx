@@ -8,9 +8,9 @@ type Props = {
 export default function HelloSection({heading, text}: Props)
 {
     return (
-        <section className={Style.helloSection}>
-            <h2>{heading}</h2>
-            <p>{text}</p>
-        </section>
+        <div className={Style.helloSection}>
+            <h1>{heading}</h1>
+            <h3>{text}</h3>
+        </div>
     )
 }
