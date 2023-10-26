@@ -5,6 +5,10 @@
   align-content: flex-start;
   grid-gap: 10px;
   width: 80vw;
+}
+
+.Transition12
+{
   height: 80vw;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
@@ -34,4 +38,22 @@
                         "cell-9 cell-10"
                         "cell-11 cell-12";
   }
+}
+
+.Transition4
+{
+  height: 40vw;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "cell-1 cell-1 cell-2 cell-2"
+                        "cell-3 cell-3 cell-4 cell-4";
+}
+
+.Transition5
+{
+  height: 40vw;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "cell-1 cell-1 cell-2 cell-2"
+                        "cell-3 cell-4 cell-4 cell-5";
 }

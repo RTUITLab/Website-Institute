@@ -1,6 +1,5 @@
 import Style from "./screensaver.module.scss";
 import Image, {StaticImageData} from "next/image";
-import localFont from "next/font/local";
 
 type Props = {
     linkImage: StaticImageData,
@@ -9,19 +8,13 @@ type Props = {
     backgroundBlack: boolean
 }
 
-const evolventa = localFont({
-    src: [{
-        path: './Evolventa-Regular.ttf'
-    }],
-})
-
 export default function Screensaver({linkImage, text, alt, backgroundBlack = true}: Props)
 {
     return (
         <div className={Style.Screensaver}>
             <Image src={linkImage} alt={alt} />
             <div className={backgroundBlack ? Style.backgroundBlack : undefined}>
-                <h1 className={evolventa.className}>
+                <h1>
                     {text}
                 </h1>
             </div>

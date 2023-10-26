@@ -7,10 +7,11 @@ type Props = {
     text: string,
     linkPage: string,
     alt: string,
-    gridAreaNumber: number
+    gridAreaNumber: number,
+    additionalText: string | null | undefined
 }
 
-export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber}: Props)
+export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, additionalText}: Props)
 {
     return (
         <Link className={Style.Cell} style={{gridArea: "cell-"+gridAreaNumber}} href={linkPage}>
@@ -19,6 +20,7 @@ export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber}:
                 <h3>
                     {text}
                 </h3>
+                {(additionalText === null || additionalText === undefined) ? <></> : <h3 key={text}>{additionalText}</h3>}
             </div>
         </Link>
     )
