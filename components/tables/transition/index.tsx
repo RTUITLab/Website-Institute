@@ -1,15 +1,10 @@
-import {CellTransition} from "@/components/table/cells";
+import {CellTransition} from "@/components/tables/cells";
 import Style from "./transition.module.scss";
 import {StaticImageData} from "next/image";
 import classNames from "classnames";
 
 type Props = {
     array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText: string | null | undefined}[]
-}
-
-type TableCellsType = {
-    Cells12: string,
-    Cells4: string
 }
 
 const TableCells : {

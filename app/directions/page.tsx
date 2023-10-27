@@ -9,7 +9,7 @@ import SoftwareEngineer from "@/public/ПрогИнжВика.svg";
 import Style from "./directions.module.scss";
 import TitleText from "../../components/titleText";
 import axios from "axios";
-import Transition from "@/components/table/transition";
+import Transition from "@/components/tables/transition";
 import Direction010304 from "@/public/01.03.04_Переход.webp";
 import Direction090301 from "@/public/09.03.01_Переход.webp";
 import Direction090303 from "@/public/09.03.03_Переход.webp";
@@ -23,6 +23,11 @@ import Direction232 from "@/public/2.3.2_Переход.webp";
 import Direction234 from "@/public/2.3.4_Переход.webp";
 import Direction235 from "@/public/2.3.5_Переход.webp";
 import Direction238 from "@/public/2.3.8_Переход.webp";
+import FactGraduates from "@/public/svg/Выпускники_Вика.svg";
+import FactPay from "@/public/svg/Платка_Вика.svg";
+import FactMilitary from "@/public/svg/Военная_кафедра_Вика.svg";
+import FactProfiles from "@/public/svg/Профили_Вика.svg";
+import {TableStroke} from "@/components/tables/table";
 
 type dataDirection = {
     direction: string,
@@ -42,7 +47,8 @@ export default async function Directions()
         directionsBachelor[i].scores = await data.data.last_year_threshold;
     }
 
-    const dataBachelor = [{
+    const dataBachelor = [
+        {
         linkImage: Direction010304,
         text: "01.03.04 | Прикладная математика",
         linkPage: "./",
@@ -78,7 +84,8 @@ export default async function Directions()
         directionsMagistracy[i].scores = await data.data.last_year_threshold;
     }
 
-    const dataMagistracy = [{
+    const dataMagistracy = [
+        {
         linkImage: Direction010404,
         text: "01.04.04 | Прикладная математика",
         linkPage: "./",
@@ -104,13 +111,14 @@ export default async function Directions()
         additionalText: "Проходной балл в 2022 году: " + directionsMagistracy[3].scores
     }]
 
-    const dataPostgraduate = [{
+    const dataPostgraduate = [
+        {
         linkImage: Direction122,
         text: "1.2.2 | Математическое моделирование, численные методы и комплексы программ",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=582",
         alt: "Мат моделирование",
         additionalText: null
-    },{
+    }, {
         linkImage: Direction232,
         text: "2.3.2 | Вычислительные системы и их элементы",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=609",
@@ -136,6 +144,49 @@ export default async function Directions()
         additionalText: null
     }]
 
+    const array = [
+        {
+            ImageOrHeading: "4",
+            text: "Направления бакалавриата",
+            alt: null
+        },
+        {
+            ImageOrHeading: "4",
+            text: "Направления магистратуры",
+            alt: null
+        },
+        {
+            ImageOrHeading: "5",
+            text: "Направлений аспирантуры",
+            alt: null
+        },
+        {
+            ImageOrHeading: "8",
+            text: "Профилей реализованы совместно с партнёрами",
+            alt: null
+        },
+        {
+            ImageOrHeading: FactGraduates,
+            text: "Выпускники - одни из самых востребованных среди работодателей в стране",
+            alt: "Выпускники"
+        },
+        {
+            ImageOrHeading: FactPay,
+            text: "Неограниченное количество учебных мест на платную основу обучения",
+            alt: "Платное обучение"
+        },
+        {
+            ImageOrHeading: FactMilitary,
+            text: "Военная кафедра на лейтенанта запаса (3 года) с отбором в конце 2 курса бакалавриата",
+            alt: "Военная кафедра"
+        },
+        {
+            ImageOrHeading: FactProfiles,
+            text: "Студенты раньше и больше изучают профильные дисциплины, чем в других высших учебных заведениях ",
+            alt: "Профили"
+        }
+    ]
+
     return(
         <>
             <Screensaver linkImage={DirectionsImage} text={"НАПРАВЛЕНИЯ И ПРОФИЛИ ОБУЧЕНИЯ"} alt={"Заставка - инфраструктура"} backgroundBlack={true} />
@@ -158,6 +209,7 @@ export default async function Directions()
                 <section>
                     <div>
                         <TitleText heading={"ЦИФРЫ И ФАКТЫ"} text={null} />
+                        <TableStroke array={array} />
                     </div>
                 </section>
                 <section>

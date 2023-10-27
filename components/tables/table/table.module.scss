@@ -1,0 +1,44 @@
+.Table
+{
+  display: grid;
+  width: 100%;
+}
+
+.Table8
+{
+  grid-template-rows: auto 2px auto;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+  grid-template-areas: "cell-1 stroke-1 cell-2 stroke-2 cell-3 stroke-3 cell-4"
+                        "stroke-4 stroke-4 stroke-4 stroke-4 stroke-4 stroke-4 stroke-4"
+                        "cell-5 stroke-5 cell-6 stroke-6 cell-7 stroke-7 cell-8";
+}
+
+.Table6
+{
+  grid-template-rows: auto 2px auto;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr;
+  grid-template-areas: "cell-1 stroke-1 cell-2 stroke-2 cell-3"
+                        "stroke-3 stroke-3 stroke-3 stroke-3 stroke-3"
+                        "cell-4 stroke-4 cell-5 stroke-5 cell-6";
+}
+
+.Table4
+{
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+  grid-template-areas: "cell-1 stroke-1 cell-2 stroke-2 cell-3 stroke-3 cell-4";
+}
+
+.Table3
+{
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr;
+  grid-template-areas: "cell-1 stroke-1 cell-2 stroke-2 cell-3";
+}
+
+.Stroke
+{
+  background-color: var(--stroke-color);
+  width: 100%;
+  height: 100%;
+}
