@@ -1,39 +1,33 @@
-import NoImage from "@/public/NoImage.webp";
+import NoImage from "@/public/image/NoImage.webp";
 import Screensaver from "@/components/screensaver";
-import DirectionsImage from "@/public/Направления.webp";
+import DirectionsImage from "@/public/image/Направления.webp";
 import {IconInformationCircle} from "@/components/iconInformation";
-import Analytics from "@/public/АналитикаВика.svg";
-import Engineer from "@/public/ИвтВика.svg";
-import Architect from "@/public/ПрикИнфВика.svg";
-import SoftwareEngineer from "@/public/ПрогИнжВика.svg";
+import Analytics from "@/public/svg/АналитикаВика.svg";
+import Engineer from "@/public/svg/ИвтВика.svg";
+import Architect from "@/public/svg/ПрикИнфВика.svg";
+import SoftwareEngineer from "@/public/svg/ПрогИнжВика.svg";
 import Style from "./directions.module.scss";
 import TitleText from "../../components/titleText";
 import axios from "axios";
 import Transition from "@/components/tables/transition";
-import Direction010304 from "@/public/01.03.04_Переход.webp";
-import Direction090301 from "@/public/09.03.01_Переход.webp";
-import Direction090303 from "@/public/09.03.03_Переход.webp";
-import Direction090304 from "@/public/09.03.04_Переход.webp";
-import Direction010404 from "@/public/01.04.04_Переход.webp";
-import Direction090401 from "@/public/09.04.01_Переход.webp";
-import Direction090403 from "@/public/09.04.03_Переход.webp";
-import Direction090404 from "@/public/09.04.04_Переход.webp";
-import Direction122 from "@/public/1.2.2_Переход.webp";
-import Direction232 from "@/public/2.3.2_Переход.webp";
-import Direction234 from "@/public/2.3.4_Переход.webp";
-import Direction235 from "@/public/2.3.5_Переход.webp";
-import Direction238 from "@/public/2.3.8_Переход.webp";
+import Direction010304 from "@/public/image/01.03.04_Переход.webp";
+import Direction090301 from "@/public/image/09.03.01_Переход.webp";
+import Direction090303 from "@/public/image/09.03.03_Переход.webp";
+import Direction090304 from "@/public/image/09.03.04_Переход.webp";
+import Direction010404 from "@/public/image/01.04.04_Переход.webp";
+import Direction090401 from "@/public/image/09.04.01_Переход.webp";
+import Direction090403 from "@/public/image/09.04.03_Переход.webp";
+import Direction090404 from "@/public/image/09.04.04_Переход.webp";
+import Direction122 from "@/public/image/1.2.2_Переход.webp";
+import Direction232 from "@/public/image/2.3.2_Переход.webp";
+import Direction234 from "@/public/image/2.3.4_Переход.webp";
+import Direction235 from "@/public/image/2.3.5_Переход.webp";
+import Direction238 from "@/public/image/2.3.8_Переход.webp";
 import FactGraduates from "@/public/svg/Выпускники_Вика.svg";
 import FactPay from "@/public/svg/Платка_Вика.svg";
 import FactMilitary from "@/public/svg/Военная_кафедра_Вика.svg";
 import FactProfiles from "@/public/svg/Профили_Вика.svg";
 import {TableStroke} from "@/components/tables/table";
-
-type dataDirection = {
-    direction: string,
-    urlAdmission: string,
-    scores: number | string | null
-}
 
 export default async function Directions()
 {
@@ -51,25 +45,25 @@ export default async function Directions()
         {
         linkImage: Direction010304,
         text: "01.03.04 | Прикладная математика",
-        linkPage: "./",
+        linkPage: "/directions/01-03-04",
         alt: "Прик мат",
         additionalText: "Проходной балл в 2023 году: " + directionsBachelor[0].scores
     },{
         linkImage: Direction090301,
         text: "09.03.01 | Информатика и вычислительная техника",
-        linkPage: "./",
+        linkPage: "/directions/09-03-01",
         alt: "ИВТ",
         additionalText: "Проходной балл в 2023 году: " + directionsBachelor[1].scores
     },{
         linkImage: Direction090303,
         text: "09.03.03 | Прикладная информатика",
-        linkPage: "./",
+        linkPage: "/directions/09-03-03",
         alt: "Прик инф",
         additionalText: "Проходной балл в 2023 году: " + directionsBachelor[2].scores
     },{
         linkImage: Direction090304,
         text: "09.03.04 | Программная инженерия",
-        linkPage: "./",
+        linkPage: "/directions/09-03-04",
         alt: "Приг инж",
         additionalText: "Проходной балл в 2023 году: " + directionsBachelor[3].scores
     }]
@@ -88,25 +82,25 @@ export default async function Directions()
         {
         linkImage: Direction010404,
         text: "01.04.04 | Прикладная математика",
-        linkPage: "./",
+        linkPage: "/directions/01-04-04",
         alt: "Прик мат",
         additionalText: "Проходной балл в 2022 году: " + directionsMagistracy[0].scores
     },{
         linkImage: Direction090401,
         text: "09.04.01 | Информатика и вычислительная техника",
-        linkPage: "./",
+        linkPage: "/directions/09-04-01",
         alt: "ИВТ",
         additionalText: "Проходной балл в 2022 году: " + directionsMagistracy[1].scores
     },{
         linkImage: Direction090403,
         text: "09.04.03 | Прикладная информатика",
-        linkPage: "./",
+        linkPage: "/directions/09-04-03",
         alt: "Прик инф",
         additionalText: "Проходной балл в 2022 году: " + directionsMagistracy[2].scores
     },{
         linkImage: Direction090404,
         text: "09.04.04 | Программная инженерия",
-        linkPage: "./",
+        linkPage: "/directions/09-04-04",
         alt: "Приг инж",
         additionalText: "Проходной балл в 2022 году: " + directionsMagistracy[3].scores
     }]
@@ -148,42 +142,50 @@ export default async function Directions()
         {
             ImageOrHeading: "4",
             text: "Направления бакалавриата",
-            alt: null
+            alt: null,
+            h2: false
         },
         {
             ImageOrHeading: "4",
             text: "Направления магистратуры",
-            alt: null
+            alt: null,
+            h2: false
         },
         {
             ImageOrHeading: "5",
             text: "Направлений аспирантуры",
-            alt: null
+            alt: null,
+            h2: false
         },
         {
             ImageOrHeading: "8",
             text: "Профилей реализованы совместно с партнёрами",
-            alt: null
+            alt: null,
+            h2: false
         },
         {
             ImageOrHeading: FactGraduates,
             text: "Выпускники - одни из самых востребованных среди работодателей в стране",
-            alt: "Выпускники"
+            alt: "Выпускники",
+            h2: false
         },
         {
             ImageOrHeading: FactPay,
             text: "Неограниченное количество учебных мест на платную основу обучения",
-            alt: "Платное обучение"
+            alt: "Платное обучение",
+            h2: false
         },
         {
             ImageOrHeading: FactMilitary,
             text: "Военная кафедра на лейтенанта запаса (3 года) с отбором в конце 2 курса бакалавриата",
-            alt: "Военная кафедра"
+            alt: "Военная кафедра",
+            h2: false
         },
         {
             ImageOrHeading: FactProfiles,
             text: "Студенты раньше и больше изучают профильные дисциплины, чем в других высших учебных заведениях ",
-            alt: "Профили"
+            alt: "Профили",
+            h2: false
         }
     ]
 

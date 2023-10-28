@@ -1,4 +1,4 @@
-import Style from "@/components/helloSection/helloSection.module.scss";
+import Style from "./heading.module.scss";
 
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 export default function TitleText({heading, text}:Props)
 {
     return (
-        <div className={Style.helloSection}>
+        <div className={Style.heading}>
             <h1>{heading}</h1>
             {text === null ? <></> : text.map((elem, index) => <h3 key={heading+"_"+index}>{elem}</h3>)}
         </div>

@@ -1,11 +1,10 @@
 import Screensaver from "@/components/screensaver";
-import HelloSection from "@/components/helloSection";
-import NoImage from "@/public/NoImage.webp";
+import NoImage from "@/public/image/NoImage.webp";
 import {Section75} from "@/components/sections";
 import {InformationTextAndImage, InformationTextAndImageAndButton} from "@/components/information";
-import V78 from "@/public/В78.webp";
-import MP1 from "@/public/МП1.webp";
-import DM1 from "@/public/ОБ1.webp";
+import V78 from "@/public/image/В78.webp";
+import MP1 from "@/public/image/МП1.webp";
+import DM1 from "@/public/image/ОБ1.webp";
 import {ButtonLinkAppBlue} from "@/components/buttons"; // общажитие
 
 
@@ -28,7 +27,6 @@ export default function Infrastructure()
             <main>
                 <section>
                     <div>
-                        <HelloSection heading={"ИНФРАСТРУКТУРА ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} text={"Институт информационных технологий располагает обширной и уникальной инфраструктурной базой, предназначенной для проведения семинарских занятий, лабораторных работ и других научно-образовательных мероприятий, доступных исключительно студентам института. В этой структуре включены как обычные аудитории наших кафедр, так и мегалаборатории, оснащенные уникальным и редким оборудованием. Кроме того, студенты нашего института имеют возможность пользоваться другими инфраструктурными объектами, которые также доступны для всех студентов РТУ МИРЭА. Это включает как обычные аудитории, так и просторные лекционные залы."} />
                         <Section75 arrayElements={arrayElementsBuilding} />
                     </div>
                 </section>
