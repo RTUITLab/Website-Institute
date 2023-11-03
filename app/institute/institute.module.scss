@@ -28,3 +28,22 @@
   grid-template-areas: "cell-1 cell-2 cell-2"
                         "cell-3 cell-4 cell-5";
 }
+
+.AchievementDivCard
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 64px;
+  > div
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 64px;
+  }
+}

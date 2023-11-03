@@ -22,7 +22,7 @@ export function ButtonLinkAppBlue({linkButton, text}: Props)
     )
 }
 
-export function ButtonLinkMirea({linkButton, text}: Props)
+export function ButtonLinkAppDefault({linkButton, text}: Props)
 {
     return (
         <Link className={classNames(Style.ButtonDefault)} href={linkButton} >
