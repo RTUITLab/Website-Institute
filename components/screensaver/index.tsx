@@ -5,7 +5,7 @@ type Props = {
     linkImage: StaticImageData,
     text: string,
     alt: string,
-    backgroundBlack: boolean
+    backgroundBlack?: boolean
 }
 
 export default function Screensaver({linkImage, text, alt, backgroundBlack = true}: Props)

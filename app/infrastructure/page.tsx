@@ -1,6 +1,6 @@
 import Screensaver from "@/components/screensaver";
 import NoImage from "@/public/image/NoImage.webp";
-import {Section75} from "@/components/sections";
+import Section from "@/components/sections";
 import {InformationTextAndImage, InformationTextAndImageAndButton} from "@/components/information";
 import V78 from "@/public/image/В78.webp";
 import MP1 from "@/public/image/МП1.webp";
@@ -25,11 +25,9 @@ export default function Infrastructure()
         <>
             <Screensaver linkImage={NoImage} text={"ИНФРАСТРУКТУРА ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} alt={"Заставка - инфраструктура"} backgroundBlack={true} />
             <main>
-                <section>
-                    <div>
-                        <Section75 arrayElements={arrayElementsBuilding} />
-                    </div>
-                </section>
+                <Section>
+                    <></>
+                </Section>
             </main>
         </>
     )

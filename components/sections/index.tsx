@@ -1,14 +1,18 @@
 import Style from "./sections.module.scss";
+import React, {FC} from "react";
 
 type Props = {
-    arrayElements: JSX.Element[]
+    children: React.ReactNode
 }
 
-export function Section75({arrayElements}: Props)
-{
+const Section: FC<Props> = ({children}) => {
     return (
-        <section className={Style.Section75}>
-            {arrayElements.map((elem) => (elem))}
+        <section className={Style.Section}>
+            <section>
+                {children}
+            </section>
         </section>
     )
 }
+
+export default Section;

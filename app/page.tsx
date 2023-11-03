@@ -12,6 +12,7 @@ import Partners from "@/public/image/Партнёры_Переход.webp";
 import Courses from "@/public/image/ДопКурсы_Переход.webp";
 import RTUITLab from "@/public/image/Лаба_Переход.webp";
 import Achievement from "@/public/image/Достижения_Переход.webp";
+import Section from "@/components/sections";
 
 export default function Home() {
     const data = [{
@@ -92,11 +93,9 @@ export default function Home() {
       <>
         <Screensaver linkImage={AppImage} text={"ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"Заставка - главная страница"} backgroundBlack={false} />
         <main>
-            <section>
-                <div>
-                    <Transition array={data}/>
-                </div>
-            </section>
+            <Section>
+                <Transition array={data}/>
+            </Section>
         </main>
       </>
   )

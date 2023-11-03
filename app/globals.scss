@@ -16,6 +16,7 @@ p,a,h3,h4,h5,h6
 
 :root {
   --backdrop-50: rgba(0,0,0,0.5);
+  --backdrop-40: rgba(0,0,0,0.4);
   --text-white: #FFFFFF;
   --background-gray: #F5F5F5;
   --background-gradient: linear-gradient(135deg, #9168CD 0.31%, #5556FF 42.64%, #45ADCD 73.58%, #3EC4CD 100%);
@@ -23,7 +24,9 @@ p,a,h3,h4,h5,h6
   --text-gradient: linear-gradient(104deg, #9168CD -29.82%, #5657FF 103.67%, #52D6FF 201.22%, #51F4FF 284.52%);
   --shadow-lite: rgba(0,0,0,0.2);
   --shadow-hard: rgba(0,0,0,0.75);
-  --stroke-color: #8C8C8C
+  --stroke-color: #8C8C8C;
+  --background-blue: #196BB1;
+  --iit-color: #282A2B;
 }
 
 main
@@ -31,45 +34,14 @@ main
   background: var(--background-white);
 }
 
-section {
-  z-index: 1;
-  width: 100%;
-
-  > div
-  {
-    gap: 72px;
-    padding: 10svw;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-radius: 0 0 5svw 5svw;
-  }
-
-
-
-  &:nth-child(odd) {
-    background-color: var(--background-gray);
-
-    > div
-    {
-      background-color: var(--background-white);
-    }
-  }
-
-  &:nth-child(even) {
-    background-color: var(--background-white);
-
-    > div
-    {
-      background-color: var(--background-gray);
-    }
-  }
-}
-
 img
 {
   object-fit: cover;
+}
+
+button
+{
+  border: none;
+
 }
 

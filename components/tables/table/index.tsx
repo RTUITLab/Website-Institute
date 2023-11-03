@@ -67,7 +67,7 @@ const booleanPaddingBig : {
     2: false
 }
 
-type PropsTableStroke = {
+export type PropsTableStroke = {
     array: {ImageOrHeading: StaticImageData | string, text: string, alt: string | null | undefined, h2: boolean}[]
 }
 
