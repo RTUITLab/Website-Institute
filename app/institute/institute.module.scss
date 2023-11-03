@@ -9,3 +9,22 @@
   align-items: center;
   gap: 48px;
 }
+
+.MissionDivCard
+{
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.PartnersDivGrid
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 24px;
+  grid-template-areas: "cell-1 cell-2 cell-2"
+                        "cell-3 cell-4 cell-5";
+}
