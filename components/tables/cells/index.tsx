@@ -18,9 +18,7 @@ export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, 
         <Link className={Style.CellTransition} style={{gridArea: "cell-"+gridAreaNumber}} href={linkPage}>
             <Image src={linkImage} alt={alt}/>
             <div>
-                <h3>
-                    {text}
-                </h3>
+                <h3>{text}</h3>
                 {(additionalText === null || additionalText === undefined) ? <></> : <h3 key={text}>{additionalText}</h3>}
             </div>
         </Link>
@@ -94,5 +92,25 @@ export function CellInformation({linkImage, heading, text, alt, paddingBig}:Prop
                 </div>
             </div>
         </div>
+    )
+}
+
+type PropsCellImage = {
+    linkImage: StaticImageData,
+    heading: string,
+    text?: string | null | undefined
+    twoToOne?: boolean
+}
+
+export function CellImage({linkImage, heading, text = null, twoToOne = true}:PropsCellImage)
+{
+    return (
+        <article className={classNames(Style.CellImage, twoToOne ? Style.CellImage2to1 : Style.CellImage1to1)}>
+            <Image src={linkImage} alt={heading} />
+            <div>
+                <h3>{heading}</h3>
+                {(text === null) || (text === undefined) ? <></> : <p>{text}</p>}
+            </div>
+        </article>
     )
 }

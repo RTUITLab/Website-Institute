@@ -57,3 +57,12 @@
   grid-template-areas: "cell-1 cell-1 cell-2 cell-2"
                         "cell-3 cell-4 cell-4 cell-5";
 }
+
+.Transition5Reverse
+{
+  height: 40vw;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "cell-1 cell-2 cell-2 cell-3"
+                        "cell-4 cell-4 cell-5 cell-5";
+}

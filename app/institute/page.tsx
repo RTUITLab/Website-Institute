@@ -115,9 +115,8 @@ export default function PageInstitute() {
                     <div className={Style.MissionDivCard} >
                         <ImageCard image={GameDev} heading={"Motion Capture, 3D,  VR/AR, видеоигры"} />
                         <ImageCard image={Data} heading={"Big Data и анализ данных"} />
-                        <ImageCard image={IOT} heading={"Эмбиентные вычисления и IOT"} />
+                        <ImageCard image={IOT} heading={"Облачные технологии, вычисления и IOT"} />
                         <ImageCard image={Network} heading={"Драйвера, сети и низкоуровневые системы"} />
-                        <ImageCard image={Cloud} heading={"Облачные технологии и вычисления"} />
                         <ImageCard image={AI} heading={"ИИ и машинное обучение"} />
                         <ImageCard image={Mobile} heading={"Мобильные приложения и технологии"} />
                         <ImageCard image={Frontend} heading={"Frontend и Backend разработка и WEB технологии"} />

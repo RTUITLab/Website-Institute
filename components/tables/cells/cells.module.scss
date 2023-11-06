@@ -1,3 +1,5 @@
+@import "@/mixin";
+
 .CellTransition
 {
   border-radius: 24px;
@@ -160,4 +162,74 @@
 .CellFactPaddingSmall
 {
   padding: 24px 48px;
+}
+
+.CellImage
+{
+  width: 100%;
+  @include Shadow();
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  &:hover
+  {
+    > img
+    {
+      width: 110%;
+      height: 110%;
+    }
+    > div
+    {
+      opacity: 0;
+    }
+  }
+  > img
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: 300ms width, 300ms height;
+  }
+  > div
+  {
+    position: relative;
+    z-index: 2;
+    background: var(--backdrop-linear-50);
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 2px;
+    transition: 300ms opacity;
+    > *
+    {
+      color: var(--text-white);
+    }
+    > h3
+    {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    > p
+    {
+      font-size: 19px;
+    }
+  }
+}
+
+.CellImage1to1
+{
+  aspect-ratio: 1 / 1;
+}
+
+.CellImage2to1
+{
+  aspect-ratio: 2 / 1;
 }

@@ -18,7 +18,6 @@ import axios from "axios";
 import SectionProfiles from "@/components/profiles/section";
 import {ApiProfiles, StaticData} from "@/api";
 import BookStudyPlan from "@/components/studyplan/book";
-import {fetch} from "next/dist/compiled/@edge-runtime/primitives";
 import Section from "@/components/sections";
 
 const arrayCurriculum = [

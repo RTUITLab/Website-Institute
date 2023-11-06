@@ -57,3 +57,10 @@
   justify-content: flex-start;
   align-content: flex-start;
 }
+
+.Table2to1
+{
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

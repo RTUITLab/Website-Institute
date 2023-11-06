@@ -4,7 +4,8 @@ import {StaticImageData} from "next/image";
 import classNames from "classnames";
 
 type Props = {
-    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText: string | null | undefined}[]
+    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined}[],
+    reverse?: boolean
 }
 
 const TableCells : {
@@ -17,10 +18,10 @@ const TableCells : {
     5: Style.Transition5
 }
 
-export default function Transition({array}: Props)
+export default function Transition({array, reverse = false}: Props)
 {
     return (
-        <div className={classNames(Style.Transition, TableCells[array.length as keyof typeof TableCells])}>
+        <div className={classNames(Style.Transition, reverse ? Style.Transition5Reverse : TableCells[array.length as keyof typeof TableCells])}>
             {
                 array.map((elem, index) => <CellTransition
                                                                                 linkImage={elem.linkImage}

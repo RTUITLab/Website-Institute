@@ -1,5 +1,5 @@
 import Style from "./table.module.scss";
-import {Cell, CellFact, CellInformation} from "@/components/tables/cells";
+import {Cell, CellFact, CellImage, CellInformation} from "@/components/tables/cells";
 import {StaticImageData} from "next/image";
 import classNames from "classnames";
 
@@ -115,6 +115,23 @@ export function Table({array}:PropsTable)
     return (
         <div className={classNames(Style.Table, Style.Table3)}>
             {array.map((elem, index) => <Cell key={elem.heading+index} linkImage={elem.linkImage} heading={elem.heading} text={elem.text} alt={elem.alt} /> )}
+        </div>
+    )
+}
+
+type PropsTableImages = {
+    array: {
+        linkImage: StaticImageData,
+        heading: string,
+        text?: string | null | undefined
+    }[],
+    twoToOne?: boolean
+}
+
+export function TableImages({array, twoToOne = true}:PropsTableImages) {
+    return (
+        <div className={classNames(Style.Table, Style.Table2to1)}>
+            {array.map((elem) => <CellImage key={"table_images_" + elem.heading} linkImage={elem.linkImage} heading={elem.heading} text={elem.text} twoToOne={twoToOne}/>)}
         </div>
     )
 }

@@ -24,16 +24,17 @@
   {
     z-index: 2;
     background-color: var(--backdrop-40);
-    padding: 48px;
+    padding: 36px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    > h2
+    > h3
     {
       color: var(--text-white);
-      font-size: 32px;
+      font-size: 24px;
+      font-weight: bold;
     }
   }
 }

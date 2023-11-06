@@ -4,9 +4,34 @@
   margin: 0;
 }
 
+a
+{
+  text-decoration: none;
+}
+
 h1,h2
 {
   font-weight: 700;
+}
+
+h1
+{
+  font-size: 36px;
+}
+
+h2
+{
+  font-size: 24px;
+}
+
+h3
+{
+  font-size: 19px;
+}
+
+h4, p, a, span
+{
+  font-size: 16px;
 }
 
 p,a,h3,h4,h5,h6
@@ -27,6 +52,8 @@ p,a,h3,h4,h5,h6
   --stroke-color: #8C8C8C;
   --background-blue: #196BB1;
   --iit-color: #282A2B;
+  --dark-text: #141B34;
+  --backdrop-linear-50: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);;
 }
 
 main

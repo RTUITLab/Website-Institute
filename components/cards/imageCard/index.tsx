@@ -11,7 +11,7 @@ export default function ImageCard({image, heading}: Props) {
         <article className={Style.ImageCard}>
             <Image src={image} alt={heading} />
             <div>
-                <h2>{heading}</h2>
+                <h3>{heading}</h3>
             </div>
         </article>
     )
