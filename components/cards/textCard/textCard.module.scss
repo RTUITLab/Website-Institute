@@ -10,7 +10,6 @@
   padding: 48px;
   gap: 48px;
   border-radius: 24px;
-  @include Shadow();
   > div
   {
     width: 100%;
@@ -39,7 +38,7 @@
 
 .BackgroundBlue
 {
-  background-color: var(--background-blue);
+  background-color: var(--mirea-color);
   * {
     color: var(--text-white);
   }

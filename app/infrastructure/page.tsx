@@ -9,7 +9,7 @@ import TitleText from "@/components/titleText";
 import Image from "next/image";
 import CampusUp from "@/public/image/CampusUp.webp";
 import Style from "./infrastructure.module.scss";
-import {TableImages, TableStroke} from "@/components/tables/table";
+import {TableImages, Table} from "@/components/tables/table";
 import Map from "@/public/svg/карта.svg";
 import Metro from "@/public/svg/метро.svg";
 import Square from "@/public/svg/площадь.svg";
@@ -61,85 +61,73 @@ export default function Infrastructure()
 
     const TableCampus = [
         {
-            ImageOrHeading: Map,
-            text: "Адрес: г. Москва, ул. проспект Вернадского, д. 78, стр. 4",
-            alt: "адрес",
-            h2: false
+            numberOrImage: Map,
+            heading: "Адрес: г. Москва, ул. проспект Вернадского, д. 78, стр. 4",
+            text: null
         },
         {
-            ImageOrHeading: Metro,
-            text: "Станция метро «Юго-Западная», 5 минут пешком до кампуса",
-            alt: "метро",
-            h2: false
+            numberOrImage: Metro,
+            heading: "Станция метро «Юго-Западная», 5 минут пешком до кампуса",
+            text: null
         },
         {
-            ImageOrHeading: Square,
-            text: "Площадь всех сооружений этого кампуса 113 тыс. м2",
-            alt: "площадь",
-            h2: false
+            numberOrImage: Square,
+            heading: "Площадь всех сооружений этого кампуса 113 тыс. м2",
+            text: null
         }
     ];
 
     const TableLaboratory = [
         {
-            ImageOrHeading: "4",
-            text: "Уникальных мегалаборатории",
-            alt: null,
-            h2: false
+            numberOrImage: "4",
+            heading: "Уникальных мегалаборатории",
+            text: null
         },
         {
-            ImageOrHeading: "110+",
-            text: "Учебных и рабочих мест",
-            alt: null,
-            h2: false
+            numberOrImage: "110+",
+            heading: "Учебных и рабочих мест",
+            text: null
         },
         {
-            ImageOrHeading: "210+",
-            text: "Устройств и компьютерного оборудования",
-            alt: null,
-            h2: false
+            numberOrImage: "210+",
+            heading: "Устройств и компьютерного оборудования",
+            text: null
         }
     ]
 
     const TableClassroomIIT = [
         {
-            ImageOrHeading: "28+",
-            text: "Компьютерных аудиторий",
-            alt: null,
-            h2: false
+            numberOrImage: "28+",
+            heading: "Компьютерных аудиторий",
+            text: null
         },
         {
-            ImageOrHeading: "650+",
-            text: "Учебных и рабочих мест",
-            alt: null,
-            h2: false
+            numberOrImage: "650+",
+            heading: "Учебных и рабочих мест",
+            text: null
         },
         {
-            ImageOrHeading: "900+",
-            text: "Устройств и компьютерного оборудования",
-            alt: null,
-            h2: false
+            numberOrImage: "900+",
+            heading: "Устройств и компьютерного оборудования",
+            text: null
         }
     ]
 
     const TableClassroomAll = [
         {
-            ImageOrHeading: "23+",
-            text: "Лекционных аудиторий основного кампуса",
-            alt: null,
-            h2: false
+            numberOrImage: "23+",
+            heading: "Лекционных аудиторий основного кампуса",
+            text: null
         },
         {
-            ImageOrHeading: "48+",
-            text: "Общих компьютерных аудиторий основного кампуса",
-            alt: null,
-            h2: false
+            numberOrImage: "48+",
+            heading: "Общих компьютерных аудиторий основного кампуса",
+            text: null
         },
         {
-            ImageOrHeading: "96+",
-            text: "Общих обычных аудиторий основного кампуса",
-            alt: null,
-            h2: false
+            numberOrImage: "96+",
+            heading: "Общих обычных аудиторий основного кампуса",
+            text: null
         }
     ]
 
@@ -273,7 +261,7 @@ export default function Infrastructure()
             <main>
                 <Section>
                     <TitleText heading={"ОСНОВНОЙ КАМПУС"} text={textCampus} />
-                    <TableStroke array={TableCampus} />
+                    <Table array={TableCampus} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"}  />
                     <div className={Style.ImageCampus}>
                         {ImagesCampus.map((elem, index) => <Image key={"photo_campus_"+index} src={elem} alt={"фото кампуса "+ index} />)}
                     </div>
@@ -298,7 +286,7 @@ export default function Infrastructure()
                 </Section>
                 <Section>
                     <TitleText heading={"МЕГАЛАБОРАТОРИИ ИНСТИТУТА"} text={laboratory} />
-                    <TableStroke array={TableLaboratory} />
+                    <Table array={TableLaboratory} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
                     <BlockImage linkImage={Laboratory1} heading={"Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/uchebno-nauchnyy-ispytatelnyy-kompleks-importozameshchenie-informatsionnykh-tekhnologiy/"} buttonImportant={"./infrastructure/laboratory_import_substitution_of_information_technologies"} />
                     <BlockImage linkImage={Laboratory2} heading={"Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/universal-educational-scientific-laboratory-technology-analytics-modeling-design-and-digital-prototy/"} buttonImportant={"./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping"} reverse={true} />
                     <BlockImage linkImage={Laboratory3} heading={"Лаборатория захвата движения (Motion capture)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/lab-motion-capture/"} buttonImportant={"./infrastructure/laboratory_motion_capture"} />
@@ -306,12 +294,12 @@ export default function Infrastructure()
                 </Section>
                 <Section>
                     <TitleText heading={"АУДИТОРИИ ИНСТИТУТА"} text={textClassroomIIT} />
-                    <TableStroke array={TableClassroomIIT} />
+                    <Table array={TableClassroomIIT} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <TableImages array={TableClassroomIITImages} twoToOne={true} />
                 </Section>
                 <Section>
                     <TitleText heading={"ОБЩИЕ АУДИТОРИИ УНИВЕРСИТЕТА"} text={textClassroomAll} />
-                    <TableStroke array={TableClassroomAll} />
+                    <Table array={TableClassroomAll} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
                     <TableImages array={TableClassroomAllImages} twoToOne={true} />
                 </Section>
                 <Section>

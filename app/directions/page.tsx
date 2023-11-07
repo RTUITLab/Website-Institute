@@ -27,7 +27,7 @@ import FactGraduates from "@/public/svg/Выпускники_Вика.svg";
 import FactPay from "@/public/svg/Платка_Вика.svg";
 import FactMilitary from "@/public/svg/Военная_кафедра_Вика.svg";
 import FactProfiles from "@/public/svg/Профили_Вика.svg";
-import {TableStroke} from "@/components/tables/table";
+import {Table} from "@/components/tables/table";
 import Section from "@/components/sections";
 
 export default async function Directions()
@@ -141,52 +141,44 @@ export default async function Directions()
 
     const array = [
         {
-            ImageOrHeading: "4",
-            text: "Направления бакалавриата",
-            alt: null,
-            h2: false
+            numberOrImage: "4",
+            heading: "Направления бакалавриата",
+            text: null
         },
         {
-            ImageOrHeading: "4",
-            text: "Направления магистратуры",
-            alt: null,
-            h2: false
+            numberOrImage: "4",
+            heading: "Направления магистратуры",
+            text: null
         },
         {
-            ImageOrHeading: "5",
-            text: "Направлений аспирантуры",
-            alt: null,
-            h2: false
+            numberOrImage: "5",
+            heading: "Направлений аспирантуры",
+            text: null
         },
         {
-            ImageOrHeading: "8",
-            text: "Профилей реализованы совместно с партнёрами",
-            alt: null,
-            h2: false
+            numberOrImage: "8",
+            heading: "Профилей совместно реализованных с партнёрами",
+            text: null
         },
         {
-            ImageOrHeading: FactGraduates,
-            text: "Выпускники - одни из самых востребованных среди работодателей в стране",
-            alt: "Выпускники",
-            h2: false
+            numberOrImage: FactGraduates,
+            heading: "Выпускники - одни из самых востребованных среди работодателей в стране",
+            text: null
         },
         {
-            ImageOrHeading: FactPay,
-            text: "Неограниченное количество учебных мест на платную основу обучения",
-            alt: "Платное обучение",
-            h2: false
+            numberOrImage: FactPay,
+            heading: "Неограниченное количество учебных мест на платную основу обучения",
+            text: null
         },
         {
-            ImageOrHeading: FactMilitary,
-            text: "Военная кафедра на лейтенанта запаса (3 года) с отбором в конце 2 курса бакалавриата",
-            alt: "Военная кафедра",
-            h2: false
+            numberOrImage: FactMilitary,
+            heading: "Военная кафедра на лейтенанта запаса (3 года) с отбором в конце 2 курса бакалавриата",
+            text: null
         },
         {
-            ImageOrHeading: FactProfiles,
-            text: "Студенты раньше и больше изучают профильные дисциплины, чем в других высших учебных заведениях ",
-            alt: "Профили",
-            h2: false
+            numberOrImage: FactProfiles,
+            heading: "Студенты раньше изучают профильные дисциплины, чем в других высших учебных заведениях ",
+            text: null
         }
     ]
 
@@ -198,18 +190,18 @@ export default async function Directions()
                     <TitleText heading={"КОГО МЫ ОБУЧАЕМ?"} text={["Образовательные направления Института информационных технологий прежде всего направлены на подготовку специалистов для современной IT-индустрии, что выделяет нас среди других институтов РТУ МИРЭА. Наши программы предоставляют обширный спектр знаний с акцентом на программирование, разработку программного обеспечения, анализ предметных областей, проектирование цифровых продуктов и систем, математическое моделирование с использованием специализированного ПО, 3D-моделирование, искусственный интеллект и другие аспекты IT-индустрии."]} />
                     <div className={Style.DirectionsSVG}>
                         <div>
-                            <IconInformationCircle icon={Analytics} alt={"Аналитика"} text={"Аналитиков больших данных, дата-инженеров и математиков"} />
-                            <IconInformationCircle icon={Engineer} alt={"Информатика и вычислительная техника"} text={"Инженеров разработчиков низкоуровневого ПО и вычислительных систем"} />
+                            <IconInformationCircle color={"gray"} icon={Analytics} text={"Аналитиков больших данных, дата-инженеров и математиков"} />
+                            <IconInformationCircle icon={Engineer} text={"Инженеров разработчиков низкоуровневого ПО и вычислительных систем"} />
                         </div>
                         <div>
-                            <IconInformationCircle icon={Architect} alt={"Прикладная математика"} text={"Проектировщиков ПО, менеджеров, бизнес и IT аналитиков"} />
-                            <IconInformationCircle icon={SoftwareEngineer} alt={"Программная инженерия"} text={"Программистов разработчиков высокоуровневого ПО и информационных систем"} />
+                            <IconInformationCircle icon={Architect} text={"Проектировщиков ПО, менеджеров, бизнес и IT аналитиков"} />
+                            <IconInformationCircle color={"gray"} icon={SoftwareEngineer} text={"Программистов разработчиков высокоуровневого ПО и информационных систем"} />
                         </div>
                     </div>
                 </Section>
                 <Section>
                     <TitleText heading={"ЦИФРЫ И ФАКТЫ"} text={null} />
-                    <TableStroke array={array} />
+                    <Table array={array} side={"left"} background={"white"} gapOutside={"16px"} gapInside={"36px/auto"} />
                 </Section>
                 <Section>
                     <TitleText heading={"БАКАЛАВРИАТ"} text={["В рамках данных направлений осуществляется комплексная подготовка будущих IT-специалистов с дипломом бакалавриата. Наша программа обучает студентов в широком спектре IT-сферы, включая разработку, проектирование, математику, информатику и анализ, а также позволяет им специализироваться в выбранной ими сфере IT. Учебный процесс начинается с основных дисциплин и постепенно переходит к более специализированным предметам. Каждый семестр студенты приобретают все больше знаний и навыков в выбранной ими области."]} />
