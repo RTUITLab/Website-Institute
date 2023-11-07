@@ -1,12 +1,10 @@
 import NoImage from "@/public/image/NoImage.webp";
 import Screensaver from "@/components/screensaver";
 import DirectionsImage from "@/public/image/Направления.webp";
-import {IconInformationCircle} from "@/components/iconInformation";
-import Analytics from "@/public/svg/АналитикаВика.svg";
-import Engineer from "@/public/svg/ИвтВика.svg";
-import Architect from "@/public/svg/ПрикИнфВика.svg";
-import SoftwareEngineer from "@/public/svg/ПрогИнжВика.svg";
-import Style from "./directions.module.scss";
+import Analytics from "@/public/svg/Analytics2.svg";
+import Engineer from "@/public/svg/Engineer.svg";
+import Architect from "@/public/svg/Architect.svg";
+import SoftwareEngineer from "@/public/svg/SoftwareEngineer.svg";
 import TitleText from "../../components/titleText";
 import axios from "axios";
 import Transition from "@/components/tables/transition";
@@ -182,22 +180,36 @@ export default async function Directions()
         }
     ]
 
+    const arrayDirection = [
+        {
+            numberOrImage: Analytics,
+            heading: "Аналитиков больших данных, дата-инженеров и математиков",
+            text: null
+        },
+        {
+            numberOrImage: Engineer,
+            heading: "Инженеров разработчиков низкоуровневого ПО и вычислительных систем",
+            text: null
+        },
+        {
+            numberOrImage: Architect,
+            heading: "Проектировщиков программного обеспечения, менеджеров, бизнес и IT аналитиков",
+            text: null
+        },
+        {
+            numberOrImage: SoftwareEngineer,
+            heading: "Программистов разработчиков приложений и информационных систем",
+            text: null
+        }
+    ]
+
     return(
         <>
             <Screensaver linkImage={DirectionsImage} text={"НАПРАВЛЕНИЯ И ПРОФИЛИ ОБУЧЕНИЯ"} alt={"Заставка - инфраструктура"} backgroundBlack={true} />
             <main>
                 <Section>
                     <TitleText heading={"КОГО МЫ ОБУЧАЕМ?"} text={["Образовательные направления Института информационных технологий прежде всего направлены на подготовку специалистов для современной IT-индустрии, что выделяет нас среди других институтов РТУ МИРЭА. Наши программы предоставляют обширный спектр знаний с акцентом на программирование, разработку программного обеспечения, анализ предметных областей, проектирование цифровых продуктов и систем, математическое моделирование с использованием специализированного ПО, 3D-моделирование, искусственный интеллект и другие аспекты IT-индустрии."]} />
-                    <div className={Style.DirectionsSVG}>
-                        <div>
-                            <IconInformationCircle color={"gray"} icon={Analytics} text={"Аналитиков больших данных, дата-инженеров и математиков"} />
-                            <IconInformationCircle icon={Engineer} text={"Инженеров разработчиков низкоуровневого ПО и вычислительных систем"} />
-                        </div>
-                        <div>
-                            <IconInformationCircle icon={Architect} text={"Проектировщиков ПО, менеджеров, бизнес и IT аналитиков"} />
-                            <IconInformationCircle color={"gray"} icon={SoftwareEngineer} text={"Программистов разработчиков высокоуровневого ПО и информационных систем"} />
-                        </div>
-                    </div>
+                    <Table array={arrayDirection} side={"center"} gapInside={"48px"} gapOutside={"48px"} background={"gray"} imgSize={"152px"} />
                 </Section>
                 <Section>
                     <TitleText heading={"ЦИФРЫ И ФАКТЫ"} text={null} />

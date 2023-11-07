@@ -1,7 +1,7 @@
 import Screensaver from "@/components/screensaver";
 import TitleText from "@/components/titleText";
 import Style from "./direction.module.scss";
-import {Table, TableInformation, TableStroke} from "@/components/tables/table";
+import {Table} from "@/components/tables/table";
 import GeneralDisciplines from "@/public/svg/Выпускники_Вика.svg";
 import ProfileDisciplines from "@/public/svg/Профильные_дисциплины_Вика.svg";
 import DisciplinesToChoose from "@/public/svg/Дисциплины_на_выбор_Вика.svg";
@@ -22,22 +22,19 @@ import Section from "@/components/sections";
 
 const arrayCurriculum = [
     {
-        ImageOrHeading: GeneralDisciplines,
-        text: "Общие дисциплины направления",
-        alt: "Общие дисциплины",
-        h2: true
+        numberOrImage: GeneralDisciplines,
+        heading: "Общие дисциплины направления",
+        text: null
     },
     {
-        ImageOrHeading: ProfileDisciplines,
-        text: "Специализированные дисциплины профиля",
-        alt: "Специализированные дисциплины",
-        h2: true
+        numberOrImage: ProfileDisciplines,
+        heading: "Специализированные дисциплины профиля",
+        text: null
     },
     {
-        ImageOrHeading: DisciplinesToChoose,
-        text: "Блоки дисциплин профиля на выбор",
-        alt: "Дисциплины на выбор",
-        h2: true
+        numberOrImage: DisciplinesToChoose,
+        heading: "Блоки дисциплин профиля на выбор",
+        text: null
     }
 ];
 
@@ -65,52 +62,46 @@ export default async function Direction({ params } : { params: { direction: stri
 
     const textCurriculum: string = "Учебный план включает три типа дисциплин: общие, специализированные дисциплины профиля и блок дисциплин профиля на выбор. Общие дисциплины изучаются независимо от выбранного профиля, их прохождение обязательно для всех студентов направления.  Специализированные дисциплины профиля предназначены для студентов определенных профилей и изучаются только ими. Блоки дисциплин профиля на выбор, предоставляет студентам возможность выбрать дисциплины, и изучать только их. ";
 
-    const arraySpecializationFact: {ImageOrHeading: StaticImageData | string, text: string, alt: string | null | undefined, h2: boolean}[] = [];
+    const arraySpecializationFact: {numberOrImage: StaticImageData | string | number, heading: string, text: string[] | null}[] = [];
 
     if (StaticData(params.direction).specializationFact.partners !== null)
     {
         arraySpecializationFact.push({
-            ImageOrHeading: String(StaticData(params.direction).specializationFact.partners!.number),
-            text: StaticData(params.direction).specializationFact.partners!.text,
-            alt: null,
-            h2: true
+            numberOrImage: String(StaticData(params.direction).specializationFact.partners!.number),
+            heading: StaticData(params.direction).specializationFact.partners!.text,
+            text: null
         });
     }
 
     arraySpecializationFact.push({
-        ImageOrHeading: String(StaticData(params.direction).specializationFact.quantity.number),
-        text: StaticData(params.direction).specializationFact.quantity.text,
-        alt: null,
-        h2: true
+        numberOrImage: String(StaticData(params.direction).specializationFact.quantity.number),
+        heading: StaticData(params.direction).specializationFact.quantity.text,
+        text: null
     });
 
     arraySpecializationFact.push({
-        ImageOrHeading: StaticData(params.direction).specializationFact.graduates+"%",
-        text: "Выпускников работающих по специальности",
-        alt: null,
-        h2: true
+        numberOrImage: StaticData(params.direction).specializationFact.graduates+"%",
+        heading: "Выпускников работающих по специальности",
+        text: null
     });
 
-    const arrayTable: {linkImage: StaticImageData, heading: string, text: string, alt: string}[] = StaticData(params.direction).sphereDirection.map((elem) => {return {linkImage: elem.linkImage, heading: elem.heading, text: elem.text, alt: elem.heading}});
+    const arrayTable: {numberOrImage: StaticImageData | string | number, heading: string, text: string[] | null}[] = StaticData(params.direction).sphereDirection.map((elem) => {return {numberOrImage: elem.linkImage, heading: elem.heading, text: [elem.text]}});
 
-    const arrayInformation: {linkImage: StaticImageData, heading: string, text: {text: string, link: string | null}[], alt: string}[] = [
+    const arrayInformation: {numberOrImage: StaticImageData, heading: string, text: string[] | null, link?: string[] | null | undefined}[] = [
         {
-            linkImage: SvgQualification,
+            numberOrImage: SvgQualification,
             heading: "Квалификация",
-            text: [{text: StaticData(params.direction).dataAdmission.Qualification, link: null}],
-            alt: "Квалификация"
+            text: [StaticData(params.direction).dataAdmission.Qualification],
         },
         {
-            linkImage: SvgFormTraining,
+            numberOrImage: SvgFormTraining,
             heading: "Форма обучения",
-            text: [{text: StaticData(params.direction).dataAdmission.FormTraining, link: null}],
-            alt: "Форма обучения"
+            text: [StaticData(params.direction).dataAdmission.FormTraining],
         },
         {
-            linkImage: SvgDurationTraining,
+            numberOrImage: SvgDurationTraining,
             heading: "Срок обучения",
-            text: StaticData(params.direction).dataAdmission.DurationTraining.map((elem, index) => {return {text: elem, link: null}}),
-            alt: "Срок обучения"
+            text: StaticData(params.direction).dataAdmission.DurationTraining.map((elem) => elem),
         }
     ]
 
@@ -121,108 +112,87 @@ export default async function Direction({ params } : { params: { direction: stri
 
         if (getDataApi.places_budget !== null && getDataApi.places_budget !== undefined && getDataApi.last_year_threshold !== null && getDataApi.last_year_threshold !== undefined && getDataApi.price !== null && getDataApi.price !== undefined)
         {
+
+            const textPlaces = ["Всего в 2023 году: "+getDataApi.places_budget];
+            if (getDataApi.places_quota !== null && getDataApi.places_quota !== undefined)
+            {
+                textPlaces.push("Особая квота: " + getDataApi.places_quota);
+            }
+            if (getDataApi.places_special_quota !== null && getDataApi.places_special_quota !== undefined)
+            {
+                textPlaces.push("Отдельная квота: "+getDataApi.places_special_quota);
+            }
+            if (getDataApi.places_target !== null && getDataApi.places_target !== undefined)
+            {
+                textPlaces.push("Целевая квота: "+getDataApi.places_target);
+            }
+
+            const textPrice = ["Полная стоимость: "+getDataApi.price];
+            if (getDataApi.price_discount_10 !== null && getDataApi.price_discount_10 !== undefined)
+            {
+                textPrice.push("С учётом базовой скидки: "+getDataApi.price_discount_10);
+            }
+            if (getDataApi.price_discount_20 !== null && getDataApi.price_discount_20 !== undefined)
+            {
+                textPrice.push("С учётом специальной скидки: "+getDataApi.price_discount_20);
+            }
+
+            const textOtherSources = ["Сайт РТУ МИРЭА","Сайт приёмной комиссии РТУ МИРЭА"];
+            const linkOtherSources = [StaticData(params.direction).dataAdmission.OtherSources.WebsiteMIREA, StaticData(params.direction).dataAdmission.OtherSources.WebsiteAdmissionsCommittee];
+            if (StaticData(params.direction).dataAdmission.OtherSources.ChatVK !== null && StaticData(params.direction).dataAdmission.OtherSources.ChatVK !== undefined)
+            {
+                textOtherSources.push("Чат для абитуриентов в VK");
+                linkOtherSources.push(StaticData(params.direction).dataAdmission.OtherSources.ChatVK as string);
+            }
+            if (StaticData(params.direction).dataAdmission.OtherSources.ChatTG !== null && StaticData(params.direction).dataAdmission.OtherSources.ChatTG !== undefined)
+            {
+                textOtherSources.push("Чат для абитуриентов в TG");
+                linkOtherSources.push(StaticData(params.direction).dataAdmission.OtherSources.ChatTG as string);
+            }
+
             arrayInformation.push(
                 {
-                    linkImage: SvgPassingScore,
+                    numberOrImage: SvgPassingScore,
                     heading: "Проходной балл",
-                    text: [
-                        {
-                            text: getDataApi.last_year_threshold+" в 2023 году",
-                            link: null
-                        }
-                    ],
-                    alt: "Проходной балл"
+                    text: [getDataApi.last_year_threshold+" в 2023 году"],
                 },
                 {
-                    linkImage: SvgEntranceTests,
+                    numberOrImage: SvgEntranceTests,
                     heading: "Вступительные испытания",
-                    text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem, index) => {return {text: elem, link: null}}),
-                    alt: "Вступительные испытания"
+                    text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem) => elem),
                 },
                 {
-                    linkImage: SvgBudgetPlaces,
+                    numberOrImage: SvgBudgetPlaces,
                     heading: "Количество бюджетных мест",
-                    text: [
-                        {
-                            text: "Всего в 2023 году: "+getDataApi.places_budget,
-                            link: null
-                        }, (getDataApi.places_quota !== null && getDataApi.places_quota) ?
-                        {
-                            text: "Особая квота: "+getDataApi.places_quota,
-                            link: null
-                        } : {} as { text: string, link: string | null }, (getDataApi.places_special_quota !== null && getDataApi.places_special_quota) ?
-                        {
-                            text: "Отдельная квота: "+getDataApi.places_special_quota,
-                            link: null
-                        } : {} as { text: string, link: string | null }, (getDataApi.places_target !== null && getDataApi.places_target) ?
-                        {
-                            text: "Целевая квота: "+getDataApi.places_target,
-                            link: null
-                        } : {} as { text: string, link: string | null }
-                    ],
-                    alt: "Количество бюджетных мест"
+                    text: textPlaces
                 },
                 {
-                    linkImage: SvgCost,
+                    numberOrImage: SvgCost,
                     heading: "Стоимость обучения в год",
-                    text: [
-                        {
-                            text: "Полная стоимость: "+getDataApi.price,
-                            link: null
-                        }, (getDataApi.price_discount_10 !== null && getDataApi.price_discount_10) ?
-                        {
-                            text: "С учётом базовой скидки: "+getDataApi.price_discount_10,
-                            link: null
-                        } : {} as { text: string, link: string | null }, (getDataApi.price_discount_20 !== null && getDataApi.price_discount_20) ?
-                        {
-                            text: "С учётом специальной скидки: "+getDataApi.price_discount_20,
-                            link: null
-                        } : {} as { text: string, link: string | null }
-                    ],
-                    alt: "Стоимость обучения в год"
+                    text: textPrice,
                 },
                 {
-                    linkImage: SvgOtherSources,
+                    numberOrImage: SvgOtherSources,
                     heading: (typeof(StaticData(params.direction).dataAdmission.OtherSources.ChatVK) === 'string' || typeof(StaticData(params.direction).dataAdmission.OtherSources.ChatTG) === 'string') ? "Другие источники информации и чаты" : "Другие источники информации",
-                    text: [
-                        {
-                            text: "Сайт РТУ МИРЭА",
-                            link: StaticData(params.direction).dataAdmission.OtherSources.WebsiteMIREA
-                        },
-                        {
-                            text: "Сайт приёмной комиссии РТУ МИРЭА",
-                            link: StaticData(params.direction).dataAdmission.OtherSources.WebsiteAdmissionsCommittee
-                        }, (StaticData(params.direction).dataAdmission.OtherSources.ChatVK !== null && StaticData(params.direction).dataAdmission.OtherSources.ChatVK !== undefined) ?
-                        {
-                            text: "Чат для абитуриентов в VK",
-                            link: StaticData(params.direction).dataAdmission.OtherSources.ChatVK
-                        } : {} as { text: string, link: string | null },
-                        (StaticData(params.direction).dataAdmission.OtherSources.ChatTG !== null && StaticData(params.direction).dataAdmission.OtherSources.ChatTG !== undefined) ?
-                            {
-                                text: "Чат для абитуриентов в TG",
-                                link: StaticData(params.direction).dataAdmission.OtherSources.ChatTG
-                            } : {} as { text: string, link: string | null }
-                    ],
-                    alt: "Источники информации"
+                    text: textOtherSources,
+                    link: linkOtherSources
                 })
         }
         else
         {
             arrayInformation.push({
-                linkImage: SvgEntranceTests,
+                numberOrImage: SvgEntranceTests,
                 heading: "Вступительные испытания",
-                text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem, index) => {return {text: elem, link: null}}),
-                alt: "Вступительные испытания"
+                text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem) => {return elem}),
             })
         }
     }
     else
     {
         arrayInformation.push({
-            linkImage: SvgEntranceTests,
+            numberOrImage: SvgEntranceTests,
             heading: "Вступительные испытания",
-            text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem, index) => {return {text: elem, link: null}}),
-            alt: "Вступительные испытания"
+            text: StaticData(params.direction).dataAdmission.EntranceTests.map((elem) => {return elem}),
         })
     }
 
@@ -233,22 +203,26 @@ export default async function Direction({ params } : { params: { direction: stri
             <main>
                 <Section>
                     <TitleText heading={StaticData(params.direction).heading} text={[StaticData(params.direction).text]} />
-                    <Table array={arrayTable} />
+                    <Table array={arrayTable} side={"left"} background={"gray"} gapInside={"36px"} gapOutside={"32px"} />
                 </Section>
                 <Section>
                     <TitleText heading={"ИНФОРМАЦИЯ ПО ПОСТУПЛЕНИЮ"} />
-                    <TableInformation array={arrayInformation} />
+                    <Table array={arrayInformation} side={"left"} background={"white"} gapInside={"36px/auto"} gapOutside={"16px"} />
                 </Section>
                 <Section>
                     <TitleText heading={"СПЕЦИАЛЬНОСТИ / ПРОФИЛИ"} text={[StaticData(params.direction).specializationText]} />
-                    <TableStroke array={arraySpecializationFact} />
+                    <Table array={arraySpecializationFact} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <SectionProfiles array={ApiProfiles(params.direction)}/>
                 </Section>
-                <Section>
-                    <TitleText heading={"УЧЕБНЫЙ ПЛАН"} text={[textCurriculum]} />
-                    <TableStroke array={arrayCurriculum} />
-                    <BookStudyPlan />
-                </Section>
+                {
+                    /*
+                        <Section>
+                            <TitleText heading={"УЧЕБНЫЙ ПЛАН"} text={[textCurriculum]} />
+                            <Table array={arrayCurriculum} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
+                            <BookStudyPlan />
+                        </Section>
+                     */
+                }
                 {StaticData(params.direction).video === null ? <></> :
                     <Section>
                         <TitleText heading={"ВИДЕО"} text={[StaticData(params.direction).video!.text]} />

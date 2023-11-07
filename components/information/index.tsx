@@ -1,4 +1,4 @@
-import {BlockImage2by1} from "@/components/blocks";
+
 import {StaticImageData} from "next/image";
 import Style from "./informationSection.module.scss";
 
@@ -20,9 +20,6 @@ export function InformationTextAndImage({heading, text1, text2, linkImage, alt}:
                     <p>{text1}</p>
                     <p>{text2}</p>
                 </div>
-            </div>
-            <div>
-                <BlockImage2by1 linkImage={linkImage} alt={alt} />
             </div>
         </div>
     )
@@ -51,9 +48,7 @@ export function InformationTextAndImageAndButton({heading, text1, text2, linkIma
                     {buttonsArray.map((elem) => elem)}
                 </div>
             </div>
-            <div>
-                <BlockImage2by1 linkImage={linkImage} alt={alt} />
-            </div>
+
         </div>
     )
 }

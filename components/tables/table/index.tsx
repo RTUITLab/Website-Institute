@@ -8,11 +8,13 @@ type PropsTable = {
         numberOrImage: string | number | StaticImageData,
         heading: string,
         text: string[] | null,
+        link?: string[] | null | undefined
     }[],
     side: "left" | "center",
     gapInside: "36px/auto" | "48px" | "36px",
     gapOutside: "32px" | "16px" | "48px" | "24px",
-    background: "white" | "gray"
+    background: "white" | "gray",
+    imgSize?: "110px" | "152px"
 }
 
 const lotTable: {
@@ -41,14 +43,37 @@ const StyleGapOutside: {
     "16px": Style.Gap16
 }
 
-export function Table({array, side, gapInside, gapOutside, background}: PropsTable) {
+export function Table({array, side, gapInside, gapOutside, background, imgSize = "110px"}: PropsTable) {
     return (
         <article className={classNames(Style.Table, lotTable[array.length as keyof typeof lotTable], StyleGapOutside[gapOutside as keyof typeof StyleGapOutside])}>
-            {array.map((elem, index) => index % 2 === 0 ? <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={background} side={side} gapInside={gapInside} /> : <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={"blue"} side={side} gapInside={gapInside} />)}
+            {array.map((elem, index) => {
+                if (array.length < 4)
+                {
+                    return (
+                        index % 2 === 0 ? <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={background} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} /> : <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={"blue"} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} />
+                    )
+                }
+                else
+                {
+                    if (index < array.length / 2)
+                    {
+                        return (
+                            index % 2 === 0 ? <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={background} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} /> : <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={"blue"} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} />
+                        )
+                    }
+                    else
+                    {
+                        return (
+                            index % 2 !== 0 ? <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={background} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} /> : <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={"blue"} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} />
+                        )
+                    }
+                }
+            })}
         </article>
     )
-
 }
+
+//            {array.map((elem, index) => )}
 
 type PropsTableImages = {
     array: {

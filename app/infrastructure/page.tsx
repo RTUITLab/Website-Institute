@@ -1,7 +1,6 @@
 import Screensaver from "@/components/screensaver";
 import NoImage from "@/public/image/NoImage.webp";
 import Section from "@/components/sections";
-import {InformationTextAndImage, InformationTextAndImageAndButton} from "@/components/information";
 import V78 from "@/public/image/В78.webp";
 import MP1 from "@/public/image/МП1.webp";
 import DM1 from "@/public/image/ОБ1.webp";

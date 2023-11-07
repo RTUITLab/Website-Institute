@@ -7,9 +7,19 @@ type Props = {
     numberOrImage: string | number | StaticImageData,
     heading: string,
     text: string[] | null,
+    link: string[] | null
     background: "white" | "gray" | "blue",
     side: "left" | "center",
     gapInside: "36px/auto" | "48px" | "36px",
+    imgSize: "110px" | "152px"
+}
+
+const ImageSize: {
+    "110px": string,
+    "152px": string
+} = {
+    "110px": Style.Img110,
+    "152px": Style.Img152
 }
 
 const TableColor : {
@@ -39,14 +49,16 @@ const TableGap: {
     "48px": Style.Gap48,
     "36px": Style.Gap36,
 }
-export function Cell({numberOrImage, heading, text, background, side, gapInside}: Props)
+export function Cell({numberOrImage, heading, text, background, side, gapInside, imgSize, link}: Props)
 {
     return (
         <article className={classNames(Style.Cell, TableColor[background as keyof typeof TableColor], TableSide[side as keyof typeof TableSide], TableGap[gapInside as keyof typeof TableGap])}>
-            {(typeof(numberOrImage) === "number") || (typeof(numberOrImage) === "string") ? <h1>{numberOrImage}</h1> : <Image src={numberOrImage} alt={heading} />}
+            {(typeof(numberOrImage) === "number") || (typeof(numberOrImage) === "string") ? <h1>{numberOrImage}</h1> : <Image className={ImageSize[imgSize as keyof typeof ImageSize]} src={numberOrImage} alt={heading} />}
             <div>
                 <h2>{heading}</h2>
-                {text === null ? <></> : text.map((elem, index) => <p key={heading+"_text_"+index}>{elem}</p>)}
+                <div>
+                    {text === null ? <></> : text.map((elem, index) => link !== null ? <Link href={link[index] !== null ? link[index] : "./"}>{elem}</Link> : <p key={heading+"_text_"+index}>{elem}</p>)}
+                </div>
             </div>
         </article>
     )
