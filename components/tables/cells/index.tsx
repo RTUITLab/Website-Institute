@@ -90,18 +90,33 @@ type PropsCellImage = {
     linkImage: StaticImageData,
     heading: string,
     text?: string | null | undefined
-    twoToOne?: boolean
+    twoToOne?: boolean,
+    gridAreaNumber?: number | null
 }
 
-export function CellImage({linkImage, heading, text = null, twoToOne = true}:PropsCellImage)
+export function CellImage({linkImage, heading, text = null, twoToOne = true, gridAreaNumber = null}:PropsCellImage)
 {
-    return (
-        <article className={classNames(Style.CellImage, twoToOne ? Style.CellImage2to1 : Style.CellImage1to1)}>
-            <Image src={linkImage} alt={heading} />
-            <div>
-                <h3>{heading}</h3>
-                {(text === null) || (text === undefined) ? <></> : <p>{text}</p>}
-            </div>
-        </article>
-    )
+    if(twoToOne === false)
+    {
+        return (
+            <article style={{gridArea: "cell-"+gridAreaNumber}} className={classNames(Style.CellImage, Style.CellImageGrid)}>
+                <Image src={linkImage} alt={heading}/>
+                <div>
+                    <h3>{heading}</h3>
+                    {(text === null) || (text === undefined) ? <></> : <p>{text}</p>}
+                </div>
+            </article>
+        )
+    }
+    else {
+        return (
+            <article className={classNames(Style.CellImage, Style.CellImage2to1)}>
+                <Image src={linkImage} alt={heading}/>
+                <div>
+                    <h3>{heading}</h3>
+                    {(text === null) || (text === undefined) ? <></> : <p>{text}</p>}
+                </div>
+            </article>
+        )
+    }
 }

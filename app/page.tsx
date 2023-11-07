@@ -1,5 +1,5 @@
 import Style from './page.module.scss';
-import AppImage from "@/public/image/app.webp";
+import AppImage from "@/public/image/new_app.webp";
 import Screensaver from "@/components/screensaver";
 import Transition from "@/components/tables/transition";
 import NoImage from "@/public/image/NoImage.webp";
@@ -112,7 +112,7 @@ export default function Home() {
         },
         {
             linkImage: Infrastructure,
-            text: "Инфраструктура",
+            text: "КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ",
             linkPage: "/infrastructure",
             alt: "Инфраструктура",
         },
@@ -126,7 +126,7 @@ export default function Home() {
 
   return (
       <>
-        <Screensaver linkImage={AppImage} text={"ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"Заставка - главная страница"} backgroundBlack={false} />
+        <Screensaver linkImage={AppImage} text={"ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"Заставка - главная страница"} />
         <main>
             <Section>
                 <Transition array={dataPreAlpha} reverse={true}/>

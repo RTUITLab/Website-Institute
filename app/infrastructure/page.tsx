@@ -256,7 +256,7 @@ export default function Infrastructure()
 
     return (
         <>
-            <Screensaver linkImage={InfrastructureImage} text={"ИНФРАСТРУКТУРА ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} alt={"Заставка - инфраструктура"} />
+            <Screensaver linkImage={InfrastructureImage} text={"КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"} alt={"Заставка - инфраструктура"} />
             <main>
                 <Section>
                     <TitleText heading={"ОСНОВНОЙ КАМПУС"} text={textCampus} />
@@ -286,10 +286,10 @@ export default function Infrastructure()
                 <Section>
                     <TitleText heading={"МЕГАЛАБОРАТОРИИ ИНСТИТУТА"} text={laboratory} />
                     <Table array={TableLaboratory} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
-                    <BlockImage linkImage={Laboratory1} heading={"Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/uchebno-nauchnyy-ispytatelnyy-kompleks-importozameshchenie-informatsionnykh-tekhnologiy/"} buttonImportant={"./infrastructure/laboratory_import_substitution_of_information_technologies"} />
-                    <BlockImage linkImage={Laboratory2} heading={"Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/universal-educational-scientific-laboratory-technology-analytics-modeling-design-and-digital-prototy/"} buttonImportant={"./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping"} reverse={true} />
-                    <BlockImage linkImage={Laboratory3} heading={"Лаборатория захвата движения (Motion capture)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/lab-motion-capture/"} buttonImportant={"./infrastructure/laboratory_motion_capture"} />
-                    <BlockImage linkImage={Laboratory4} heading={"Лаборатория иммерсивных технологий (VR/AR/MR/XR)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/laboratory-of-immersive-technologies/"} buttonImportant={"./infrastructure/laboratory_immersive_technologies"} reverse={true} />
+                    <BlockImage linkImage={Laboratory1} heading={"Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/uchebno-nauchnyy-ispytatelnyy-kompleks-importozameshchenie-informatsionnykh-tekhnologiy/"} buttonImportant={"./infrastructure/laboratory_import_substitution_of_information_technologies"} reverse={true} />
+                    <BlockImage linkImage={Laboratory2} heading={"Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/universal-educational-scientific-laboratory-technology-analytics-modeling-design-and-digital-prototy/"} buttonImportant={"./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping"} />
+                    <BlockImage linkImage={Laboratory3} heading={"Лаборатория захвата движения (Motion capture)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/lab-motion-capture/"} buttonImportant={"./infrastructure/laboratory_motion_capture"} reverse={true} />
+                    <BlockImage linkImage={Laboratory4} heading={"Лаборатория иммерсивных технологий (VR/AR/MR/XR)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/laboratory-of-immersive-technologies/"} buttonImportant={"./infrastructure/laboratory_immersive_technologies"} />
                 </Section>
                 <Section>
                     <TitleText heading={"АУДИТОРИИ ИНСТИТУТА"} text={textClassroomIIT} />

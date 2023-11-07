@@ -47,7 +47,7 @@ export function Table({array, side, gapInside, gapOutside, background, imgSize =
     return (
         <article className={classNames(Style.Table, lotTable[array.length as keyof typeof lotTable], StyleGapOutside[gapOutside as keyof typeof StyleGapOutside])}>
             {array.map((elem, index) => {
-                if (array.length < 4)
+                if (array.length === 2 || array.length === 3 || array.length === 6)
                 {
                     return (
                         index % 2 === 0 ? <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={background} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} /> : <Cell key={"table_"+index} numberOrImage={elem.numberOrImage} heading={elem.heading} text={elem.text} background={"blue"} side={side} gapInside={gapInside} imgSize={imgSize} link={elem.link === undefined ? null : elem.link} />
@@ -73,7 +73,7 @@ export function Table({array, side, gapInside, gapOutside, background, imgSize =
     )
 }
 
-//            {array.map((elem, index) => )}
+
 
 type PropsTableImages = {
     array: {
@@ -84,10 +84,22 @@ type PropsTableImages = {
     twoToOne?: boolean
 }
 
+const StyleTableImages: {
+    15: string,
+    5: string,
+    4: string,
+    2: string
+} = {
+    15: Style.TableImage15,
+    5: Style.TableImage5,
+    4: Style.TableImage4,
+    2: Style.TableImage2
+}
+
 export function TableImages({array, twoToOne = true}:PropsTableImages) {
     return (
-        <div className={classNames(Style.Table, Style.Table2to1)}>
-            {array.map((elem) => <CellImage key={"table_images_" + elem.heading} linkImage={elem.linkImage} heading={elem.heading} text={elem.text} twoToOne={twoToOne}/>)}
+        <div className={classNames(Style.Table, twoToOne ? Style.Table2to1 : StyleTableImages[array.length as keyof typeof StyleTableImages])}>
+            {array.map((elem, index) => <CellImage key={"table_images_" + elem.heading} linkImage={elem.linkImage} heading={elem.heading} text={elem.text} twoToOne={twoToOne} gridAreaNumber={index+1}/>)}
         </div>
     )
 }
