@@ -12,7 +12,6 @@ import GameDev from "@/public/svg/gamedev.webp";
 import Data from "@/public/svg/data.webp";
 import IOT from "@/public/svg/iot.webp";
 import Network from "@/public/svg/network.webp";
-import Cloud from "@/public/svg/cloud.webp";
 import AI from "@/public/svg/ai.webp";
 import Mobile from "@/public/svg/mobile.webp";
 import Frontend from "@/public/svg/frontend.webp";
@@ -30,6 +29,11 @@ import Fact3 from "@/public/image/fact3.webp";
 import Fact4 from "@/public/image/fact4.webp";
 import AdmissionCard from "@/components/cards/admissionCard";
 import AdmissionImage from "@/public/image/admission.webp";
+import DownTransition from "@/components/downTransition";
+import DirectionsImage from "@/public/image/Направления.webp";
+import RTUITLab from "@/public/image/Лаба_Переход.webp";
+import Infrastructure from "@/public/image/Инфраструктура.webp";
+import Equipment from "@/public/image/Оборудование_Переход.webp";
 
 
 export default function PageInstitute() {
@@ -88,11 +92,19 @@ export default function PageInstitute() {
         }
     ];
 
+    const id = [{link: "structure", text: "Узнать про институт"}, {link: "mission", text: "Деятельность института"}, {link: "partners", text: "Посмотреть партнёров"}, {link: "facts", text: "Факты о институте"}, {link: "entrance", text: "Узнать про поступление"}];
+
+    const DownCell = {
+        element1: {linkImage: Equipment,linkPage: "./equipment",text: "Уникальное оборудование"},
+        element2: {linkImage: DirectionsImage,linkPage: "./directions",text: "ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ"},
+        element3: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"}
+    }
+
     return (
         <>
-            <Screensaver linkImage={InstituteImage} text={"ИНСТИТУТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"ИИТ лого"} />
+            <Screensaver id={id} linkImage={InstituteImage} text={"ИНСТИТУТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"ИИТ лого"} />
             <main>
-                <Section>
+                <Section id={id[0].link}>
                     <TitleText heading={"Начните своЁ творческое приключение сегодня!"} />
                     <Table array={arrayTableStrokeInstitute} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <div className={Style.InstituteDivCard}>
@@ -100,7 +112,7 @@ export default function PageInstitute() {
                         <TextCard image={IitSvg} heading={"ИНСТИТУТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} text={"В отличие от других институтов РТУ МИРЭА, наш институт в первую очередь ориентирован на подготовку студентов в области программирования, разработки программного обеспечения и IT-сферы. При этом мы также уделяем внимание инженерным, математическим и бизнес-информационным наукам, но в меньшей степени. Например, студенты направления \"Информатика и вычислительная техника\" в основном занимаются разработкой программного обеспечения для различных устройств, а прикладные математики именно занимаются практическим применением математические методов в анализе данных и в области искусственного интеллекта."} />
                     </div>
                 </Section>
-                <Section>
+                <Section id={id[1].link}>
                     <TitleText heading={"НАША МИССИЯ И УНИКАЛЬНЫЕ «ФИШКИ»"} text={["Нашей задачей является подготовка будущих специалистов в IT-отрасли, предоставляя им образовательные программы и современное оборудование. Наш институт выделяется среди других институтов и факультетов тем, что мы специализируемся исключительно на подготовке IT-специалистов, способных разрабатывать IT-продукты и программное обеспечение."]} />
                     <Table array={arrayTableStrokeMission} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
                     <div className={Style.MissionDivCard} >
@@ -114,7 +126,7 @@ export default function PageInstitute() {
                         <ImageCard image={OneC} heading={"Средства автоматизации и информатизации организаций"} />
                     </div>
                 </Section>
-                <Section>
+                <Section id={id[2].link}>
                     <TitleText heading={"ПАРТНЁРЫ ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} />
                     <Table array={arrayTableStrokePartners} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <div className={Style.PartnersDivGrid}>
@@ -125,7 +137,7 @@ export default function PageInstitute() {
                         <PartnersCard image={RostelecomLogo} heading={"РОСТЕЛЕКОМ"} text={"ПАО «Ростелеком»"} indexGrid={5} />
                     </div>
                 </Section>
-                <Section>
+                <Section id={id[3].link}>
                     <TitleText heading={"ИНТЕРЕСНЫЕ ФАКТЫ ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"} />
                     <div className={Style.AchievementDivCard}>
                         <div>
@@ -138,10 +150,11 @@ export default function PageInstitute() {
                         </div>
                     </div>
                 </Section>
-                <Section>
+                <Section id={id[4].link}>
                     <TitleText heading={"ХОТИТЕ ПОСТУПИТЬ К НАМ?"} />
-                    <AdmissionCard heading={"ПРИЁМНАЯ КОММИССИЯ "} text={"Поступление в РТУ МИРЭА и Институт информационных технологий осуществляется через приемную комиссию как на платной, так и на бюджетной основе. Подробную информацию о процедуре приема и ее правилах вы можете найти на официальном сайте приемной комиссии."} image={AdmissionImage} />
+                    <AdmissionCard buttonOne={{link: "https://priem.mirea.ru", text: "ПРИЁМНАЯ КОММИССИЯ"}} buttonTwo={{link: "https://www.mirea.ru/education/the-institutes-and-faculties/", text: "ДРУГИЕ ИНСТИТУТЫ РТУ МИРЭА"}} heading={"ПРИЁМНАЯ КОММИССИЯ "} text={"Поступление в РТУ МИРЭА и Институт информационных технологий осуществляется через приемную комиссию как на платной, так и на бюджетной основе. Подробную информацию о процедуре приема и ее правилах вы можете найти на официальном сайте приемной комиссии."} image={AdmissionImage} />
                 </Section>
+                <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
             </main>
         </>
     )

@@ -100,3 +100,29 @@
   }
 }
 
+.ButtonLinkAside
+{
+  width: 48px;
+  height: 48px;
+  transition: 300ms transform;
+  &:hover
+  {
+    transform: scale(1.25);
+  }
+}
+
+.ButtonId
+{
+  width: 48px;
+  height: 48px;
+  transition: 300ms transform;
+  > img
+  {
+    width: 48px;
+    height: 48px;
+  }
+  &:hover
+  {
+    transform: scale(1.25);
+  }
+}

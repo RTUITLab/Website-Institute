@@ -11,11 +11,11 @@ type Props = {
 const TableCells : {
     12: string,
     4: string,
-    5: string
+    5: string,
 } = {
     12: Style.Transition12,
     4: Style.Transition4,
-    5: Style.Transition5
+    5: Style.Transition5,
 }
 
 export default function Transition({array, reverse = false}: Props)
@@ -31,6 +31,38 @@ export default function Transition({array, reverse = false}: Props)
                                                                                 gridAreaNumber={index+1}
                                                                                 key={index}
                                                                                 additionalText={elem.additionalText} />)
+            }
+        </div>
+    )
+}
+
+type TransitionDown = {
+    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined}[],
+    side?: "left" | "center" | "right"
+}
+
+const TableSide : {
+    "left": string,
+    "center": string,
+    "right": string,
+} = {
+    "left": Style.Transition3Left,
+    "center": Style.Transition3Center,
+    "right": Style.Transition3Right
+}
+
+export function TransitionDown({array, side = "center"}: TransitionDown) {
+    return (
+        <div className={classNames(Style.Transition, Style.Transition3, TableSide[side as keyof typeof TableSide])}>
+            {
+                array.map((elem, index) => <CellTransition
+                    linkImage={elem.linkImage}
+                    text={elem.text}
+                    linkPage={elem.linkPage}
+                    alt={elem.alt}
+                    gridAreaNumber={index+1}
+                    key={index}
+                    additionalText={elem.additionalText} />)
             }
         </div>
     )

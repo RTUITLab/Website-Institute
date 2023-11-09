@@ -14,6 +14,7 @@ import RTUITLab from "@/public/image/Лаба_Переход.webp";
 import Achievement from "@/public/image/Достижения_Переход.webp";
 import Institute from "@/public/image/институт.webp";
 import Section from "@/components/sections";
+import TitleText from "@/components/titleText";
 
 export default function Home() {
     const data = [
@@ -119,16 +120,19 @@ export default function Home() {
         {
             linkImage: Equipment,
             text: "Уникальное оборудование",
-            linkPage: "./",
+            linkPage: "/equipment",
             alt: "Оборудование",
         }
     ]
 
+    const id = [{link: "page_table", text: "СТРАНИЦЫ ПОРТАЛА"}];
+
   return (
       <>
-        <Screensaver linkImage={AppImage} text={"ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"Заставка - главная страница"} />
+        <Screensaver id={id} linkImage={AppImage} text={"ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА"} alt={"Заставка - главная страница"} />
         <main>
-            <Section>
+            <Section id={id[0].link}>
+                <TitleText heading={"СТРАНИЦЫ ИНФОРМАЦИОННОГО ПОРТАЛА"} text={["На этом сайте собрана полезная и актуальная информация как для абитуриентов, так и для студентов института информационных технологий. Для вашего удобства, мы разделили информацию на несколько страниц и секций по определённым сферам."]}/>
                 <Transition array={dataPreAlpha} reverse={true}/>
             </Section>
         </main>

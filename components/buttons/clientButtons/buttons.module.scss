@@ -1,0 +1,45 @@
+.ButtonMenuAside
+{
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0,0,0,0);
+  transition: 300ms transform;
+  &:hover
+  {
+    transform: scale(1.25);
+  }
+  > img
+  {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.ButtonAside
+{
+  background-color: var(--text-white);
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  transition: 300ms background-color;
+  &:hover
+  {
+    background-color: rgb(192,192,192);
+  }
+  > img
+  {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0,0,0,0);
+  }
+  > h3
+  {
+    color: var(--dark-text);
+  }
+}

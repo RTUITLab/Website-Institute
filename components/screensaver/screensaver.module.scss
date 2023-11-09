@@ -19,14 +19,34 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 10svw;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10svw 10svw 5svw;
+    gap: 72px;
     > h1
     {
       font-size: 64px;
       text-transform: uppercase;
       color: var(--text-white);
+    }
+    > div
+    {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    > article
+    {
+      width: 100%;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

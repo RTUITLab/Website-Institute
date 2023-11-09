@@ -1,0 +1,43 @@
+
+
+.Section
+{
+  z-index: 1;
+  width: 100%;
+  gap: 72px;
+  padding: 10svw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  > article
+  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    > div
+    {
+      justify-self: stretch;
+      height: 2px;
+      background-color: var(--dark-text);
+    }
+    > h2
+    {
+      text-transform: uppercase;
+      justify-self: stretch;
+      height: 28px;
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: var(--background-white);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--background-gray);
+  }
+}

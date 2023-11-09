@@ -1,9 +1,6 @@
 import Screensaver from "@/components/screensaver";
 import NoImage from "@/public/image/NoImage.webp";
 import Section from "@/components/sections";
-import V78 from "@/public/image/В78.webp";
-import MP1 from "@/public/image/МП1.webp";
-import DM1 from "@/public/image/ОБ1.webp";
 import TitleText from "@/components/titleText";
 import Image from "next/image";
 import CampusUp from "@/public/image/CampusUp.webp";
@@ -50,6 +47,11 @@ import Laboratory1 from "@/public/image/лаба_инженерка.webp";
 import Laboratory2 from "@/public/image/лаба_кресла.webp";
 import Laboratory3 from "@/public/image/лаба_мокап.webp";
 import Laboratory4 from "@/public/image/лаба_вр.webp";
+import DirectionsImage from "@/public/image/Направления.webp";
+import RTUITLab from "@/public/image/Лаба_Переход.webp";
+import DownTransition from "@/components/downTransition";
+import Equipment from "@/public/image/Оборудование_Переход.webp";
+import InstituteImage from "@/public/image/институт.webp";
 
 export default function Infrastructure()
 {
@@ -254,11 +256,19 @@ export default function Infrastructure()
     const textClassroomAll = ["В дополнение к вышеуказанным аудиториям и лабораториям, обучение студентов также будет проводиться в общих аудиториях, где предоставленное оборудование ориентировано на более простых и малых заданий, таких как ведение документации, написание простых программ и алгоритмов, проектирование блок-схем ПО и другие подобные задания. Такие аудитории расположены в информационно-вычислительном центре под корпусом «А», а также в корпусе «И».", "Студенты также будут заниматься в обычных аудиториях без электронно-вычислительной техники, где изучают иностранные, математические и гуманитарные дисциплины. Кроме того, учебные лекции будут проводиться в просторных и удобных аудиториях, оснащенных демонстрационным оборудованием и розетками."];
     const textExtracurricularInfrastructure = ["На территории кампуса по адресу Проспект Вернадского, д. 78, созданы все необходимые условия и пространства для внеучебной деятельности, доступные всем студентам РТУ МИРЭА, независимо от их института. В числе них: столовые, кафетерии, чилл-зоны, проектные зоны и коворкинг, киберспортивный центр (игровой клуб), библиотека с читальным залом, игровая зона с теннисными и бильярдными столами, конференц-залы для проведения мероприятий, а также медицинские пункты и спортивная инфраструктура — от тренажерного зала до обширного спортивного комплекса с зоной для офп, баскетбола, волейбола и других видов спорта."];
 
+    const id = [{link: "campus", text: "Прочитать про кампус"}, {link: "megalaboratory", text: "Узнать про мегалаборатории"}, {link: "classroom_iit", text: "Посмотреть аудитории института"}, {link: "classroom_mirea", text: "Посмотреть аудитории университета"}, {link: "infrastructure", text: "Посмотреть внеучебную инфраструктура"}]
+
+    const DownCell = {
+        element1: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"},
+        element2: {linkImage: Equipment,linkPage: "./equipment",text: "Уникальное оборудование"},
+        element3: {linkImage: InstituteImage,linkPage: "./institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"}
+    }
+
     return (
         <>
-            <Screensaver linkImage={InfrastructureImage} text={"КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"} alt={"Заставка - инфраструктура"} />
+            <Screensaver id={id} linkImage={InfrastructureImage} text={"КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"} alt={"Заставка - инфраструктура"} />
             <main>
-                <Section>
+                <Section id={id[0].link}>
                     <TitleText heading={"ОСНОВНОЙ КАМПУС"} text={textCampus} />
                     <Table array={TableCampus} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"}  />
                     <div className={Style.ImageCampus}>
@@ -283,7 +293,7 @@ export default function Infrastructure()
                         </div>
                     </div>
                 </Section>
-                <Section>
+                <Section id={id[1].link}>
                     <TitleText heading={"МЕГАЛАБОРАТОРИИ ИНСТИТУТА"} text={laboratory} />
                     <Table array={TableLaboratory} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
                     <BlockImage linkImage={Laboratory1} heading={"Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/uchebno-nauchnyy-ispytatelnyy-kompleks-importozameshchenie-informatsionnykh-tekhnologiy/"} buttonImportant={"./infrastructure/laboratory_import_substitution_of_information_technologies"} reverse={true} />
@@ -291,20 +301,21 @@ export default function Infrastructure()
                     <BlockImage linkImage={Laboratory3} heading={"Лаборатория захвата движения (Motion capture)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/lab-motion-capture/"} buttonImportant={"./infrastructure/laboratory_motion_capture"} reverse={true} />
                     <BlockImage linkImage={Laboratory4} heading={"Лаборатория иммерсивных технологий (VR/AR/MR/XR)"} buttonBasic={"https://www.mirea.ru/education/megalaboratories/laboratory-of-immersive-technologies/"} buttonImportant={"./infrastructure/laboratory_immersive_technologies"} />
                 </Section>
-                <Section>
+                <Section id={id[2].link}>
                     <TitleText heading={"АУДИТОРИИ ИНСТИТУТА"} text={textClassroomIIT} />
                     <Table array={TableClassroomIIT} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <TableImages array={TableClassroomIITImages} twoToOne={true} />
                 </Section>
-                <Section>
+                <Section id={id[3].link}>
                     <TitleText heading={"ОБЩИЕ АУДИТОРИИ УНИВЕРСИТЕТА"} text={textClassroomAll} />
                     <Table array={TableClassroomAll} side={"center"} background={"white"} gapInside={"36px"} gapOutside={"24px"} />
                     <TableImages array={TableClassroomAllImages} twoToOne={true} />
                 </Section>
-                <Section>
+                <Section id={id[4].link}>
                     <TitleText heading={"ВНЕУЧЕБНАЯ ИНФРАСТРУКТУРА"} text={textExtracurricularInfrastructure} />
                     <TableImages array={TableExtracurricularInfrastructure} twoToOne={true} />
                 </Section>
+                <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
             </main>
         </>
     )

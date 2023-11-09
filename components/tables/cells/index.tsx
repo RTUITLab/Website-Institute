@@ -57,7 +57,7 @@ export function Cell({numberOrImage, heading, text, background, side, gapInside,
             <div>
                 <h2>{heading}</h2>
                 <div>
-                    {text === null ? <></> : text.map((elem, index) => link !== null ? <Link href={link[index] !== null ? link[index] : "./"}>{elem}</Link> : <p key={heading+"_text_"+index}>{elem}</p>)}
+                    {text === null ? <></> : text.map((elem, index) => link !== null ? <Link key={"link_"+heading+"_"+index} href={link[index] !== null ? link[index] : "./"}>{elem}</Link> : <p key={heading+"_text_"+index}>{elem}</p>)}
                 </div>
             </div>
         </article>

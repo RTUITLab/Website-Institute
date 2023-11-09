@@ -19,6 +19,10 @@ import SectionProfiles from "@/components/profiles/section";
 import {ApiProfiles, StaticData} from "@/api";
 import BookStudyPlan from "@/components/studyplan/book";
 import Section from "@/components/sections";
+import AdmissionCard from "@/components/cards/admissionCard";
+import ReplaceApi from "@/public/image/приёмка_замена.webp";
+import DownTransition from "@/components/downTransition";
+import InstituteImage from "@/public/image/институт.webp";
 
 const arrayCurriculum = [
     {
@@ -40,19 +44,34 @@ const arrayCurriculum = [
 
 async function getAPI(url: string)
 {
-    const data = await axios({
-        method: 'get',
-        url: url
-    })
-    return {
-        last_year_threshold: await data.data.last_year_threshold,
-        places_budget: await data.data.places_budget,
-        places_quota: await data.data.places_quota,
-        places_special_quota: await data.data.places_special_quota,
-        places_target: await data.data.places_target,
-        price: await data.data.price,
-        price_discount_10: await data.data.price_discount_10,
-        price_discount_20: await data.data.price_discount_20
+    try {
+        const data = await axios({
+            method: 'get',
+            url: url
+        })
+        return {
+            last_year_threshold: await data.data.last_year_threshold,
+            places_budget: await data.data.places_budget,
+            places_quota: await data.data.places_quota,
+            places_special_quota: await data.data.places_special_quota,
+            places_target: await data.data.places_target,
+            price: await data.data.price,
+            price_discount_10: await data.data.price_discount_10,
+            price_discount_20: await data.data.price_discount_20
+        }
+    }
+    catch
+    {
+        return {
+            last_year_threshold: null,
+            places_budget: null,
+            places_quota: null,
+            places_special_quota: null,
+            places_target: null,
+            price: null,
+            price_discount_10: null,
+            price_discount_20: null
+        }
     }
 }
 
@@ -196,20 +215,79 @@ export default async function Direction({ params } : { params: { direction: stri
         })
     }
 
+    const id = [{link: "specificity", text: "ЦЕЛЬ ПРОГРАММЫ"}, {link: "entrance", text: "ИНФОРМАЦИЯ ПО ПОСТУПЛЕНИЮ"}, {link: "profiles", text: "СПЕЦИАЛЬНОСТИ/ПРОФИЛИ"}];
+
+    if (StaticData(params.direction).video !== null)
+    {
+        id.push({link: "video", text: "ПОСМОТРЕТЬ ВИДЕОРОЛИК"});
+    }
+
+    const DownCell = {
+        "01-03-04": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"},
+            element2: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
+            element3: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"}
+        },
+        "09-03-01": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"},
+            element2: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
+            element3: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"}
+        },
+        "09-03-03": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
+            element2: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"},
+            element3: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"}
+        },
+        "09-03-04": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
+            element2: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"},
+            element3: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"}
+        },
+        "01-04-04": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"},
+            element2: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
+            element3: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"}
+        },
+        "09-04-01": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"},
+            element2: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
+            element3: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"}
+        },
+        "09-04-03": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
+            element2: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"},
+            element3: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"}
+        },
+        "09-04-04": {
+            heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
+            element1: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
+            element2: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"},
+            element3: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"}
+        },
+    }
+
 
     return (
         <>
-            <Screensaver linkImage={StaticData(params.direction).linkImage} text={StaticData(params.direction).title} alt={"Заставка - инфраструктура"} backgroundBlack={true} />
+            <Screensaver id={id} linkImage={StaticData(params.direction).linkImage} text={StaticData(params.direction).title} alt={"Заставка - инфраструктура"} backgroundBlack={true} />
             <main>
-                <Section>
+                <Section id={id[0].link}>
                     <TitleText heading={StaticData(params.direction).heading} text={[StaticData(params.direction).text]} />
                     <Table array={arrayTable} side={"left"} background={"gray"} gapInside={"36px"} gapOutside={"32px"} />
                 </Section>
-                <Section>
+                <Section id={id[1].link}>
                     <TitleText heading={"ИНФОРМАЦИЯ ПО ПОСТУПЛЕНИЮ"} />
                     <Table array={arrayInformation} side={"left"} background={"white"} gapInside={"36px/auto"} gapOutside={"16px"} />
+                    {arrayInformation.length === 4 ? <AdmissionCard heading={"ПРИЁМНАЯ КОММИССИЯ "} text={"На официальном сайте приёмной комиссии РТУ МИРЭА вы найдете всю необходимую информацию о поступлении: стоимость обучение, количество бюджетных мест и проходные баллы в предыдущие годы. Кроме того, вы сможете более детально ознакомиться с учебным направлением на официальном сайте РТУ МИРЭА."} image={ReplaceApi} buttonOne={{link: StaticData(params.direction).dataAdmission.OtherSources.WebsiteAdmissionsCommittee, text: "ПРИЁМНАЯ КОММИССИЯ РТУ МИРЭА"}} buttonTwo={{link: StaticData(params.direction).dataAdmission.OtherSources.WebsiteMIREA, text: "САЙТ РТУ МИРЭА"}} /> : <></>}
                 </Section>
-                <Section>
+                <Section id={id[2].link}>
                     <TitleText heading={"СПЕЦИАЛЬНОСТИ / ПРОФИЛИ"} text={[StaticData(params.direction).specializationText]} />
                     <Table array={arraySpecializationFact} side={"center"} background={"gray"} gapInside={"36px"} gapOutside={"24px"} />
                     <SectionProfiles array={ApiProfiles(params.direction)}/>
@@ -224,11 +302,12 @@ export default async function Direction({ params } : { params: { direction: stri
                      */
                 }
                 {StaticData(params.direction).video === null ? <></> :
-                    <Section>
+                    <Section id={id[3].link}>
                         <TitleText heading={"ВИДЕО"} text={[StaticData(params.direction).video!.text]} />
                         <iframe className={Style.Video} src={StaticData(params.direction).video!.videoURL} frameBorder="0" allow="clipboard-write; autoplay" allowFullScreen />
                     </Section>
                 }
+                <DownTransition heading={DownCell[params.direction as keyof typeof DownCell].heading} element1={DownCell[params.direction as keyof typeof DownCell].element1} element2={DownCell[params.direction as keyof typeof DownCell].element2} element3={DownCell[params.direction as keyof typeof DownCell].element3} />
             </main>
         </>
     )

@@ -57,6 +57,10 @@ import Vr_equipment_12 from "@/public/image/вр_оборудование_12.web
 import Vr_equipment_13 from "@/public/image/вр_оборудование_13.webp";
 import Vr_equipment_14 from "@/public/image/вр_оборудование_14.webp";
 import Vr_equipment_15 from "@/public/image/вр_оборудование_15.webp";
+import DirectionsImage from "@/public/image/Направления.webp";
+import RTUITLab from "@/public/image/Лаба_Переход.webp";
+import Infrastructure from "@/public/image/Инфраструктура.webp";
+import DownTransition from "@/components/downTransition";
 
 
 function getApi(params: string)
@@ -102,31 +106,106 @@ function getApi(params: string)
 
     return data[params as keyof typeof data];
 }
+
+const DownCell = {
+    "laboratory_import_substitution_of_information_technologies": {
+        element1: {
+            linkImage: ImageScreensaver4,
+            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            text: "Лаборатория иммерсивных технологий"
+        },
+        element2: {
+            linkImage: ImageScreensaver2,
+            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
+        },
+        element3: {
+            linkImage: ImageScreensaver3,
+            linkPage: "./infrastructure/laboratory_motion_capture",
+            text: "Лаборатория захвата движения"
+        }
+    },
+    "laboratory_technology_analytics_modeling_design_and_digital_prototyping": {
+        element1: {
+            linkImage: ImageScreensaver1,
+            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
+        },
+        element2: {
+            linkImage: ImageScreensaver3,
+            linkPage: "./infrastructure/laboratory_motion_capture",
+            text: "Лаборатория захвата движения"
+        },
+        element3: {
+            linkImage: ImageScreensaver4,
+            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            text: "Лаборатория иммерсивных технологий"
+        }
+    },
+    "laboratory_motion_capture": {
+        element1: {
+            linkImage: ImageScreensaver2,
+            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
+        },
+        element2: {
+            linkImage: ImageScreensaver4,
+            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            text: "Лаборатория иммерсивных технологий"
+        },
+        element3: {
+            linkImage: ImageScreensaver1,
+            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
+        }
+    },
+    "laboratory_immersive_technologies": {
+        element1: {
+            linkImage: ImageScreensaver3,
+            linkPage: "./infrastructure/laboratory_motion_capture",
+            text: "Лаборатория захвата движения"
+        },
+        element2: {
+            linkImage: ImageScreensaver1,
+            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
+        },
+        element3: {
+            linkImage: ImageScreensaver2,
+            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
+        }
+    },
+}
+
 export default function Megalaboratory({ params } : { params: { megalaboratory: string } }) {
-    const data = getApi(params.megalaboratory)
+    const data = getApi(params.megalaboratory);
+
+    const id = [{link: "specificity", text: "Прочитать про МЕГАЛАБОРАТОРИЮ"}, {link: "equipment", text: "ПОСМОТРЕТЬ ОБОРУДОВАНИЕ"}, {link: "usage", text: "УЗНАТЬ КТО В НЕЙ ЗАНИМАЕТСЯ"}, {link: "video", text: "ПОСМОТРЕТЬ ВИДЕОРОЛИКИ"}, {link: "photo", text: "ПОСМОТРЕТЬ ФОТОГРАФИИ"}];
 
     return (
         <>
-            <Screensaver linkImage={data.screensaverImage} text={data.screensaverText} alt={data.screensaverText} />
+            <Screensaver id={id} linkImage={data.screensaverImage} text={data.screensaverText} alt={data.screensaverText} />
             <main>
-                <Section>
+                <Section id={id[0].link}>
                     <TitleText heading={"Основные ПРЕИМУЩЕСТВА И направления работы лаборатории"} text={data.text} />
                     <Table array={data.specificity} side={"left"} gapInside={"36px/auto"} gapOutside={"16px"} background={"gray"} />
                 </Section>
-                <Section>
+                <Section id={id[1].link}>
                     <TitleText heading={"ОБОРУДОВАНИЕ"} text={null} />
                     <TableImages array={data.equipment} twoToOne={false} />
                 </Section>
-                <Section>
+                <Section id={id[2].link}>
                     <TitleText heading={"ОБУЧЕНИЕ И ИСПОЛЬЗОВАНИЕ ЛАБОРАТОРИИ"} text={data.textUsage} />
                 </Section>
-                <Section>
+                <Section id={id[3].link}>
                     <TitleText heading={"ВИДЕО"} text={null} />
                     <iframe className={Style.Video} src={data.video} frameBorder="0" allow="clipboard-write; autoplay" allowFullScreen />
                 </Section>
-                <Section>
+                <Section id={id[4].link}>
                     <TitleText heading={"ФОТОГРАФИИ"} text={null} />
                 </Section>
+                <DownTransition heading={"ДРУГИЕ МЕГАЛАБАРАТОРИИ ИНСТИТУТА"} element1={DownCell[params.megalaboratory as keyof typeof DownCell].element1} element2={DownCell[params.megalaboratory as keyof typeof DownCell].element2} element3={DownCell[params.megalaboratory as keyof typeof DownCell].element3}/>
             </main>
         </>
     )

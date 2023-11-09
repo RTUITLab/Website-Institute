@@ -1,7 +1,7 @@
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
-import classNames from "classnames";
+import Index from "@/components/header";
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -22,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
-      <body>{children}</body>
+      <body>
+        <Index/>
+        {children}
+      </body>
     </html>
   )
 }

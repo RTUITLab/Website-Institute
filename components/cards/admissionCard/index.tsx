@@ -6,11 +6,11 @@ type Props = {
     heading: string,
     text: string,
     image: StaticImageData,
-    linkAdmission?: string,
-    linkAllInstitute?: string
+    buttonOne: {text: string, link: string},
+    buttonTwo: {text: string, link: string}
 }
 
-export default function AdmissionCard({heading, text, image, linkAdmission, linkAllInstitute}: Props) {
+export default function AdmissionCard({heading, text, image, buttonOne, buttonTwo}: Props) {
     return (
         <article className={Style.AdmissionCard}>
             <Image src={image} alt={heading} />
@@ -18,8 +18,8 @@ export default function AdmissionCard({heading, text, image, linkAdmission, link
                 <h1>{heading}</h1>
                 <h2>{text}</h2>
                 <div>
-                    <ButtonLinkDefault link={"https://priem.mirea.ru"} text={"ПРИЁМНАЯ КОММИССИЯ"} />
-                    <ButtonLinkVIKA link={"https://www.mirea.ru/education/the-institutes-and-faculties/"} text={"ДРУГИЕ ИНСТИТУТЫ РТУ МИРЭА"} />
+                    <ButtonLinkDefault link={buttonOne.link} text={buttonOne.text} />
+                    <ButtonLinkDefault link={buttonTwo.link} text={buttonTwo.text} />
                 </div>
             </div>
         </article>

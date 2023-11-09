@@ -58,6 +58,28 @@
                         "cell-3 cell-4 cell-4 cell-5";
 }
 
+.Transition3
+{
+  height: 20vw;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.Transition3Left
+{
+  grid-template-areas: "cell-1 cell-1 cell-2 cell-3";
+}
+
+.Transition3Center
+{
+  grid-template-areas: "cell-1 cell-2 cell-2 cell-3";
+}
+
+.Transition3Right
+{
+  grid-template-areas: "cell-1 cell-2 cell-3 cell-3";
+}
+
 .Transition5Reverse
 {
   height: 40vw;
