@@ -81,7 +81,8 @@ type PropsTableImages = {
         heading: string,
         text?: string | null | undefined
     }[],
-    twoToOne?: boolean
+    twoToOne?: boolean,
+    sixTable?: boolean
 }
 
 const StyleTableImages: {
@@ -96,9 +97,9 @@ const StyleTableImages: {
     2: Style.TableImage2
 }
 
-export function TableImages({array, twoToOne = true}:PropsTableImages) {
+export function TableImages({array, twoToOne = true, sixTable = false}:PropsTableImages) {
     return (
-        <div className={classNames(Style.Table, twoToOne ? Style.Table2to1 : StyleTableImages[array.length as keyof typeof StyleTableImages])}>
+        <div className={classNames(Style.Table, twoToOne ? Style.Table2to1 : (sixTable ? Style.TableSix : StyleTableImages[array.length as keyof typeof StyleTableImages]))}>
             {array.map((elem, index) => <CellImage key={"table_images_" + elem.heading} linkImage={elem.linkImage} heading={elem.heading} text={elem.text} twoToOne={twoToOne} gridAreaNumber={index+1}/>)}
         </div>
     )

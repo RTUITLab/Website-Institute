@@ -240,12 +240,12 @@ export default function Infrastructure()
             heading: "Информационно-библиотечный центр И ЧИТАЛЬНЫЙ ЗАЛ"
         },
         {
-            linkImage: ExtracurricularInfrastructure9,
-            heading: "КИБЕРСПОРТИВНЫЙ, ИГРОВОЙ И VR ЦЕНТР «КИБЕРЗОНА»"
-        },
-        {
             linkImage: ExtracurricularInfrastructure10,
             heading: "КОНФЕРЕНЦ-ЗАЛЫ ДЛЯ МЕРОПРИЯТИЙ"
+        },
+        {
+            linkImage: ExtracurricularInfrastructure9,
+            heading: "КИБЕРСПОРТИВНЫЙ, ИГРОВОЙ И VR ЦЕНТР «КИБЕРЗОНА»"
         },
     ]
 
@@ -313,7 +313,7 @@ export default function Infrastructure()
                 </Section>
                 <Section id={id[4].link}>
                     <TitleText heading={"ВНЕУЧЕБНАЯ ИНФРАСТРУКТУРА"} text={textExtracurricularInfrastructure} />
-                    <TableImages array={TableExtracurricularInfrastructure} twoToOne={true} />
+                    <TableImages array={TableExtracurricularInfrastructure} twoToOne={false} sixTable={true} />
                 </Section>
                 <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
             </main>
