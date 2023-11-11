@@ -4,7 +4,7 @@ import {ButtonMenuAside, ButtonAside} from "@/components/buttons/clientButtons"
 import {StaticImageData} from "next/image";
 import HelloPage from "@/public/svg/главная_страница_aside.svg";
 import DirectionPage from "@/public/svg/программы_обучения_aside.svg";
-import InfrastructurePage from "@/public/svg/инфраструктура_aside.svg";
+import InfrastructurePage from "@/public/svg/university.svg";
 import IitPage from "@/public/svg/иит_aside.svg";
 import EquipmentPage from "@/public/svg/оборудование_aside.svg";
 import RTUITLabWeb from "@/public/svg/лаба_aside.svg";

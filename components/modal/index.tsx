@@ -3,6 +3,7 @@ import BaseLevel from "@/public/svg/BaseLevel.svg";
 import ProLevel from "@/public/svg/ProLevel.svg";
 import Style from "./modal.module.scss";
 import classNames from "classnames";
+import Close from "@/public/svg/cancel-01.svg";
 
 type PropsLevel = {
     image: StaticImageData,
@@ -82,7 +83,9 @@ export default function Modal({image, titleProfile, titleDepartment, text, spher
                     </article>
                 </div>
             </article>
-            <button onClick={onClick}/>
+            <button onClick={onClick}>
+                <Image src={Close} alt={"крестик_закрыть"} />
+            </button>
         </div>
     )
 }

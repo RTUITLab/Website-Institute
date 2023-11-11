@@ -1,0 +1,67 @@
+.usageCardSection
+{
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 32px;
+}
+
+.usageCard
+{
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 36px 48px;
+  > img
+  {
+    width: 72px;
+    height: 72px;
+    background-color: rgba(0,0,0,0);
+  }
+  > h2
+  {
+    width: 100%;
+  }
+}
+
+.CardDefault
+{
+  background: var(--background-white);
+  border: 2px solid var(--iit-color);
+  *
+  {
+    color: var(--dark-text);
+  }
+}
+
+.CardVika
+{
+  background: var(--gradient-card);
+  *
+  {
+    color: var(--text-white);
+  }
+}
+
+.CardRostelecom
+{
+  background: var(--rostelecom-card);
+  *
+  {
+    color: var(--text-white);
+  }
+}
+
+.CardIio
+{
+  background: var(--gradient-iio);
+  *
+  {
+    color: var(--text-white);
+  }
+}
