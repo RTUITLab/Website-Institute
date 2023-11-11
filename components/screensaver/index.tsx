@@ -6,15 +6,16 @@ type Props = {
     linkImage: StaticImageData,
     text: string,
     alt: string,
+    positionUp?: boolean,
     id: {text: string, link: string}[]
     backgroundBlack?: boolean
 }
 
-export default function Screensaver({linkImage, text, alt, backgroundBlack = true, id}: Props)
+export default function Screensaver({linkImage, text, alt, backgroundBlack = true, id, positionUp = false}: Props)
 {
     return (
         <div className={Style.Screensaver}>
-            <Image src={linkImage} alt={alt} />
+            <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={alt} />
             <div className={backgroundBlack ? Style.backgroundBlack : undefined}>
                 <h1>
                     {text}

@@ -1,4 +1,4 @@
-'use client'
+
 import {ButtonLinkAside} from "@/components/buttons";
 import {ButtonMenuAside, ButtonAside} from "@/components/buttons/clientButtons"
 import {StaticImageData} from "next/image";

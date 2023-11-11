@@ -149,7 +149,7 @@ export default function PageEquipment() {
                     <TitleText heading={"ТАБЛИЦА С ОБОРУДОВАНИЕМ"}/>
                     <TableImages array={data} twoToOne={false} />
                 </Section>
-                <DownTransition side={"right"} element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
+                <DownTransition side={"center"} element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
             </main>
         </>
     )

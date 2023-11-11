@@ -70,14 +70,15 @@ type PropsCellTransition = {
     linkPage: string,
     alt: string,
     gridAreaNumber: number,
-    additionalText: string | null | undefined
+    additionalText: string | null | undefined,
+    positionUp?: boolean
 }
 
-export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, additionalText}: PropsCellTransition)
+export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, additionalText, positionUp = false}: PropsCellTransition)
 {
     return (
         <Link className={Style.CellTransition} style={{gridArea: "cell-"+gridAreaNumber}} href={linkPage}>
-            <Image src={linkImage} alt={alt}/>
+            <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={alt}/>
             <div>
                 <h3>{text}</h3>
                 {(additionalText === null || additionalText === undefined) ? <></> : <h3 key={text}>{additionalText}</h3>}
@@ -89,18 +90,19 @@ export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, 
 type PropsCellImage = {
     linkImage: StaticImageData,
     heading: string,
-    text?: string | null | undefined
+    text?: string | null | undefined,
+    positionUp?: boolean,
     twoToOne?: boolean,
     gridAreaNumber?: number | null
 }
 
-export function CellImage({linkImage, heading, text = null, twoToOne = true, gridAreaNumber = null}:PropsCellImage)
+export function CellImage({linkImage, heading, text = null, twoToOne = true, gridAreaNumber = null, positionUp = false}:PropsCellImage)
 {
     if(twoToOne === false)
     {
         return (
             <article style={{gridArea: "cell-"+gridAreaNumber}} className={classNames(Style.CellImage, Style.CellImageGrid)}>
-                <Image src={linkImage} alt={heading}/>
+                <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={heading}/>
                 <div>
                     <h3>{heading}</h3>
                     {(text === null) || (text === undefined) ? <></> : <p>{text}</p>}

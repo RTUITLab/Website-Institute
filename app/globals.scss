@@ -104,7 +104,14 @@ button
   border-radius: 16px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  transition: 300ms background-color;
+  &:hover
+  {
+    background-color: rgb(192,192,192);
+  }
 }
+
+
 
 body
 {

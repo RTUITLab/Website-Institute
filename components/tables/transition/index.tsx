@@ -37,7 +37,7 @@ export default function Transition({array, reverse = false}: Props)
 }
 
 type TransitionDown = {
-    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined}[],
+    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined, positionUp?: boolean | undefined}[],
     side?: "left" | "center" | "right"
 }
 
@@ -62,6 +62,7 @@ export function TransitionDown({array, side = "center"}: TransitionDown) {
                     alt={elem.alt}
                     gridAreaNumber={index+1}
                     key={index}
+                    positionUp={elem.positionUp === undefined ? false : elem.positionUp}
                     additionalText={elem.additionalText} />)
             }
         </div>

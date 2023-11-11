@@ -1,0 +1,102 @@
+
+
+.SectionPhoto
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  > article
+  {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--iit-color);
+    > img
+    {
+      object-fit: contain;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  > div
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 12px;
+    &::-webkit-scrollbar
+    {
+      display: none;
+    }
+    > button
+    {
+      flex-shrink: 0;
+      width: 128px;
+      height: 128px;
+      border-radius: 16px;
+      overflow: hidden;
+      > img
+      {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.Button
+{
+  position: absolute;
+  top: calc(50% - 24px);
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0,0,0,0);
+  transition: 300ms transform;
+  &:hover
+  {
+    transform: scale(1.5);
+  }
+  &:active
+  {
+    transform: scale(1.25);
+  }
+  > img
+  {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.Right
+{
+  right: 16px;
+}
+
+.Left
+{
+  left: 16px;
+}
+
+.ButtonSwitch
+{
+  transition: 300ms border;
+}
+
+.ButtonNoActive
+{
+  border: 4px solid var(--background-white);
+}
+
+.ButtonActive
+{
+  border: 4px solid var(--mirea-color);
+}

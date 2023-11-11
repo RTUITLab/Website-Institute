@@ -1,4 +1,4 @@
-'use client'
+
 import Image, {StaticImageData} from "next/image";
 import Style from "./buttons.module.scss";
 import Link from "next/link";
