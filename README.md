@@ -17,13 +17,6 @@ npm run start
 ## Запуск сайта при помощи docker'а
 
 ```bash
-# Установить все зависимости/библиотеки
-npm install
-# Собрать сборку
-npm run build
-# Собрать dockerfile (необходимо сперва собрать сборку)
-docker build ./
-# Запустить docker контейнер (необходимо сперва собрать сборку и dockerfile)
-docker-compose up
+# Временно не работает
 ```
 

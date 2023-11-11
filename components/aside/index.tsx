@@ -31,11 +31,11 @@ export default function Aside({onClick, imageLink, hidden}: Props) {
                 </article>
                 <div>
                     <h2>Страницы</h2>
-                    <ButtonAside imageLink={HelloPage} link={"./"} text={"Главная страница портала"} onClick={onClick} />
-                    <ButtonAside imageLink={DirectionPage} link={"./directions"} text={"Про институт ИТ"} onClick={onClick} />
-                    <ButtonAside imageLink={InfrastructurePage} link={"./infrastructure"} text={"Инфраструктура"} onClick={onClick} />
-                    <ButtonAside imageLink={IitPage} link={"./institute"} text={"Программы обучения"} onClick={onClick} />
-                    <ButtonAside imageLink={EquipmentPage} link={"./equipment"} text={"Уникальное оборудование"} onClick={onClick} />
+                    <ButtonAside imageLink={HelloPage} link={"/"} text={"Главная страница портала"} onClick={onClick} />
+                    <ButtonAside imageLink={IitPage} link={"/institute"} text={"Про институт ИТ"} onClick={onClick} />
+                    <ButtonAside imageLink={InfrastructurePage} link={"/infrastructure"} text={"Инфраструктура"} onClick={onClick} />
+                    <ButtonAside imageLink={DirectionPage} link={"/directions"} text={"Программы обучения"} onClick={onClick} />
+                    <ButtonAside imageLink={EquipmentPage} link={"/equipment"} text={"Уникальное оборудование"} onClick={onClick} />
                 </div>
                 <div>
                     <h2>Сайты</h2>

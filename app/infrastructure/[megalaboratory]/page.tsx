@@ -111,68 +111,68 @@ const DownCell = {
     "laboratory_import_substitution_of_information_technologies": {
         element1: {
             linkImage: ImageScreensaver4,
-            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            linkPage: "/infrastructure/laboratory_immersive_technologies",
             text: "Лаборатория иммерсивных технологий"
         },
         element2: {
             linkImage: ImageScreensaver2,
-            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            linkPage: "/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
             text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
         },
         element3: {
             linkImage: ImageScreensaver3,
-            linkPage: "./infrastructure/laboratory_motion_capture",
+            linkPage: "/infrastructure/laboratory_motion_capture",
             text: "Лаборатория захвата движения"
         }
     },
     "laboratory_technology_analytics_modeling_design_and_digital_prototyping": {
         element1: {
             linkImage: ImageScreensaver1,
-            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            linkPage: "/infrastructure/laboratory_import_substitution_of_information_technologies",
             text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
         },
         element2: {
             linkImage: ImageScreensaver3,
-            linkPage: "./infrastructure/laboratory_motion_capture",
+            linkPage: "/infrastructure/laboratory_motion_capture",
             text: "Лаборатория захвата движения"
         },
         element3: {
             linkImage: ImageScreensaver4,
-            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            linkPage: "/infrastructure/laboratory_immersive_technologies",
             text: "Лаборатория иммерсивных технологий"
         }
     },
     "laboratory_motion_capture": {
         element1: {
             linkImage: ImageScreensaver2,
-            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            linkPage: "/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
             text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
         },
         element2: {
             linkImage: ImageScreensaver4,
-            linkPage: "./infrastructure/laboratory_immersive_technologies",
+            linkPage: "/infrastructure/laboratory_immersive_technologies",
             text: "Лаборатория иммерсивных технологий"
         },
         element3: {
             linkImage: ImageScreensaver1,
-            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            linkPage: "/infrastructure/laboratory_import_substitution_of_information_technologies",
             text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
         }
     },
     "laboratory_immersive_technologies": {
         element1: {
             linkImage: ImageScreensaver3,
-            linkPage: "./infrastructure/laboratory_motion_capture",
+            linkPage: "/infrastructure/laboratory_motion_capture",
             text: "Лаборатория захвата движения"
         },
         element2: {
             linkImage: ImageScreensaver1,
-            linkPage: "./infrastructure/laboratory_import_substitution_of_information_technologies",
+            linkPage: "/infrastructure/laboratory_import_substitution_of_information_technologies",
             text: "Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»"
         },
         element3: {
             linkImage: ImageScreensaver2,
-            linkPage: "./infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
+            linkPage: "/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping",
             text: "Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования"
         }
     },

@@ -6,7 +6,7 @@
   overflow: hidden;
   position: relative;
   height: 48px;
-  @include Shadow();
+  box-shadow: 0 2px 1px 0 var(--shadow-lite);
   > div
   {
     top: 0;

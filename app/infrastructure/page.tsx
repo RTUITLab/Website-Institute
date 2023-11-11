@@ -260,8 +260,8 @@ export default function Infrastructure()
 
     const DownCell = {
         element1: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"},
-        element2: {linkImage: Equipment,linkPage: "./equipment",text: "Уникальное оборудование"},
-        element3: {linkImage: InstituteImage,linkPage: "./institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"}
+        element2: {linkImage: Equipment,linkPage: "/equipment",text: "Уникальное оборудование"},
+        element3: {linkImage: InstituteImage,linkPage: "/institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"}
     }
 
     return (

@@ -222,9 +222,9 @@ export default async function Directions()
     const id = [{link: "education", text: "КОГО МЫ ОБУЧАЕМ?"}, {link: "facts", text: "ЦИФРЫ И ФАКТЫ"}, {link: "bachelor", text: "НАПРАВЛЕНИЯ БАКАЛАВРИАТА"}, {link: "magistracy", text: "НАПРАВЛЕНИЯ МАГИСТРАТУРЫ"}, {link: "postgraduate", text: "НАПРАВЛЕНИЯ АСПИРАНТУРЫ"}];
 
     const DownCell = {
-        element1: {linkImage: InstituteImage,linkPage: "./institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"},
+        element1: {linkImage: InstituteImage,linkPage: "/institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"},
         element2: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"},
-        element3: {linkImage: Infrastructure,linkPage: "./infrastructure",text: "КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"}
+        element3: {linkImage: Infrastructure,linkPage: "/infrastructure",text: "КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"}
     }
 
     return(

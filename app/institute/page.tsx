@@ -95,8 +95,8 @@ export default function PageInstitute() {
     const id = [{link: "structure", text: "Узнать про институт"}, {link: "mission", text: "Деятельность института"}, {link: "partners", text: "Посмотреть партнёров"}, {link: "facts", text: "Факты о институте"}, {link: "entrance", text: "Узнать про поступление"}];
 
     const DownCell = {
-        element1: {linkImage: Equipment,linkPage: "./equipment",text: "Уникальное оборудование"},
-        element2: {linkImage: DirectionsImage,linkPage: "./directions",text: "ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ"},
+        element1: {linkImage: Equipment,linkPage: "/equipment",text: "Уникальное оборудование"},
+        element2: {linkImage: DirectionsImage,linkPage: "/directions",text: "ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ"},
         element3: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"}
     }
 

@@ -1,3 +1,4 @@
+'use client'
 import {StaticImageData} from "next/image";
 import Profile from "@/components/profiles/profile";
 import Style from "./sectionProfiles.module.scss";
@@ -8,13 +9,14 @@ type Props = {
         linkImage: StaticImageData,
         direction: {title: string, link: string} | null,
         partner: string | null ,
-        text: string | null,
+        department: string,
+        text: string,
         areasStudy: {
-            imageMin: StaticImageData,
-            imageMax: StaticImageData,
-            title: string,
+            imageMin?: StaticImageData | null | undefined,
+            image: StaticImageData,
+            heading: string,
             levelBase: boolean
-        }[] | null
+        }[]
     }[]
 };
 
@@ -30,7 +32,7 @@ export default function SectionProfiles({array}:Props) {
                     direction={elem.direction}
                     partner={elem.partner}
                     text={elem.text}
-                    areasStudy={elem.areasStudy} />)}
+                    areasStudy={elem.areasStudy} department={elem.department} />)}
             </div>
         </>
     );

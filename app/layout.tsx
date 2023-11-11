@@ -1,7 +1,8 @@
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
-import Index from "@/components/header";
+import React from "react";
+import Header from "@/components/header";
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
       <body>
-        <Index/>
+        <Header/>
         {children}
       </body>
     </html>

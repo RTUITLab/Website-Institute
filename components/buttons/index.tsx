@@ -12,7 +12,7 @@ type PropsButtonLink = {
 
 export function ButtonLinkDefault({link, text, image = null, tagLink = true}: PropsButtonLink)
 {
-    const imageComponent = image === null ? <></> : <Image src={link} alt={text} />
+    const imageComponent = image === null ? <></> : <Image src={image} alt={text} />
 
     if(tagLink) {
         return (
@@ -51,7 +51,7 @@ export function ButtonLinkDefault({link, text, image = null, tagLink = true}: Pr
 
 export function ButtonLinkVIKA({link, text, image = null}: PropsButtonLink)
 {
-    const imageComponent = image === null ? <></> : <Image src={link} alt={text} />
+    const imageComponent = image === null ? <></> : <Image src={image} alt={text} />
 
     return (
         <Link className={Style.Button} href={link}>
@@ -113,5 +113,31 @@ export function ButtonId({link}:PropsButtonId)
         <a className={Style.ButtonId} href={link}>
             <Image src={Arrow_down} alt={"кнопка_стрелка_вниз"} />
         </a>
+    )
+}
+
+type PropsButton = {
+    text: string,
+    image?: StaticImageData | null,
+    onClick: () => void
+}
+
+export function ButtonDefault({text, image = null, onClick}: PropsButton)
+{
+    const imageComponent = image === null ? <></> : <Image src={image} alt={text} />
+
+    return (
+        <button className={Style.Button} onClick={onClick}>
+            <div className={Style.ButtonDefault}>
+                {imageComponent}
+                <h4>{text}</h4>
+            </div>
+            <div className={Style.ButtonStrokeVIKA}>
+                <div>
+                    {imageComponent}
+                    <h4>{text}</h4>
+                </div>
+            </div>
+        </button>
     )
 }

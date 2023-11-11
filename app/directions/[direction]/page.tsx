@@ -23,6 +23,7 @@ import AdmissionCard from "@/components/cards/admissionCard";
 import ReplaceApi from "@/public/image/приёмка_замена.webp";
 import DownTransition from "@/components/downTransition";
 import InstituteImage from "@/public/image/институт.webp";
+import {ButtonDefault} from "@/components/buttons";
 
 const arrayCurriculum = [
     {
@@ -225,51 +226,51 @@ export default async function Direction({ params } : { params: { direction: stri
     const DownCell = {
         "01-03-04": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"},
-            element2: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
-            element3: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"}
+            element1: {linkImage: StaticData("09-03-04").linkImage,linkPage: "/directions/09-03-04",text: "09.03.04 | Программная инженерия"},
+            element2: {linkImage: StaticData("09-03-01").linkImage,linkPage: "/directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
+            element3: {linkImage: StaticData("09-03-03").linkImage,linkPage: "/directions/09-03-03",text: "09.03.03 | Прикладная информатика"}
         },
         "09-03-01": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"},
-            element2: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
-            element3: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"}
+            element1: {linkImage: StaticData("01-03-04").linkImage,linkPage: "/directions/01-03-04",text: "01.03.04 | Прикладная математика"},
+            element2: {linkImage: StaticData("09-03-03").linkImage,linkPage: "/directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
+            element3: {linkImage: StaticData("09-03-04").linkImage,linkPage: "/directions/09-03-04",text: "09.03.04 | Программная инженерия"}
         },
         "09-03-03": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
-            element2: {linkImage: StaticData("09-03-04").linkImage,linkPage: "./directions/09-03-04",text: "09.03.04 | Программная инженерия"},
-            element3: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"}
+            element1: {linkImage: StaticData("09-03-01").linkImage,linkPage: "/directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"},
+            element2: {linkImage: StaticData("09-03-04").linkImage,linkPage: "/directions/09-03-04",text: "09.03.04 | Программная инженерия"},
+            element3: {linkImage: StaticData("01-03-04").linkImage,linkPage: "/directions/01-03-04",text: "01.03.04 | Прикладная математика"}
         },
         "09-03-04": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ БАКАЛАВРИАТА ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-03-03").linkImage,linkPage: "./directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
-            element2: {linkImage: StaticData("01-03-04").linkImage,linkPage: "./directions/01-03-04",text: "01.03.04 | Прикладная математика"},
-            element3: {linkImage: StaticData("09-03-01").linkImage,linkPage: "./directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"}
+            element1: {linkImage: StaticData("09-03-03").linkImage,linkPage: "/directions/09-03-03",text: "09.03.03 | Прикладная информатика"},
+            element2: {linkImage: StaticData("01-03-04").linkImage,linkPage: "/directions/01-03-04",text: "01.03.04 | Прикладная математика"},
+            element3: {linkImage: StaticData("09-03-01").linkImage,linkPage: "/directions/09-03-01",text: "09.03.01 | Информатика и вычислительная техника"}
         },
         "01-04-04": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"},
-            element2: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
-            element3: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"}
+            element1: {linkImage: StaticData("09-04-04").linkImage,linkPage: "/directions/09-04-03",text: "09.04.03 | Программная инженерия"},
+            element2: {linkImage: StaticData("09-04-01").linkImage,linkPage: "/directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
+            element3: {linkImage: StaticData("09-04-03").linkImage,linkPage: "/directions/09-04-03",text: "09.04.03 | Прикладная информатика"}
         },
         "09-04-01": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"},
-            element2: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
-            element3: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"}
+            element1: {linkImage: StaticData("01-04-04").linkImage,linkPage: "/directions/01-04-04",text: "01.04.04 | Прикладная математика"},
+            element2: {linkImage: StaticData("09-04-03").linkImage,linkPage: "/directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
+            element3: {linkImage: StaticData("09-04-04").linkImage,linkPage: "/directions/09-04-03",text: "09.04.03 | Программная инженерия"}
         },
         "09-04-03": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
-            element2: {linkImage: StaticData("09-04-04").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Программная инженерия"},
-            element3: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"}
+            element1: {linkImage: StaticData("09-04-01").linkImage,linkPage: "/directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"},
+            element2: {linkImage: StaticData("09-04-04").linkImage,linkPage: "/directions/09-04-04",text: "09.04.03 | Программная инженерия"},
+            element3: {linkImage: StaticData("01-04-04").linkImage,linkPage: "/directions/01-04-04",text: "01.04.04 | Прикладная математика"}
         },
         "09-04-04": {
             heading: "ДРУГИЕ НАПРАВЛЕНИЯ МАГИСТРАТУРЫ ИНСТИТУТА ИТ",
-            element1: {linkImage: StaticData("09-04-03").linkImage,linkPage: "./directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
-            element2: {linkImage: StaticData("01-04-04").linkImage,linkPage: "./directions/01-04-04",text: "01.04.04 | Прикладная математика"},
-            element3: {linkImage: StaticData("09-04-01").linkImage,linkPage: "./directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"}
+            element1: {linkImage: StaticData("09-04-03").linkImage,linkPage: "/directions/09-04-03",text: "09.04.03 | Прикладная информатика"},
+            element2: {linkImage: StaticData("01-04-04").linkImage,linkPage: "/directions/01-04-04",text: "01.04.04 | Прикладная математика"},
+            element3: {linkImage: StaticData("09-04-01").linkImage,linkPage: "/directions/09-04-01",text: "09.04.01 | Информатика и вычислительная техника"}
         },
     }
 

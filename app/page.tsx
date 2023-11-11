@@ -15,6 +15,10 @@ import Achievement from "@/public/image/Достижения_Переход.webp
 import Institute from "@/public/image/институт.webp";
 import Section from "@/components/sections";
 import TitleText from "@/components/titleText";
+import {Table} from "@/components/tables/table";
+import Info from "@/public/svg/info.svg";
+import News from "@/public/svg/news.svg";
+import Vika from "@/public/svg/vika.svg";
 
 export default function Home() {
     const data = [
@@ -125,7 +129,25 @@ export default function Home() {
         }
     ]
 
-    const id = [{link: "page_table", text: "СТРАНИЦЫ ПОРТАЛА"}];
+    const id = [{link: "pages_table", text: "СТРАНИЦЫ ПОРТАЛА"},{link: "info", text: "ПРО ИНФОРМАЦИОННЫЙ ПОРТАЛ"}];
+
+    const arrayTable = [
+        {
+            numberOrImage: Info,
+            heading: "Информационные секции для абитуриентов и студентов",
+            text: ["Дата частичной реализации: 12.11.23"]
+        },
+        {
+            numberOrImage: News,
+            heading: "Новости и достижения института",
+            text: ["Дата реализации: 14.02.24"]
+        },
+        {
+            numberOrImage: Vika,
+            heading: "Расписание и интеграция чат-ассистента “ВИКА”",
+            text: ["Дата реализации: 14.02.24"]
+        }
+    ]
 
   return (
       <>
@@ -134,6 +156,10 @@ export default function Home() {
             <Section id={id[0].link}>
                 <TitleText heading={"СТРАНИЦЫ ИНФОРМАЦИОННОГО ПОРТАЛА"} text={["На этом сайте собрана полезная и актуальная информация как для абитуриентов, так и для студентов института информационных технологий. Для вашего удобства, мы разделили информацию на несколько страниц и секций по определённым сферам."]}/>
                 <Transition array={dataPreAlpha} reverse={true}/>
+            </Section>
+            <Section id={id[1].link}>
+                <TitleText heading={"ПРО ИНФОРМАЦИОННЫЙ ПОРТАЛ"} text={["Информационный портал был задуман в августе 2023 года во время приемной компании, с целью предоставления понятной и привлекательной информации абитуриентам и студентам. Первая версия портала будет содержать данные о направлениях обучения, инфраструктуре, руководстве и структуре института. Также будет представлена информация об институте, его кафедрах, оборудовании, партнерах, внеучебных мероприятиях и дополнительных курсах. Неотъемлемой частью портала станет функционал, позволяющий получить информацию о расписании занятий, преподавателях, сессиях, новостях и достижениях. Кроме того, портал будет дополнен виртуальным информационно-коммуникационным ассистентом института IT, получившим название \"ВИКА\". Особенностью портала является использование фреймворка Next.js, который позволяет отрисовывать страницы на сервере, а не на устройстве пользователя, что значительно снижает нагрузку на устройство и время загрузки."]} />
+                <Table array={arrayTable} side={"left"} background={"white"} gapInside={"36px"} gapOutside={"32px"} />
             </Section>
         </main>
       </>

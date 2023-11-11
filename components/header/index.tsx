@@ -10,7 +10,7 @@ import ButtonMenuAsideImage from "@/public/svg/buttonMenuAside.svg";
 import ButtonMenuAsideImageClose from "@/public/svg/cancel-01.svg";
 import Aside from "@/components/aside";
 
-export default function Index() {
+export default function Header() {
 
     const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [asideStatus, setAsideStatus] = useState<boolean>(false)
@@ -20,6 +20,8 @@ export default function Index() {
     };
 
     useEffect(() => {
+        setScrollPosition(window.scrollY);
+
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -30,7 +32,7 @@ export default function Index() {
     return (
         <>
             <header className={classNames(Style.Header, 100 < scrollPosition ? Style.BackgroundIIT : Style.BackgroundTransparent)}>
-                <Link href={"./"}>
+                <Link href={"/"}>
                     <Image src={Logo} alt={"иит логотип"} />
                     <h3>Институт информационных технологий РТУ МИРЭА</h3>
                 </Link>
