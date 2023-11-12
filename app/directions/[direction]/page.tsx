@@ -174,7 +174,7 @@ export default async function Direction({ params } : { params: { direction: stri
                 {
                     numberOrImage: SvgPassingScore,
                     heading: "Проходной балл",
-                    text: [getDataApi.last_year_threshold+" в 2023 году"],
+                    text: [getDataApi.last_year_threshold+((params.direction === "01-04-04" || params.direction === "09-04-01" || params.direction === "09-04-03" || params.direction === "09-04-04") ? " в 2022 году" : " в 2023 году")],
                 },
                 {
                     numberOrImage: SvgEntranceTests,
