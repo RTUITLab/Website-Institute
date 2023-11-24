@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
 import React from "react";
 import Header from "@/components/header";
+import Cocos from "@/public/image/vw6c9iwr6rk51.webp";
+import Image, {StaticImageData} from "next/image";
+
+const cocos: {image?: StaticImageData | undefined} = {image: Cocos};
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -21,12 +25,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={ubuntu.className}>
-      <body>
-        <Header/>
-        {children}
-      </body>
-    </html>
-  )
+  if (cocos.image === undefined)
+  {
+    return (
+        <html lang="en" className={ubuntu.className}>
+          <body>
+            <Image src={Cocos} alt={"кокос"} />
+          </body>
+        </html>
+    )
+  }
+  else
+  {
+    return (
+        <html lang="en" className={ubuntu.className}>
+          <body>
+            <Header/>
+            {children}
+          </body>
+        </html>
+    )
+  }
 }

@@ -126,31 +126,31 @@ export default async function Directions()
         text: "1.2.2 | Математическое моделирование, численные методы и комплексы программ",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=582",
         alt: "Мат моделирование",
-        additionalText: null
+        additionalText: null, targetBlank: true
     }, {
         linkImage: Direction232,
         text: "2.3.2 | Вычислительные системы и их элементы",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=609",
         alt: "Вычислительные системы",
-        additionalText: null
+        additionalText: null, targetBlank: true
     },{
         linkImage: Direction234,
         text: "2.3.4 | Управление в организационных системах",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=611",
         alt: "Управление",
-        additionalText: null
+        additionalText: null, targetBlank: true
     },{
         linkImage: Direction235,
         text: "2.3.5 | Математическое и программное обеспечение вычислительных систем, комплексов и компьютерных сетей",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=612",
         alt: "Мат и ПО систем",
-        additionalText: null
+        additionalText: null, targetBlank: true
     },{
         linkImage: Direction238,
         text: "2.3.8 | Информатика и информационные процессы",
         linkPage: "https://priem.mirea.ru/guide-direction?direction_id=613",
         alt: "Информатика и процессы",
-        additionalText: null
+        additionalText: null, targetBlank: true
     }]
 
     const array = [
@@ -223,7 +223,7 @@ export default async function Directions()
 
     const DownCell = {
         element1: {linkImage: InstituteImage,linkPage: "/institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"},
-        element2: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"},
+        element2: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ", targetBlank: true},
         element3: {linkImage: Infrastructure,linkPage: "/infrastructure",text: "КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ"}
     }
 
@@ -251,7 +251,7 @@ export default async function Directions()
                     <TitleText heading={"АСПИРАНТУРА"} text={["Наш институт также занимается подготовкой научных и научно-педагогических кадров, в рамках второй или третей ступени высшего образования под названием аспирантура. Поступление в аспирантуру на основании диплома специалиста или магистра возможно как на бюджетной, так и на договорной основе. По окончании обучения вы получаете заключение о соответствии диссертации критериям, установленным в соответствии с Федеральным законом и от 23 августа 1996 г. № 127-ФЗ «О науке и государственной научно-технической политике» и свидетельство об окончании аспирантуры."]} />
                     <Transition array={dataPostgraduate} />
                 </Section>
-                <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
+                <DownTransition array={[DownCell.element1, DownCell.element2, DownCell.element3]}/>
             </main>
         </>
     )

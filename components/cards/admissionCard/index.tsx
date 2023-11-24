@@ -18,8 +18,8 @@ export default function AdmissionCard({heading, text, image, buttonOne, buttonTw
                 <h1>{heading}</h1>
                 <h2>{text}</h2>
                 <div>
-                    <ButtonLinkDefault link={buttonOne.link} text={buttonOne.text} />
-                    <ButtonLinkDefault link={buttonTwo.link} text={buttonTwo.text} />
+                    <ButtonLinkDefault targetBlank={true} link={buttonOne.link} text={buttonOne.text} />
+                    <ButtonLinkDefault targetBlank={true} link={buttonTwo.link} text={buttonTwo.text} />
                 </div>
             </div>
         </article>

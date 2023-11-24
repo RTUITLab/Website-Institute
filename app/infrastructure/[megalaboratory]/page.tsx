@@ -330,7 +330,7 @@ export default function Megalaboratory({ params } : { params: { megalaboratory: 
                     <TitleText heading={"ФОТОГРАФИИ"} text={null} />
                     <PhotoSection images={data.images} />
                 </Section>
-                <DownTransition heading={"ДРУГИЕ МЕГАЛАБАРАТОРИИ ИНСТИТУТА"} element1={DownCell[params.megalaboratory as keyof typeof DownCell].element1} element2={DownCell[params.megalaboratory as keyof typeof DownCell].element2} element3={DownCell[params.megalaboratory as keyof typeof DownCell].element3}/>
+                <DownTransition heading={"ДРУГИЕ МЕГАЛАБАРАТОРИИ ИНСТИТУТА"} array={[DownCell[params.megalaboratory as keyof typeof DownCell].element1, DownCell[params.megalaboratory as keyof typeof DownCell].element2, DownCell[params.megalaboratory as keyof typeof DownCell].element3]} />
             </main>
         </>
     )

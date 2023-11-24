@@ -4,7 +4,7 @@ import {StaticImageData} from "next/image";
 import classNames from "classnames";
 
 type Props = {
-    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined}[],
+    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined, targetBlank?: boolean | undefined}[],
     reverse?: boolean
 }
 
@@ -30,6 +30,7 @@ export default function Transition({array, reverse = false}: Props)
                                                                                 alt={elem.alt}
                                                                                 gridAreaNumber={index+1}
                                                                                 key={index}
+                                                                                targetBlank={elem.targetBlank}
                                                                                 additionalText={elem.additionalText} />)
             }
         </div>
@@ -37,32 +38,21 @@ export default function Transition({array, reverse = false}: Props)
 }
 
 type TransitionDown = {
-    array: {linkImage: StaticImageData,text: string,linkPage: string,alt: string,additionalText?: string | null | undefined, positionUp?: boolean | undefined}[],
-    side?: "left" | "center" | "right"
+    array: {linkImage: StaticImageData,text: string,linkPage: string,additionalText?: string | null | undefined, targetBlank?: boolean | undefined}[]
 }
 
-const TableSide : {
-    "left": string,
-    "center": string,
-    "right": string,
-} = {
-    "left": Style.Transition3Left,
-    "center": Style.Transition3Center,
-    "right": Style.Transition3Right
-}
-
-export function TransitionDown({array, side = "center"}: TransitionDown) {
+export function TransitionDown({array}: TransitionDown) {
     return (
-        <div className={classNames(Style.Transition, Style.Transition3, TableSide[side as keyof typeof TableSide])}>
+        <div className={classNames(Style.Transition, Style.Transition3, Style.Transition3Left)}>
             {
                 array.map((elem, index) => <CellTransition
                     linkImage={elem.linkImage}
                     text={elem.text}
                     linkPage={elem.linkPage}
-                    alt={elem.alt}
+                    alt={elem.text}
                     gridAreaNumber={index+1}
                     key={index}
-                    positionUp={elem.positionUp === undefined ? false : elem.positionUp}
+                    targetBlank={elem.targetBlank}
                     additionalText={elem.additionalText} />)
             }
         </div>

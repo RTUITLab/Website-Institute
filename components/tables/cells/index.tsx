@@ -71,14 +71,14 @@ type PropsCellTransition = {
     alt: string,
     gridAreaNumber: number,
     additionalText: string | null | undefined,
-    positionUp?: boolean
+    targetBlank?: boolean
 }
 
-export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, additionalText, positionUp = false}: PropsCellTransition)
+export function CellTransition({linkImage, text, linkPage, alt, gridAreaNumber, additionalText, targetBlank = false}: PropsCellTransition)
 {
     return (
-        <Link className={Style.CellTransition} style={{gridArea: "cell-"+gridAreaNumber}} href={linkPage}>
-            <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={alt}/>
+        <Link target={targetBlank ? "_blank" : ""} className={Style.CellTransition} style={{gridArea: "cell-"+gridAreaNumber}} href={linkPage}>
+            <Image src={linkImage} alt={alt}/>
             <div>
                 <h3>{text}</h3>
                 {(additionalText === null || additionalText === undefined) ? <></> : <h3 key={text}>{additionalText}</h3>}

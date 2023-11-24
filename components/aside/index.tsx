@@ -39,15 +39,15 @@ export default function Aside({onClick, imageLink, hidden}: Props) {
                 </div>
                 <div>
                     <h2>Сайты</h2>
-                    <ButtonAside imageLink={RTUITLabWeb} link={"https://rtuitlab.dev"} text={"IT лаборатория ИИТ"} onClick={onClick} />
-                    <ButtonAside imageLink={MIREAWeb} link={"https://www.mirea.ru/education/the-institutes-and-faculties/institute-of-information-technology/about-the-institute/"} text={"Сайт РТУ МИРЭА"} onClick={onClick} />
+                    <ButtonAside targetBlank={true} imageLink={RTUITLabWeb} link={"https://rtuitlab.dev"} text={"IT лаборатория ИИТ"} onClick={onClick} />
+                    <ButtonAside targetBlank={true} imageLink={MIREAWeb} link={"https://www.mirea.ru/education/the-institutes-and-faculties/institute-of-information-technology/about-the-institute/"} text={"Сайт РТУ МИРЭА"} onClick={onClick} />
                 </div>
             </article>
             <div>
-                <ButtonLinkAside imageLink={VK} link={"https://vk.com/it_sumirea"} alt={"vk_iit"} />
-                <ButtonLinkAside imageLink={Youtube} link={"https://www.youtube.com/@Otvetstvenno_Pro_IT"} alt={"youtube_iit"} />
-                <ButtonLinkAside imageLink={TG} link={"https://t.me/rtumirea_official"} alt={"tg_mirea"} />
-                <ButtonLinkAside imageLink={Rutube} link={"https://rutube.ru/u/rtumirea/"} alt={"rutube_mirea"} />
+                <ButtonLinkAside targetBlank={true} imageLink={VK} link={"https://vk.com/it_sumirea"} alt={"vk_iit"} />
+                <ButtonLinkAside targetBlank={true} imageLink={Youtube} link={"https://www.youtube.com/@Otvetstvenno_Pro_IT"} alt={"youtube_iit"} />
+                <ButtonLinkAside targetBlank={true} imageLink={TG} link={"https://t.me/rtumirea_official"} alt={"tg_mirea"} />
+                <ButtonLinkAside targetBlank={true} imageLink={Rutube} link={"https://rutube.ru/u/rtumirea/"} alt={"rutube_mirea"} />
             </div>
         </aside>
     )

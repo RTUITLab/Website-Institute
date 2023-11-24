@@ -259,7 +259,7 @@ export default function Infrastructure()
     const id = [{link: "campus", text: "Прочитать про кампус"}, {link: "megalaboratory", text: "Узнать про мегалаборатории"}, {link: "classroom_iit", text: "Посмотреть аудитории института"}, {link: "classroom_mirea", text: "Посмотреть аудитории университета"}, {link: "infrastructure", text: "Посмотреть внеучебную инфраструктура"}]
 
     const DownCell = {
-        element1: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"},
+        element1: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ", targetBlank: true},
         element2: {linkImage: Equipment,linkPage: "/equipment",text: "Уникальное оборудование"},
         element3: {linkImage: InstituteImage,linkPage: "/institute",text: "ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ"}
     }
@@ -287,8 +287,8 @@ export default function Infrastructure()
                             <h1>ОБЩЕЖИТИЯ</h1>
                             {textHostel.map((elem, index) => <p key={"last_campus_"+index}>{elem}</p>)}
                             <div>
-                                <ButtonLinkDefault link={"https://www.mirea.ru/about/hostel/"} text={"УСЛОВИЯ ПОЛУЧЕНИЯ МЕСТА В ОБЩЕЖИТИЕ"} />
-                                <ButtonLinkDefault link={"https://priem.mirea.ru/about/campus/about"} text={"ПОДРОБНЕЕ ПРО ОБЩЕЖИТИЯ"} />
+                                <ButtonLinkDefault targetBlank={true} link={"https://www.mirea.ru/about/hostel/"} text={"УСЛОВИЯ ПОЛУЧЕНИЯ МЕСТА В ОБЩЕЖИТИЕ"} />
+                                <ButtonLinkDefault targetBlank={true} link={"https://priem.mirea.ru/about/campus/about"} text={"ПОДРОБНЕЕ ПРО ОБЩЕЖИТИЯ"} />
                             </div>
                         </div>
                     </div>
@@ -315,7 +315,7 @@ export default function Infrastructure()
                     <TitleText heading={"ВНЕУЧЕБНАЯ ИНФРАСТРУКТУРА"} text={textExtracurricularInfrastructure} />
                     <TableImages array={TableExtracurricularInfrastructure} twoToOne={false} sixTable={true} />
                 </Section>
-                <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
+                <DownTransition array={[DownCell.element1, DownCell.element2, DownCell.element3]} />
             </main>
         </>
     )

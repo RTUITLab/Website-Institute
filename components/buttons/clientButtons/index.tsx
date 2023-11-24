@@ -22,13 +22,14 @@ type PropsButtonAside = {
     imageLink: StaticImageData,
     link: string,
     text: string,
-    onClick: () => void
+    onClick: () => void,
+    targetBlank?: boolean
 }
 
-export function ButtonAside({link, imageLink, text, onClick}: PropsButtonAside)
+export function ButtonAside({link, imageLink, text, onClick, targetBlank = false}: PropsButtonAside)
 {
     return (
-        <Link className={Style.ButtonAside} href={link} onClick={onClick}>
+        <Link target={targetBlank ? "_blank" : ""} className={Style.ButtonAside} href={link} onClick={onClick}>
             <Image src={imageLink} alt={text} />
             <h3>{text}</h3>
         </Link>

@@ -308,7 +308,7 @@ export default async function Direction({ params } : { params: { direction: stri
                         <iframe className={Style.Video} src={StaticData(params.direction).video!.videoURL} frameBorder="0" allow="clipboard-write; autoplay" allowFullScreen />
                     </Section>
                 }
-                <DownTransition heading={DownCell[params.direction as keyof typeof DownCell].heading} element1={DownCell[params.direction as keyof typeof DownCell].element1} element2={DownCell[params.direction as keyof typeof DownCell].element2} element3={DownCell[params.direction as keyof typeof DownCell].element3} />
+                <DownTransition heading={DownCell[params.direction as keyof typeof DownCell].heading} array={[DownCell[params.direction as keyof typeof DownCell].element1, DownCell[params.direction as keyof typeof DownCell].element2, DownCell[params.direction as keyof typeof DownCell].element3]} />
             </main>
         </>
     )

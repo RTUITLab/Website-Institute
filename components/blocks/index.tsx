@@ -23,7 +23,7 @@ export function BlockImage({linkImage, heading, reverse=false, buttonImportant =
                 {(typeof buttonBasic === "string") || (typeof buttonImportant === "string") ?
                     <div>
                         {(buttonImportant === null) || (buttonImportant === undefined) ? <></> : <ButtonLinkVIKA link={buttonImportant} text={"подробнее"} />}
-                        {(buttonBasic === null) || (buttonBasic === undefined) ? <></> : <ButtonLinkDefault link={buttonBasic} text={"подробнее на сайте рту мирэа"} />}
+                        {(buttonBasic === null) || (buttonBasic === undefined) ? <></> : <ButtonLinkDefault targetBlank={true} link={buttonBasic} text={"подробнее на сайте рту мирэа"} />}
                     </div> : <></>
                 }
             </div>

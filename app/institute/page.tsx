@@ -97,7 +97,7 @@ export default function PageInstitute() {
     const DownCell = {
         element1: {linkImage: Equipment,linkPage: "/equipment",text: "Уникальное оборудование"},
         element2: {linkImage: DirectionsImage,linkPage: "/directions",text: "ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ"},
-        element3: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ"}
+        element3: {linkImage: RTUITLab,linkPage: "https://rtuitlab.dev",text: "IT лабораториЯ ИИТ", targetBlank: true}
     }
 
     return (
@@ -154,7 +154,7 @@ export default function PageInstitute() {
                     <TitleText heading={"ХОТИТЕ ПОСТУПИТЬ К НАМ?"} />
                     <AdmissionCard buttonOne={{link: "https://priem.mirea.ru", text: "ПРИЁМНАЯ КОММИССИЯ"}} buttonTwo={{link: "https://www.mirea.ru/education/the-institutes-and-faculties/", text: "ДРУГИЕ ИНСТИТУТЫ РТУ МИРЭА"}} heading={"ПРИЁМНАЯ КОММИССИЯ "} text={"Поступление в РТУ МИРЭА и Институт информационных технологий осуществляется через приемную комиссию как на платной, так и на бюджетной основе. Подробную информацию о процедуре приема и ее правилах вы можете найти на официальном сайте приемной комиссии."} image={AdmissionImage} />
                 </Section>
-                <DownTransition element1={DownCell.element1} element2={DownCell.element2} element3={DownCell.element3}/>
+                <DownTransition array={[DownCell.element1, DownCell.element2, DownCell.element3]} />
             </main>
         </>
     )

@@ -7,16 +7,17 @@ type PropsButtonLink = {
     link: string,
     text: string,
     image?: StaticImageData | null,
-    tagLink?: boolean
+    tagLink?: boolean,
+    targetBlank?: boolean
 }
 
-export function ButtonLinkDefault({link, text, image = null, tagLink = true}: PropsButtonLink)
+export function ButtonLinkDefault({link, text, image = null, tagLink = true, targetBlank}: PropsButtonLink)
 {
     const imageComponent = image === null ? <></> : <Image src={image} alt={text} />
 
     if(tagLink) {
         return (
-            <Link className={Style.Button} href={link}>
+            <Link target={targetBlank ? "_blank" : ""} className={Style.Button} href={link}>
                 <div className={Style.ButtonDefault}>
                     {imageComponent}
                     <h4>{text}</h4>
@@ -91,13 +92,14 @@ export function ButtonBoolean({setState, text}: PropsButtonBoolean)
 type PropsButtonLinkAside = {
     imageLink: StaticImageData,
     link: string,
-    alt: string
+    alt: string,
+    targetBlank?: boolean,
 }
 
-export function ButtonLinkAside({imageLink, link, alt}:PropsButtonLinkAside)
+export function ButtonLinkAside({imageLink, link, alt, targetBlank = false}:PropsButtonLinkAside)
 {
     return (
-        <Link className={Style.ButtonLinkAside} href={link}>
+        <Link target={targetBlank ? "_blank" : ""} className={Style.ButtonLinkAside} href={link}>
             <Image src={imageLink} alt={alt} />
         </Link>
     )
