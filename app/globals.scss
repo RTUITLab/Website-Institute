@@ -1,120 +1,115 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html
-{
+html {
   scroll-behavior: smooth;
 }
 
-*
-{
+* {
   overscroll-behavior: contain;
 }
 
-a
-{
+a {
   text-decoration: none;
 }
 
-h1,h2
-{
+h1,
+h2 {
   font-weight: 700;
 }
 
-h1
-{
+h1 {
   font-size: 36px;
 }
 
-h2
-{
+h2 {
   font-size: 24px;
 }
 
-h3
-{
+h3 {
   font-size: 19px;
 }
 
-h4, p, a, span
-{
+h4,
+p,
+a,
+span {
   font-size: 16px;
 }
 
-p,a,h3,h4,h5,h6
-{
+p,
+a,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
 }
 
 :root {
-  --backdrop-50: rgba(0,0,0,0.5);
-  --backdrop-40: rgba(0,0,0,0.4);
-  --text-white: #FFFFFF;
-  --background-gray: #F0F0F0;
-  --background-gradient: linear-gradient(135deg, #9168CD 0.31%, #5556FF 42.64%, #45ADCD 73.58%, #3EC4CD 100%);
-  --background-white: #FFFFFF;
-  --text-gradient: linear-gradient(104deg, #9168CD -29.82%, #5657FF 103.67%, #52D6FF 201.22%, #51F4FF 284.52%);
-  --shadow-lite: rgba(0,0,0,0.2);
-  --shadow-hard: rgba(0,0,0,0.5);
-  --stroke-color: #8C8C8C;
-  --background-blue: #DEEDFF;
-  --iit-color: #282A2B;
-  --dark-text: #141B34;
-  --backdrop-linear-50: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
-  --mirea-color: #196BB1;
-  --black-gray: #4C4C50;
-  --black-active: #6F6F72;
-  --rostelecom-card: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%), linear-gradient(135deg, #70F 0.31%, rgba(148, 102, 255, 0.75) 42.64%, rgba(255, 94, 45, 0.70) 73.58%, rgba(255, 79, 18, 0.69) 100%), #FFF;
-  --gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), linear-gradient(135deg, #9168CD 0.31%, rgba(86, 87, 255, 0.75) 42.64%, rgba(82, 214, 255, 0.70) 73.58%, rgba(81, 244, 255, 0.69) 100%), #FFF;
-  --gradient-iio: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%), linear-gradient(135deg, #1F2326 0.31%, rgba(76, 85, 92, 0.75) 42.64%, rgba(146, 150, 157, 0.70) 73.58%, rgba(124, 135, 151, 0.69) 100%), #FFF;
+  --backdrop-50: rgba(0, 0, 0, 0.5);
+  --backdrop-40: rgba(0, 0, 0, 0.4);
+  --text-white: #ffffff;
+  --background-gray: #f0f0f0;
+  --background-gradient: linear-gradient(135deg, #9168cd 0.31%, #5556ff 42.64%, #45adcd 73.58%, #3ec4cd 100%);
+  --background-white: #ffffff;
+  --text-gradient: linear-gradient(104deg, #9168cd -29.82%, #5657ff 103.67%, #52d6ff 201.22%, #51f4ff 284.52%);
+  --shadow-lite: rgba(0, 0, 0, 0.2);
+  --shadow-hard: rgba(0, 0, 0, 0.5);
+  --stroke-color: #8c8c8c;
+  --background-blue: #deedff;
+  --iit-color: #282a2b;
+  --dark-text: #141b34;
+  --backdrop-linear-50: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  --mirea-color: #196bb1;
+  --black-gray: #4c4c50;
+  --black-active: #6f6f72;
+  --rostelecom-card: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(135deg, #70f 0.31%, rgba(148, 102, 255, 0.75) 42.64%, rgba(255, 94, 45, 0.7) 73.58%, rgba(255, 79, 18, 0.69) 100%), #fff;
+  --gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%),
+    linear-gradient(135deg, #9168cd 0.31%, rgba(86, 87, 255, 0.75) 42.64%, rgba(82, 214, 255, 0.7) 73.58%, rgba(81, 244, 255, 0.69) 100%),
+    #fff;
+  --gradient-iio: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(135deg, #1f2326 0.31%, rgba(76, 85, 92, 0.75) 42.64%, rgba(146, 150, 157, 0.7) 73.58%, rgba(124, 135, 151, 0.69) 100%),
+    #fff;
 }
 
-main
-{
+main {
   background: var(--background-white);
 }
 
-img
-{
+img {
   object-fit: cover;
   height: auto;
 }
 
-button
-{
+button {
   border: none;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 16px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: var(--iit-color);
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background-color: var(--background-white);
   border: 4px solid transparent;
   border-radius: 16px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   transition: 300ms background-color;
-  &:hover
-  {
-    background-color: rgb(192,192,192);
+  &:hover {
+    background-color: rgb(192, 192, 192);
   }
 }
 
-
-
-body
-{
-  scrollbar-color: rgb(255,0,0) rgb(0,255,0);
+body {
+  scrollbar-color: rgb(255, 0, 0) rgb(0, 255, 0);
 }
-

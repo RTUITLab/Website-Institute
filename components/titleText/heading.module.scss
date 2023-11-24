@@ -1,18 +1,16 @@
-.heading
-{
+.heading {
   width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 36px;
-  > h1
-  {
+  > h1 {
     font-size: 48px;
     text-transform: uppercase;
   }
-  > h1, > h3
-  {
+  > h1,
+  > h3 {
     width: 100%;
     text-align: left;
   }

@@ -1,26 +1,22 @@
-.Profile
-{
+.Profile {
   width: 100%;
   aspect-ratio: 100 / 37;
   border-radius: 24px;
   position: relative;
   overflow: hidden;
-  > *
-  {
+  > * {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  > img
-  {
+  > img {
     z-index: 1;
     width: 100%;
     height: 100%;
   }
-  > div
-  {
+  > div {
     z-index: 2;
     background-color: var(--backdrop-40);
     padding: 48px 80px;
@@ -28,16 +24,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    > div
-    {
+    > div {
       width: 50%;
       height: 100%;
     }
   }
 }
 
-.BlockBetween
-{
+.BlockBetween {
   width: 100%;
   height: 100%;
   display: flex;
@@ -45,29 +39,24 @@
   justify-content: space-between;
   align-items: flex-start;
   transition: 300ms opacity;
-  > div
-  {
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
-    > h2
-    {
+    > h2 {
       text-transform: uppercase;
     }
-    > *
-    {
+    > * {
       width: 100%;
       color: var(--text-white);
     }
   }
 }
 
-.BlockRevers
-{
+.BlockRevers {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
 }
-

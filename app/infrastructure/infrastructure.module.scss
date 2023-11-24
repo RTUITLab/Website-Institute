@@ -1,14 +1,12 @@
-@import "@/mixin.scss";
+@import '@/mixin.scss';
 
-.ImageCampus
-{
+.ImageCampus {
   width: 100%;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 48px;
-  > img
-  {
+  > img {
     width: 100%;
     aspect-ratio: 3 / 2;
     border-radius: 24px;
@@ -16,23 +14,20 @@
   }
 }
 
-.LastCampusAndHostel
-{
+.LastCampusAndHostel {
   width: 100%;
   display: grid;
   gap: 10%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   align-self: stretch;
-  > img
-  {
+  > img {
     width: 100%;
     align-self: stretch;
     border-radius: 24px;
     @include Shadow();
   }
-  > div
-  {
+  > div {
     width: 100%;
     padding: 36px;
     gap: 36px;
@@ -40,8 +35,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    > div
-    {
+    > div {
       width: 100%;
       display: flex;
       flex-direction: row;

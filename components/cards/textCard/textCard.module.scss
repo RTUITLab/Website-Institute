@@ -1,7 +1,6 @@
 @import '@/mixin';
 
-.CardText
-{
+.CardText {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,42 +9,36 @@
   padding: 48px;
   gap: 48px;
   border-radius: 24px;
-  > div
-  {
+  > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 36px;
-    > img
-    {
+    > img {
       height: 110px;
     }
-    > h1
-    {
+    > h1 {
       font-size: 32px;
       text-align: center;
     }
   }
-  > p
-  {
+  > p {
     font-size: 19px;
     width: 100%;
     text-align: center;
   }
 }
 
-.BackgroundBlue
-{
+.BackgroundBlue {
   background-color: var(--mirea-color);
   * {
     color: var(--text-white);
   }
 }
 
-.BackgroundWhite
-{
+.BackgroundWhite {
   background-color: var(--background-white);
   border: 2px solid var(--iit-color);
 }

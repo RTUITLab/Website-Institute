@@ -1,14 +1,12 @@
-@import "@/mixin";
+@import '@/mixin';
 
-.Cell
-{
+.Cell {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-radius: 24px;
-  h1
-  {
+  h1 {
     font-size: 96px;
     color: transparent;
     -webkit-background-clip: text;
@@ -16,30 +14,26 @@
     background-image: var(--background-gradient);
     width: 100%;
   }
-  h2
-  {
+  h2 {
     font-size: 24px;
     width: 100%;
   }
-  p, a
-  {
+  p,
+  a {
     font-size: 19px;
     width: 100%;
   }
-  a
-  {
+  a {
     text-decoration: underline;
   }
-  > div
-  {
+  > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
-    > div
-    {
+    > div {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -50,72 +44,59 @@
   }
 }
 
-.Img110
-{
+.Img110 {
   height: 110px;
   width: 110px;
 }
 
-.Img152
-{
+.Img152 {
   height: 152px;
   width: 152px;
 }
 
-.Left
-{
+.Left {
   align-items: flex-start;
-  *
-  {
+  * {
     text-align: left;
   }
 }
 
-.Center
-{
+.Center {
   align-items: center;
-  *
-  {
+  * {
     text-align: center;
   }
 }
 
-.Gray
-{
+.Gray {
   background-color: var(--background-gray);
 }
 
-.White
-{
+.White {
   background-color: var(--background-white);
 }
 
-.Blue
-{
+.Blue {
   background-color: var(--background-blue);
 }
 
-.GapAuto
-{
+.GapAuto {
   padding: 24px;
   gap: 36px;
   justify-content: space-between;
 }
 
-.Gap48
-{
+.Gap48 {
   padding: 48px;
   gap: 48px;
 }
 
-.Gap36
-{
+.Gap36 {
   padding: 24px;
   gap: 36px;
 }
 
-.CellTransition
-{
+.CellTransition {
   border-radius: 24px;
   display: flex;
   justify-content: center;
@@ -126,21 +107,18 @@
   overflow: hidden;
   box-shadow: none;
   transition: 300ms box-shadow;
-  &:hover
-  {
+  &:hover {
     box-shadow: 0 4px 16px 0 var(--shadow-hard);
     > img {
       transform: scale(1.1);
     }
   }
-  > img
-  {
+  > img {
     width: 100%;
     height: 100%;
     transition: 300ms transform;
   }
-  > div
-  {
+  > div {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -150,17 +128,14 @@
     width: 100%;
     height: 100%;
     padding: 16px;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
-    > h3
-    {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    > h3 {
       color: var(--text-white);
-      &:nth-child(1)
-      {
+      &:nth-child(1) {
         font-weight: bold;
         text-transform: uppercase;
       }
-      &:nth-child(2)
-      {
+      &:nth-child(2) {
         font-weight: normal;
         text-transform: none;
       }
@@ -168,27 +143,22 @@
   }
 }
 
-.CellImage
-{
+.CellImage {
   width: 100%;
   @include Shadow();
   border-radius: 24px;
   overflow: hidden;
   position: relative;
-  &:hover
-  {
-    > img
-    {
+  &:hover {
+    > img {
       width: 110%;
       height: 110%;
     }
-    > div
-    {
+    > div {
       opacity: 0;
     }
   }
-  > img
-  {
+  > img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -196,10 +166,11 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    transition: 300ms width, 300ms height;
+    transition:
+      300ms width,
+      300ms height;
   }
-  > div
-  {
+  > div {
     position: relative;
     z-index: 2;
     background: var(--backdrop-linear-50);
@@ -212,38 +183,31 @@
     align-items: flex-start;
     gap: 2px;
     transition: 300ms opacity;
-    > *
-    {
+    > * {
       color: var(--text-white);
     }
-    > h3
-    {
+    > h3 {
       font-weight: bold;
       text-transform: uppercase;
     }
-    > p
-    {
+    > p {
       font-size: 19px;
     }
   }
 }
 
-.CellImageGrid
-{
+.CellImageGrid {
   height: 100%;
 }
 
-.CellImage2to1
-{
+.CellImage2to1 {
   aspect-ratio: 2 / 1;
 }
 
-.ImageUp
-{
+.ImageUp {
   object-position: top;
 }
 
-.ImageCenter
-{
+.ImageCenter {
   object-position: center;
 }

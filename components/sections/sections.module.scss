@@ -1,10 +1,8 @@
-.Section
-{
+.Section {
   z-index: 1;
   width: 100%;
 
-  > section
-  {
+  > section {
     gap: 72px;
     padding: 10svw;
     width: 100%;
@@ -15,13 +13,10 @@
     border-radius: 0 0 5svw 5svw;
   }
 
-
-
   &:nth-child(odd) {
     background-color: var(--background-gray);
 
-    > section
-    {
+    > section {
       background-color: var(--background-white);
     }
   }
@@ -29,8 +24,7 @@
   &:nth-child(even) {
     background-color: var(--background-white);
 
-    > section
-    {
+    > section {
       background-color: var(--background-gray);
     }
   }

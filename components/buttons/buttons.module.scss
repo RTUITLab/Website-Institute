@@ -1,39 +1,33 @@
-@import "@/mixin";
+@import '@/mixin';
 
-.Button
-{
+.Button {
   border-radius: 24px;
   overflow: hidden;
   position: relative;
   height: 48px;
   box-shadow: 0 2px 1px 0 var(--shadow-lite);
-  > div
-  {
+  > div {
     top: 0;
     left: 0;
     position: relative;
     height: 48px;
     transition: 300ms opacity;
-    &:first-child
-    {
+    &:first-child {
       min-width: 144px;
       z-index: 2;
     }
-    &:last-child
-    {
+    &:last-child {
       position: absolute;
       width: 100%;
       z-index: 1;
     }
   }
-  &:hover > div:first-child
-  {
+  &:hover > div:first-child {
     opacity: 0;
   }
 }
 
-.ButtonDefault
-{
+.ButtonDefault {
   background-color: var(--background-white);
   display: flex;
   flex-direction: row;
@@ -41,8 +35,7 @@
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-  > h4
-  {
+  > h4 {
     width: auto;
     font-weight: bold;
     color: var(--dark-text);
@@ -50,15 +43,13 @@
   }
 }
 
-.ButtonStrokeVIKA
-{
+.ButtonStrokeVIKA {
   background-image: var(--background-gradient);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  > div
-  {
+  > div {
     margin: 2px;
     width: 100%;
     background-color: var(--background-white);
@@ -69,8 +60,7 @@
     gap: 10px;
     border-radius: 24px;
     padding: 13px 18px;
-    > h4
-    {
+    > h4 {
       width: auto;
       height: auto;
       font-weight: bold;
@@ -83,8 +73,7 @@
   }
 }
 
-.ButtonVIKA
-{
+.ButtonVIKA {
   background: var(--background-gradient);
   display: flex;
   flex-direction: row;
@@ -92,37 +81,31 @@
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-  > h4
-  {
+  > h4 {
     font-weight: bold;
     color: var(--text-white);
     text-transform: uppercase;
   }
 }
 
-.ButtonLinkAside
-{
+.ButtonLinkAside {
   width: 48px;
   height: 48px;
   transition: 300ms transform;
-  &:hover
-  {
+  &:hover {
     transform: scale(1.25);
   }
 }
 
-.ButtonId
-{
+.ButtonId {
   width: 48px;
   height: 48px;
   transition: 300ms transform;
-  > img
-  {
+  > img {
     width: 48px;
     height: 48px;
   }
-  &:hover
-  {
+  &:hover {
     transform: scale(1.25);
   }
 }
