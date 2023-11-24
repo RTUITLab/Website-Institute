@@ -1,4 +1,3 @@
-import NoImage from '@/public/image/NoImage.webp';
 import Screensaver from '@/components/screensaver';
 import DirectionsImage from '@/public/image/Направления.webp';
 import Analytics from '@/public/svg/Analytics2.svg';
@@ -6,8 +5,7 @@ import Engineer from '@/public/svg/Engineer.svg';
 import Architect from '@/public/svg/Architect.svg';
 import SoftwareEngineer from '@/public/svg/SoftwareEngineer.svg';
 import TitleText from '../../components/titleText';
-import axios from 'axios';
-import Transition, { TransitionDown } from '@/components/tables/transition';
+import Transition from '@/components/tables/transition';
 import Direction010304 from '@/public/image/01.03.04_Переход.webp';
 import Direction090301 from '@/public/image/09.03.01_Переход.webp';
 import Direction090303 from '@/public/image/09.03.03_Переход.webp';
@@ -42,11 +40,9 @@ export default async function Directions() {
 
   for (let i = 0; i < directionsBachelor.length; ++i) {
     try {
-      const data = await axios({
-        method: 'get',
-        url: directionsBachelor[i].urlAdmission,
-      });
-      directionsBachelor[i].scores = await data.data.last_year_threshold;
+      const response = await fetch(directionsBachelor[i].urlAdmission);
+      const data = await response.json();
+      directionsBachelor[i].scores = await data.last_year_threshold;
     } catch {
       directionsBachelor[i].scores = null;
     }
@@ -89,13 +85,12 @@ export default async function Directions() {
     { urlAdmission: 'https://priem.mirea.ru/lk/api/directions/get/6', scores: null },
     { urlAdmission: 'https://priem.mirea.ru/lk/api/directions/get/7', scores: null },
   ];
+
   for (let i = 0; i < directionsMagistracy.length; ++i) {
     try {
-      const data = await axios({
-        method: 'get',
-        url: directionsMagistracy[i].urlAdmission,
-      });
-      directionsMagistracy[i].scores = await data.data.last_year_threshold;
+      const response = await fetch(directionsMagistracy[i].urlAdmission);
+      const data = await response.json();
+      directionsMagistracy[i].scores = await data.last_year_threshold;
     } catch {
       directionsMagistracy[i].scores = null;
     }

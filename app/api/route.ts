@@ -1,15 +1,15 @@
-import Info from '@/public/svg/info.svg';
-import News from '@/public/svg/news.svg';
-import Vika from '@/public/svg/vika.svg';
+import { NextResponse } from 'next/server';
+import AppImage from '@/public/image/new_app.webp';
 import Institute from '@/public/image/институт.webp';
 import Directions from '@/public/image/Направления_Переход.webp';
 import RTUITLab from '@/public/image/Лаба_Переход.webp';
 import Infrastructure from '@/public/image/Инфраструктура.webp';
 import Equipment from '@/public/image/Оборудование_Переход.webp';
-import AppImage from '@/public/image/new_app.webp';
-
-export default async function dataApp() {
-  return {
+import Info from '@/public/svg/info.svg';
+import News from '@/public/svg/news.svg';
+import Vika from '@/public/svg/vika.svg';
+export async function GET() {
+  const data = {
     menuSection: {
       image: AppImage,
       text: 'ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА (PRE-ALPHA Версия)',
@@ -106,6 +106,8 @@ export default async function dataApp() {
       },
     ],
   };
+
+  return NextResponse.json(data, { status: 200 });
 }
 
 /*

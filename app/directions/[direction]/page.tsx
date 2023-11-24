@@ -14,16 +14,12 @@ import SvgBudgetPlaces from '@/public/svg/BudgetPlaces.svg';
 import SvgPassingScore from '@/public/svg/PassingScore.svg';
 import SvgCost from '@/public/svg/Cost.svg';
 import SvgOtherSources from '@/public/svg/OtherSources.svg';
-import axios from 'axios';
 import SectionProfiles from '@/components/profiles/section';
 import { ApiProfiles, StaticData } from '@/api';
-import BookStudyPlan from '@/components/studyplan/book';
 import Section from '@/components/sections';
 import AdmissionCard from '@/components/cards/admissionCard';
 import ReplaceApi from '@/public/image/приёмка_замена.webp';
 import DownTransition from '@/components/downTransition';
-import InstituteImage from '@/public/image/институт.webp';
-import { ButtonDefault } from '@/components/buttons';
 
 const arrayCurriculum = [
   {
@@ -45,19 +41,17 @@ const arrayCurriculum = [
 
 async function getAPI(url: string) {
   try {
-    const data = await axios({
-      method: 'get',
-      url: url,
-    });
+    const response = await fetch(url);
+    const data = await response.json();
     return {
-      last_year_threshold: await data.data.last_year_threshold,
-      places_budget: await data.data.places_budget,
-      places_quota: await data.data.places_quota,
-      places_special_quota: await data.data.places_special_quota,
-      places_target: await data.data.places_target,
-      price: await data.data.price,
-      price_discount_10: await data.data.price_discount_10,
-      price_discount_20: await data.data.price_discount_20,
+      last_year_threshold: await data.last_year_threshold,
+      places_budget: await data.places_budget,
+      places_quota: await data.places_quota,
+      places_special_quota: await data.places_special_quota,
+      places_target: await data.places_target,
+      price: await data.price,
+      price_discount_10: await data.price_discount_10,
+      price_discount_20: await data.price_discount_20,
     };
   } catch {
     return {

@@ -1,13 +1,59 @@
-import Style from './page.module.scss';
 import Screensaver from '@/components/screensaver';
 import Section from '@/components/sections';
 import TitleText from '@/components/titleText';
-import dataApp from './data';
-import elementsManager from '@/elementsManager';
-import { PropsManager } from '@/elementsManager';
+import elementsManager, { PropsManager } from '@/elementsManager';
+import { StaticImageData } from 'next/image';
+import { notFound } from 'next/navigation';
+import { Simulate } from 'react-dom/test-utils';
+import error = Simulate.error;
 
+type Api = {
+  menuSection: {
+    image: StaticImageData;
+    text: string;
+  };
+  sections: {
+    sectionId: {
+      link: string;
+      text: string;
+    };
+    titleText: {
+      heading: string;
+      text: string[];
+    };
+    elements:
+      | {
+          type: 'transition';
+          array: {
+            linkImage: StaticImageData;
+            text: string;
+            linkPage: string;
+            alt: string;
+          }[];
+          reverse: boolean;
+        }[]
+      | {
+          type: 'table';
+          array: {
+            numberOrImage: StaticImageData | number | string;
+            heading: string;
+            text: string[];
+          }[];
+          side: 'left' | 'center';
+          background: 'white' | 'gray';
+          gapInside: '36px' | '36px/auto' | '48px';
+          gapOutside: '48px' | '32px' | '16px' | '24px';
+        }[];
+  }[];
+};
 export default async function Home() {
-  const data = await dataApp();
+  let data: Api;
+  try {
+    const response = await fetch('http://localhost:3000/api');
+    data = await response.json();
+  } catch (e) {
+    throw e;
+  }
 
   return (
     <>

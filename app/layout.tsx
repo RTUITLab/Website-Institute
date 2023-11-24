@@ -20,15 +20,11 @@ export const metadata: Metadata = {
   description: 'Информационный портал института информационных технологий РТУ МИРЭА',
 };
 
+export const revalidate = 7200;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   if (cocos.image === undefined) {
-    return (
-      <html lang="en" className={ubuntu.className}>
-        <body>
-          <Image src={Cocos} alt={'кокос'} />
-        </body>
-      </html>
-    );
+    throw new Error('Отсутствует важный компонент (кокос)');
   } else {
     return (
       <html lang="en" className={ubuntu.className}>
