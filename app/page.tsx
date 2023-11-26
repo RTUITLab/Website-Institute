@@ -3,9 +3,6 @@ import Section from '@/components/sections';
 import TitleText from '@/components/titleText';
 import elementsManager, { PropsManager } from '@/elementsManager';
 import { StaticImageData } from 'next/image';
-import { notFound } from 'next/navigation';
-import { Simulate } from 'react-dom/test-utils';
-import error = Simulate.error;
 
 type Api = {
   menuSection: {
