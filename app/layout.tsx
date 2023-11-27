@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: 'Информационный портал института информационных технологий РТУ МИРЭА',
 };
 
-export const revalidate = 7200;
+export const revalidate = 3600;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   if (cocos.image === undefined) {

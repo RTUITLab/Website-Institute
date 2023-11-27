@@ -1,13 +1,13 @@
 import Image, { StaticImageData } from 'next/image';
 import Style from './achievementCard.module.scss';
 
-type Props = {
+type PropsAchievementCard = {
   heading: string;
   text: string[];
   image: StaticImageData;
 };
 
-export default function AchievementCard({ heading, text, image }: Props) {
+function AchievementCard({ heading, text, image }: PropsAchievementCard) {
   return (
     <article className={Style.AchievementCard}>
       <div>
@@ -18,5 +18,30 @@ export default function AchievementCard({ heading, text, image }: Props) {
       </div>
       <Image src={image} alt={heading} />
     </article>
+  );
+}
+
+type PropsDivAchievementCards = {
+  array: PropsAchievementCard[];
+};
+
+export default function DivAchievementCards({ array }: PropsDivAchievementCards) {
+  return (
+    <div className={Style.AchievementDivCard}>
+      <div>
+        {array.map((elem, index) => {
+          if (index % 2 === 0) {
+            return <AchievementCard key={'left_achievement_card_' + index} heading={elem.heading} text={elem.text} image={elem.image} />;
+          }
+        })}
+      </div>
+      <div>
+        {array.map((elem, index) => {
+          if (index % 2 === 1) {
+            return <AchievementCard key={'right_achievement_card_' + index} heading={elem.heading} text={elem.text} image={elem.image} />;
+          }
+        })}
+      </div>
+    </div>
   );
 }

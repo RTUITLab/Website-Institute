@@ -18,29 +18,7 @@ type Api = {
       heading: string;
       text: string[];
     };
-    elements:
-      | {
-          type: 'transition';
-          array: {
-            linkImage: StaticImageData;
-            text: string;
-            linkPage: string;
-            alt: string;
-          }[];
-          reverse: boolean;
-        }[]
-      | {
-          type: 'table';
-          array: {
-            numberOrImage: StaticImageData | number | string;
-            heading: string;
-            text: string[];
-          }[];
-          side: 'left' | 'center';
-          background: 'white' | 'gray';
-          gapInside: '36px' | '36px/auto' | '48px';
-          gapOutside: '48px' | '32px' | '16px' | '24px';
-        }[];
+    elements: PropsManager[];
   }[];
 };
 export default async function Home() {
