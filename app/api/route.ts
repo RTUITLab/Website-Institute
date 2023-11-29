@@ -101,6 +101,7 @@ export async function GET() {
             background: 'white',
             gapInside: '36px',
             gapOutside: '32px',
+            imgSize: '110px',
           },
         ],
       },

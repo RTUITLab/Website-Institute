@@ -205,11 +205,16 @@ function getApi(params: string) {
         },
       ],
       equipment: [
-        { linkImage: Rostelecom_equipment_1, heading: 'ОТЕЧЕСТВЕННОЕ КОМПЬЮТЕРНОЕ ОБОРУДОВАНИЕ', text: '65+ устройств' },
-        { linkImage: Rostelecom_equipment_2, heading: 'Демонстрационная зона', text: '1 экран и 20 мест' },
-        { linkImage: Rostelecom_equipment_3, heading: 'ОТЕЧЕСТВЕННОЕ ИНЖЕНЕРНОЕ ОБОРУДОВАНИЕ', text: '13+ устройств' },
-        { linkImage: Rostelecom_equipment_4, heading: 'ЭКСПЕРЕМЕНТАЛЬНЫЙ ПРОТОТИП ДИНАМИЧЕСКОЙ ШАГАЮЩЕЙ ПЛАТФОРМЫ', text: '1 устройство' },
-        { linkImage: Rostelecom_equipment_5, heading: 'МАЛАЯ ЭКСПЕРЕМЕНТАЛЬНАЯ ШАГАЮЩАЯ ПЛАТФОРМА', text: '6+ устройств' },
+        { linkImage: Rostelecom_equipment_1, heading: 'ОТЕЧЕСТВЕННОЕ КОМПЬЮТЕРНОЕ ОБОРУДОВАНИЕ', text: '65+ устройств', position: false },
+        { linkImage: Rostelecom_equipment_2, heading: 'Демонстрационная зона', text: '1 экран и 20 мест', position: false },
+        { linkImage: Rostelecom_equipment_3, heading: 'ОТЕЧЕСТВЕННОЕ ИНЖЕНЕРНОЕ ОБОРУДОВАНИЕ', text: '13+ устройств', position: false },
+        {
+          linkImage: Rostelecom_equipment_4,
+          heading: 'ЭКСПЕРЕМЕНТАЛЬНЫЙ ПРОТОТИП ДИНАМИЧЕСКОЙ ШАГАЮЩЕЙ ПЛАТФОРМЫ',
+          text: '1 устройство',
+          position: false,
+        },
+        { linkImage: Rostelecom_equipment_5, heading: 'МАЛАЯ ЭКСПЕРЕМЕНТАЛЬНАЯ ШАГАЮЩАЯ ПЛАТФОРМА', text: '6+ устройств', position: false },
       ],
       UsageCardTable: [
         {
@@ -290,8 +295,8 @@ function getApi(params: string) {
         { numberOrImage: Kresla_specificity_6, heading: 'Аналитика больших данных и предиктивная аналитика', text: null },
       ],
       equipment: [
-        { linkImage: Kresla_equipment_1, heading: 'Моноблок Apple iMac INTEL', text: '19 устройств' },
-        { linkImage: Kresla_equipment_2, heading: 'Компьютерные кресла CyberCapsule', text: '26 устройств' },
+        { linkImage: Kresla_equipment_1, heading: 'Моноблок Apple iMac INTEL', text: '19 устройств', position: false },
+        { linkImage: Kresla_equipment_2, heading: 'Компьютерные кресла CyberCapsule', text: '26 устройств', position: false },
       ],
       UsageCardTable: [
         {
@@ -341,10 +346,11 @@ function getApi(params: string) {
           linkImage: Mocap_equipment_1,
           heading: 'КОМПЬЮТЕРНАЯ СТАНЦИЯ VICON C ПРОГРАММНЫМ ПАКЕТОМ SHOGUN ДЛЯ ОБРАБОТКИ И ОТСЛЕЖИВАНИЯ МИМИКИ И ДВИЖЕНИЯ ОБЪЕКТОВ ',
           text: '1 устройство',
+          position: false,
         },
-        { linkImage: Mocap_equipment_2, heading: 'КАМЕРЫ ДЛЯ ЗАХВАТА ДВИЖЕНИЯ Vicon Vero', text: '16 устройств' },
-        { linkImage: Mocap_equipment_3, heading: 'КОМПЛЕКТ ТРЕКИНГ КОСТЮМА ДЛЯ ЗАХВАТА ДВИЖЕНИЯ', text: '2 комплекта' },
-        { linkImage: Mocap_equipment_4, heading: 'ШЛЕМ Mark IV Wireless Headcam System', text: '2 устройства' },
+        { linkImage: Mocap_equipment_2, heading: 'КАМЕРЫ ДЛЯ ЗАХВАТА ДВИЖЕНИЯ Vicon Vero', text: '16 устройств', position: false },
+        { linkImage: Mocap_equipment_3, heading: 'КОМПЛЕКТ ТРЕКИНГ КОСТЮМА ДЛЯ ЗАХВАТА ДВИЖЕНИЯ', text: '2 комплекта', position: false },
+        { linkImage: Mocap_equipment_4, heading: 'ШЛЕМ Mark IV Wireless Headcam System', text: '2 устройства', position: false },
       ],
       UsageCardTable: [
         {
@@ -417,29 +423,46 @@ function getApi(params: string) {
         { numberOrImage: Vr_specificity_6, heading: 'Оборудование расширенной реальности', text: null },
       ],
       equipment: [
-        { linkImage: Vr_equipment_1, heading: 'Тактильные костюмы TACTOT с бронёй для рук и ног', text: '5 устройств' },
+        { linkImage: Vr_equipment_1, heading: 'Тактильные костюмы TACTOT с бронёй для рук и ног', text: '5 устройств', position: false },
         {
           linkImage: Vr_equipment_2,
           heading: 'Стенд С БАЗОВЫМИ VR СТАНЦИЯМИ для одновременной И СОВМЕСТНОЙ работы до четырёх VR операторов',
           text: '1 устройство',
+          position: false,
         },
-        { linkImage: Vr_equipment_3, heading: 'НАБОР ТАКТИЛЬНЫХ VR ПЕРЧАТОК С ОТДАЧЕЙ', text: '2 комплекта' },
-        { linkImage: Vr_equipment_4, heading: 'Шлем вирутальной реальности HTC Vive Pro', text: '5 устройств' },
-        { linkImage: Vr_equipment_5, heading: 'Шлем вирутальной реальности HTC VIVE Cosmos', text: '2 устройства' },
-        { linkImage: Vr_equipment_6, heading: 'Шлем вирутальной реальности HTC VIVE', text: '8 устройств' },
-        { linkImage: Vr_equipment_7, heading: 'Переносные компьютеры в виде рюкзаков Zotac VR Go 2.0', text: '3 устройства' },
-        { linkImage: Vr_equipment_8, heading: 'ДОПОЛНИТЕЛЬНЫЕ наборы VR ТРЕКЕРОВ И базовых vr станций', text: '6 наборов' },
+        { linkImage: Vr_equipment_3, heading: 'НАБОР ТАКТИЛЬНЫХ VR ПЕРЧАТОК С ОТДАЧЕЙ', text: '2 комплекта', position: false },
+        { linkImage: Vr_equipment_4, heading: 'Шлем вирутальной реальности HTC Vive Pro', text: '5 устройств', position: false },
+        { linkImage: Vr_equipment_5, heading: 'Шлем вирутальной реальности HTC VIVE Cosmos', text: '2 устройства', position: false },
+        { linkImage: Vr_equipment_6, heading: 'Шлем вирутальной реальности HTC VIVE', text: '8 устройств', position: false },
+        {
+          linkImage: Vr_equipment_7,
+          heading: 'Переносные компьютеры в виде рюкзаков Zotac VR Go 2.0',
+          text: '3 устройства',
+          position: false,
+        },
+        {
+          linkImage: Vr_equipment_8,
+          heading: 'ДОПОЛНИТЕЛЬНЫЕ наборы VR ТРЕКЕРОВ И базовых vr станций',
+          text: '6 наборов',
+          position: false,
+        },
         {
           linkImage: Vr_equipment_9,
           heading: 'Графическая КОМПЬЮТЕРНАЯ станция для рендера и обработки 3D моделей и анимаций',
           text: '1 устройство',
+          position: false,
         },
-        { linkImage: Vr_equipment_10, heading: 'Шлем вирутальной реальности Oculus Rift CV1', text: '11 устройств' },
-        { linkImage: Vr_equipment_11, heading: 'Шлем вирутальной реальности Oculus Quest 2', text: '3 устройства' },
-        { linkImage: Vr_equipment_12, heading: 'Устройство дополненной реальности EPSON BT-35E', text: '2 устройства' },
-        { linkImage: Vr_equipment_13, heading: 'Устройство дополненной реальности EPSON BT-300 H756A', text: '3 устройства' },
-        { linkImage: Vr_equipment_14, heading: 'Устройство смешанной реальности Hololens 2', text: '2 устройства' },
-        { linkImage: Vr_equipment_15, heading: 'Устройство смешанной реальности Hololens', text: '9 устройств' },
+        { linkImage: Vr_equipment_10, heading: 'Шлем вирутальной реальности Oculus Rift CV1', text: '11 устройств', position: false },
+        { linkImage: Vr_equipment_11, heading: 'Шлем вирутальной реальности Oculus Quest 2', text: '3 устройства', position: false },
+        { linkImage: Vr_equipment_12, heading: 'Устройство дополненной реальности EPSON BT-35E', text: '2 устройства', position: false },
+        {
+          linkImage: Vr_equipment_13,
+          heading: 'Устройство дополненной реальности EPSON BT-300 H756A',
+          text: '3 устройства',
+          position: false,
+        },
+        { linkImage: Vr_equipment_14, heading: 'Устройство смешанной реальности Hololens 2', text: '2 устройства', position: false },
+        { linkImage: Vr_equipment_15, heading: 'Устройство смешанной реальности Hololens', text: '9 устройств', position: false },
       ],
       UsageCardTable: [
         {
@@ -583,7 +606,7 @@ export default function Megalaboratory({ params }: { params: { megalaboratory: s
         </Section>
         <Section id={id[1].link}>
           <TitleText heading={'ОБОРУДОВАНИЕ'} text={null} />
-          <TableImages array={data.equipment} twoToOne={false} />
+          <TableImages array={data.equipment} styleTableImages={'default'} />
         </Section>
         <Section id={id[2].link}>
           <TitleText heading={'ОБУЧЕНИЕ И ИСПОЛЬЗОВАНИЕ ЛАБОРАТОРИИ'} text={data.textUsage} />

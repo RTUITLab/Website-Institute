@@ -4,7 +4,7 @@ import TitleText from '@/components/titleText';
 import DownTransition from '@/components/downTransition';
 import DirectionsImage from '@/public/image/Направления.webp';
 import RTUITLab from '@/public/image/Лаба_Переход.webp';
-import Equipment from '@/public/image/Оборудование_Переход.webp';
+import Infrastructure from '@/public/image/Инфраструктура.webp';
 import { StaticImageData } from 'next/image';
 import elementsManager, { PropsManager } from '@/elementsManager';
 
@@ -37,8 +37,8 @@ export default async function PageInstitute() {
 
   const DownCell = {
     element1: { linkImage: DirectionsImage, linkPage: '/directions', text: 'ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ' },
-    element2: { linkImage: Equipment, linkPage: '/equipment', text: 'Уникальное оборудование' },
-    element3: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+    element2: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+    element3: { linkImage: Infrastructure, linkPage: '/infrastructure', text: 'КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ' },
   };
 
   return (

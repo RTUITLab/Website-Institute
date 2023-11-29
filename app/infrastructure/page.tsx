@@ -139,42 +139,62 @@ export default function Infrastructure() {
     {
       linkImage: ClassroomIIT1,
       heading: 'СПЕЦИАЛИЗИРОВАННАЯ УЧЕБНО-НАУЧНАЯ ЛАБОРАТОРИЯ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ ИНТЕРНЕТА ВЕЩЕЙ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT2,
       heading: 'Аудитория кафедры ИГРОВОЙ ИНДУСТРИИ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT3,
       heading: 'Аудитория кафедры ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ В АТОМНОЙ ЭНЕРГЕТИКЕ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT4,
       heading: 'Аудитория кафедры МАТЕМАТИЧЕСКОГО ОБЕСПЕЧЕНИЯ И СТАНДАРТИЗАЦИИ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT5,
       heading: 'Аудитория кафедры ПРАКТИЧЕСКОЙ И ПРИКЛАДНОЙ ИНФОРМАТИКИ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT6,
       heading: 'Аудитория кафедры ИНСТРУМЕНТАЛЬНОГО И ПРИКЛАДНОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT7,
       heading: 'Аудитория кафедры ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT8,
       heading: 'Аудитория кафедры цифровой трансформации',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT9,
       heading: 'Аудитория кафедры КОРПОРАТИВНЫХ ИНФОРМАЦИОННЫХ СИСТЕМ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomIIT10,
       heading: 'Аудитория кафедры ВЫЧИСЛИТЕЛЬНОЙ МАТЕМАТИКИ',
+      position: false,
+      text: null,
     },
   ];
 
@@ -182,26 +202,38 @@ export default function Infrastructure() {
     {
       linkImage: ClassroomAll1,
       heading: 'ЛЕКЦИОННЫЕ АУДИТОРИИ УНИВЕРСИТЕТА',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomAll2,
       heading: 'УЧЕБНЫЕ КОМПЬЮТЕРНЫЕ АУДИТОРИИ И ЛЕКТОРИИ ТЕХНОКОВОРКИНГА',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomAll3,
       heading: 'КОМПЬЮТЕРНЫЕ АУДИТОРИИ КОРПУСА «И»',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomAll4,
       heading: 'ЛЕКЦИОННЫЕ АУДИТОРИИ УНИВЕРСИТЕТА',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomAll5,
       heading: 'Аудитории для занятий по иностранным языкам, математическим и гуманитарным дисциплинам',
+      position: false,
+      text: null,
     },
     {
       linkImage: ClassroomAll6,
       heading: 'Аудитории КАФЕДР ДРУГИХ ИНСТИТУТОВ ДЛЯ ЗАНЯТИЙ ПО ИХ  ДИСЦИПЛИНАМ',
+      position: false,
+      text: null,
     },
   ];
 
@@ -209,42 +241,62 @@ export default function Infrastructure() {
     {
       linkImage: ExtracurricularInfrastructure1,
       heading: 'СТОЛОВЫЕ, КАФЕТЕРИИ И БУФЕТЫ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure2,
       heading: 'Физкультурно-оздоровительный комплекс',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure3,
       heading: 'СТРАЙКБОЛЬНЫЙ КЛУБ И ВОЕННЫЙ УЧЕБНЫЙ ЦЕНТР',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure4,
       heading: 'Универсальный учебно-тренировочный комплекс подготовки студентов-спасателей',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure5,
       heading: 'ТЕННИСНЫЕ И БИЛЬЯРДНЫЕ ЗОНЫ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure6,
       heading: 'ЧИЛЛ-ЗОНЫ (ЗОНЫ ОТДЫХА)',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure7,
       heading: 'ПРОЕКТНАЯ ЗОНА И ТЕХНОКОВОРКИНГ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure8,
       heading: 'Информационно-библиотечный центр И ЧИТАЛЬНЫЙ ЗАЛ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure10,
       heading: 'КОНФЕРЕНЦ-ЗАЛЫ ДЛЯ МЕРОПРИЯТИЙ',
+      position: false,
+      text: null,
     },
     {
       linkImage: ExtracurricularInfrastructure9,
       heading: 'КИБЕРСПОРТИВНЫЙ, ИГРОВОЙ И VR ЦЕНТР «КИБЕРЗОНА»',
+      position: false,
+      text: null,
     },
   ];
 
@@ -373,16 +425,16 @@ export default function Infrastructure() {
         <Section id={id[2].link}>
           <TitleText heading={'АУДИТОРИИ ИНСТИТУТА'} text={textClassroomIIT} />
           <Table array={TableClassroomIIT} side={'center'} background={'gray'} gapInside={'36px'} gapOutside={'24px'} />
-          <TableImages array={TableClassroomIITImages} twoToOne={true} />
+          <TableImages array={TableClassroomIITImages} styleTableImages={'twoToOne'} />
         </Section>
         <Section id={id[3].link}>
           <TitleText heading={'ОБЩИЕ АУДИТОРИИ УНИВЕРСИТЕТА'} text={textClassroomAll} />
           <Table array={TableClassroomAll} side={'center'} background={'white'} gapInside={'36px'} gapOutside={'24px'} />
-          <TableImages array={TableClassroomAllImages} twoToOne={true} />
+          <TableImages array={TableClassroomAllImages} styleTableImages={'twoToOne'} />
         </Section>
         <Section id={id[4].link}>
           <TitleText heading={'ВНЕУЧЕБНАЯ ИНФРАСТРУКТУРА'} text={textExtracurricularInfrastructure} />
-          <TableImages array={TableExtracurricularInfrastructure} twoToOne={false} sixTable={true} />
+          <TableImages array={TableExtracurricularInfrastructure} styleTableImages={'sixTable'} />
         </Section>
         <DownTransition array={[DownCell.element1, DownCell.element2, DownCell.element3]} />
       </main>

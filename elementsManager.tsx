@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 import Transition from '@/components/tables/transition';
-import { Table } from '@/components/tables/table';
+import { Table, TableImages } from '@/components/tables/table';
 import DownTransition from '@/components/downTransition';
 import DivAchievementCards from '@/components/cards/achievementCard';
 import AdmissionCard from '@/components/cards/admissionCard';
@@ -30,6 +30,7 @@ export type PropsManager =
       background: 'white' | 'gray';
       gapInside: '36px' | '36px/auto' | '48px';
       gapOutside: '48px' | '32px' | '16px' | '24px';
+      imgSize: '110px' | '152px';
     }
   | {
       type: 'downTransition';
@@ -86,6 +87,16 @@ export type PropsManager =
       };
       text: string;
       image: StaticImageData;
+    }
+  | {
+      type: 'tableImages';
+      array: {
+        linkImage: StaticImageData;
+        heading: string;
+        text: string | null;
+        position: boolean;
+      }[];
+      styleTableImages: 'twoToOne' | 'sixTable' | 'default';
     };
 
 export default function elementsManager(element: PropsManager, index: number, index2: number) {
@@ -103,16 +114,17 @@ export default function elementsManager(element: PropsManager, index: number, in
           gapInside={data.gapInside}
           gapOutside={data.gapOutside}
           background={data.background}
+          imgSize={data.imgSize}
         />
       );
     case 'downTransition':
-      return <DownTransition key={'section_' + index + '_transition_' + index2} heading={data.heading} array={data.array} />;
+      return <DownTransition key={'section_' + index + '_down_transition_' + index2} heading={data.heading} array={data.array} />;
     case 'achievementCard':
-      return <DivAchievementCards key={'section_' + index + '_transition_' + index2} array={data.array} />;
+      return <DivAchievementCards key={'section_' + index + '_div_achievement_cards_' + index2} array={data.array} />;
     case 'admissionCard':
       return (
         <AdmissionCard
-          key={'section_' + index + '_transition_' + index2}
+          key={'section_' + index + '_admission_card_' + index2}
           heading={data.heading}
           text={data.text}
           image={data.image}
@@ -121,11 +133,11 @@ export default function elementsManager(element: PropsManager, index: number, in
         />
       );
     case 'imageCard':
-      return <DivImageCards key={'section_' + index + '_transition_' + index2} array={data.array} />;
+      return <DivImageCards key={'section_' + index + '_div_image_cards_' + index2} array={data.array} />;
     case 'partnersCard':
       return (
         <DivPartnersCards
-          key={'section_' + index + '_transition_' + index2}
+          key={'section_' + index + '_div_partners_cards_' + index2}
           element1={data.array[0]}
           element2={data.array[1]}
           element3={data.array[2]}
@@ -134,7 +146,11 @@ export default function elementsManager(element: PropsManager, index: number, in
         />
       );
     case 'textCard':
-      return <DivTextCards key={'section_' + index + '_transition_' + index2} textCard1={data.array[0]} textCard2={data.array[1]} />;
+      return <DivTextCards key={'section_' + index + '_div_text_cards_' + index2} textCard1={data.array[0]} textCard2={data.array[1]} />;
+    case 'tableImages':
+      return (
+        <TableImages key={'section_' + index + '_table_images_' + index2} array={data.array} styleTableImages={data.styleTableImages} />
+      );
     default:
       return <></>;
   }

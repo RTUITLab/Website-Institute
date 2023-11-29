@@ -122,20 +122,20 @@ export function CellTransition({
 type PropsCellImage = {
   linkImage: StaticImageData;
   heading: string;
-  text?: string | null | undefined;
-  positionUp?: boolean;
-  twoToOne?: boolean;
-  gridAreaNumber?: number | null;
+  text: string | null;
+  positionUp: boolean;
+  twoToOne: boolean;
+  gridAreaNumber: number;
 };
 
-export function CellImage({ linkImage, heading, text = null, twoToOne = true, gridAreaNumber = null, positionUp = false }: PropsCellImage) {
-  if (twoToOne === false) {
+export function CellImage({ linkImage, heading, text, twoToOne, gridAreaNumber, positionUp }: PropsCellImage) {
+  if (!twoToOne) {
     return (
       <article style={{ gridArea: 'cell-' + gridAreaNumber }} className={classNames(Style.CellImage, Style.CellImageGrid)}>
         <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={heading} />
         <div>
           <h3>{heading}</h3>
-          {text === null || text === undefined ? <></> : <p>{text}</p>}
+          {text === null ? <></> : <p>{text}</p>}
         </div>
       </article>
     );

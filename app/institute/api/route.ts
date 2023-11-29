@@ -69,6 +69,7 @@ export async function GET() {
             background: 'gray',
             gapInside: '36px',
             gapOutside: '24px',
+            imgSize: '110px',
           },
           {
             type: 'textCard',
@@ -124,6 +125,7 @@ export async function GET() {
             background: 'white',
             gapInside: '36px',
             gapOutside: '24px',
+            imgSize: '110px',
           },
           {
             type: 'imageCard',
@@ -197,6 +199,7 @@ export async function GET() {
             background: 'gray',
             gapInside: '36px',
             gapOutside: '24px',
+            imgSize: '110px',
           },
           {
             type: 'partnersCard',
