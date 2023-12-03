@@ -1,0 +1,12 @@
+.ImageCampus {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 48px;
+  > img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 24px;
+  }
+}

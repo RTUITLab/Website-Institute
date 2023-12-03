@@ -7,6 +7,9 @@ import AdmissionCard from '@/components/cards/admissionCard';
 import DivImageCards from '@/components/cards/imageCard';
 import DivPartnersCards from '@/components/cards/partnersCard';
 import DivTextCards from '@/components/cards/textCard';
+import { BlockImage } from '@/components/blocks';
+import ImageAndTextCard from '@/components/cards/imageAndTextCard';
+import Images from '@/components/tables/images';
 
 export type PropsManager =
   | {
@@ -97,6 +100,33 @@ export type PropsManager =
         position: boolean;
       }[];
       styleTableImages: 'twoToOne' | 'sixTable' | 'default';
+    }
+  | {
+      type: 'imagesTable';
+      array: StaticImageData[];
+      titleKeyAndAlt: string;
+    }
+  | {
+      type: 'imageAndTextCard';
+      image: StaticImageData;
+      heading: string;
+      text: string[];
+      buttons:
+        | null
+        | {
+            targetBlank: boolean;
+            link: string;
+            text: string;
+          }[];
+      reverse: boolean;
+    }
+  | {
+      type: 'blockImage';
+      image: StaticImageData;
+      heading: string;
+      buttonBasic: string;
+      buttonImportant: string;
+      reverse: boolean;
     };
 
 export default function elementsManager(element: PropsManager, index: number, index2: number) {
@@ -151,6 +181,30 @@ export default function elementsManager(element: PropsManager, index: number, in
       return (
         <TableImages key={'section_' + index + '_table_images_' + index2} array={data.array} styleTableImages={data.styleTableImages} />
       );
+    case 'blockImage':
+      return (
+        <BlockImage
+          key={'section_' + index + '_block_image_' + index2}
+          linkImage={data.image}
+          heading={data.heading}
+          reverse={data.reverse}
+          buttonImportant={data.buttonImportant}
+          buttonBasic={data.buttonBasic}
+        />
+      );
+    case 'imageAndTextCard':
+      return (
+        <ImageAndTextCard
+          key={'section_' + index + '_image_and_text_card_' + index2}
+          reverse={data.reverse}
+          image={data.image}
+          heading={data.heading}
+          text={data.text}
+          buttons={data.buttons}
+        />
+      );
+    case 'imagesTable':
+      return <Images key={'section_' + index + '_images_table_' + index2} array={data.array} titleKeyAndAlt={data.titleKeyAndAlt} />;
     default:
       return <></>;
   }

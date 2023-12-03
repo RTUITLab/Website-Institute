@@ -6,12 +6,12 @@ import { ButtonLinkDefault, ButtonLinkVIKA } from '@/components/buttons';
 type Props = {
   linkImage: StaticImageData;
   heading: string;
-  reverse?: boolean;
+  reverse: boolean;
   buttonImportant?: string | null | undefined;
   buttonBasic?: string | null | undefined;
 };
 
-export function BlockImage({ linkImage, heading, reverse = false, buttonImportant = null, buttonBasic = null }: Props) {
+export function BlockImage({ linkImage, heading, reverse, buttonImportant = null, buttonBasic = null }: Props) {
   return (
     <article className={classNames(Style.BlockImage, reverse ? Style.DirectionRow : Style.DirectionReverseRow)}>
       <article>
