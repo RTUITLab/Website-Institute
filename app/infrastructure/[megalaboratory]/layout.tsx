@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export const revalidate = 7200;
+export const revalidate = 3600;
 export const dynamicParams = false;
 
 export default function MegalaboratoryLayout({ children }: { children: React.ReactNode }) {

@@ -17,7 +17,8 @@ npm run start
 ## Запуск сайта при помощи docker'а
 
 ```bash
-# Временно не работает
+docker build -t website-institute .
+docker run -p 3000:3000 website-institute
 ```
 
 ## Запуск авто форматирования кода (eslint + prettier)

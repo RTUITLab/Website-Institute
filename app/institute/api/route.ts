@@ -1,13 +1,5 @@
 import { NextResponse } from 'next/server';
 import InstituteImage from '@/public/image/институт.webp';
-import Institute from '@/public/image/институт.webp';
-import Directions from '@/public/image/Направления_Переход.webp';
-import RTUITLab from '@/public/image/Лаба_Переход.webp';
-import Infrastructure from '@/public/image/Инфраструктура.webp';
-import Equipment from '@/public/image/Оборудование_Переход.webp';
-import Info from '@/public/svg/info.svg';
-import News from '@/public/svg/news.svg';
-import Vika from '@/public/svg/vika.svg';
 import MIREASvg from '@/public/svg/MIREA_Gerb_Colour.svg';
 import IitSvg from '@/public/svg/it_svg_logo.svg';
 import GameDev from '@/public/svg/gamedev.webp';

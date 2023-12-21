@@ -1,24 +1,4 @@
 import { NextResponse } from 'next/server';
-import Fact_E_1 from '@/public/svg/fact_e_1.svg';
-import Fact_E_2 from '@/public/svg/fact_e_2.svg';
-import Fact_E_3 from '@/public/svg/fact_e_3.svg';
-import Fact_E_4 from '@/public/svg/fact_e_4.svg';
-import EquipmentImage1 from '@/public/image/equipment/Оборудование 1.png';
-import EquipmentImage2 from '@/public/image/equipment/Оборудование 2.png';
-import EquipmentImage3 from '@/public/image/equipment/Оборудование 3.png';
-import EquipmentImage4 from '@/public/image/equipment/Оборудование 4.png';
-import EquipmentImage5 from '@/public/image/equipment/Оборудование 5.png';
-import EquipmentImage6 from '@/public/image/equipment/Оборудование 6.png';
-import EquipmentImage7 from '@/public/image/equipment/Оборудование 7.png';
-import EquipmentImage8 from '@/public/image/equipment/Оборудование 8.png';
-import EquipmentImage9 from '@/public/image/equipment/Оборудование 9.png';
-import EquipmentImage10 from '@/public/image/equipment/Оборудование 10.png';
-import EquipmentImage11 from '@/public/image/equipment/Оборудование 11.png';
-import EquipmentImage12 from '@/public/image/equipment/Оборудование 12.png';
-import EquipmentImage13 from '@/public/image/equipment/Оборудование 13.png';
-import EquipmentImage14 from '@/public/image/equipment/Оборудование 14.png';
-import EquipmentImage15 from '@/public/image/equipment/Оборудование 15.png';
-import Equipment from '@/public/image/Оборудование_Переход.webp';
 import InfrastructureImage from '@/public/image/Инфраструктура.webp';
 import Map from '@/public/svg/карта.svg';
 import Metro from '@/public/svg/метро.svg';
@@ -33,14 +13,6 @@ import Laboratory1 from '@/public/image/лаба_инженерка.webp';
 import Laboratory2 from '@/public/image/лаба_кресла.webp';
 import Laboratory3 from '@/public/image/лаба_мокап.webp';
 import Laboratory4 from '@/public/image/лаба_вр.webp';
-import GameDev from '@/public/svg/gamedev.webp';
-import Data from '@/public/svg/data.webp';
-import IOT from '@/public/svg/iot.webp';
-import Network from '@/public/svg/network.webp';
-import AI from '@/public/svg/ai.webp';
-import Mobile from '@/public/svg/mobile.webp';
-import Frontend from '@/public/svg/frontend.webp';
-import OneC from '@/public/svg/1c.webp';
 import ClassroomIIT1 from '@/public/image/самсунг_лаба.webp';
 import ClassroomIIT2 from '@/public/image/ии_аудитория.webp';
 import ClassroomIIT3 from '@/public/image/итаэ_аудитория.webp';
@@ -81,7 +53,7 @@ export async function GET() {
           text: 'ИНФОРМАЦИЯ ПРО ОБОРУДОВАНИЕ',
         },
         titleText: {
-          heading: 'ОСНОВНОЙ КАМПУС',
+          heading: '\"ОСНОВНОЙ КАМПУС',
           text: [
             'Рассказываем и показываем, основной кампус РТУ МИРЭА, на территории которого будет проходить 95% всех занятий студентов института информационных технологий.',
             'Долгое время после своего создания в 1947 году вуз базировался на разных площадках. Собственный дом он начал обретать только в 1969 году, тогда началось строительство на тот момент современного учебного комплекса общей площадью 100 тыс. м2 на Юго-Западе Москвы.',
