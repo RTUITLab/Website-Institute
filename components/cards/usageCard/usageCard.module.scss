@@ -53,3 +53,17 @@
     color: var(--text-white);
   }
 }
+
+.CardGameDev {
+  background: var(--gamedev-card);
+  * {
+    color: var(--text-white);
+  }
+}
+
+.CardVrDev {
+  background: var(--vrdev-card);
+  * {
+    color: var(--text-white);
+  }
+}

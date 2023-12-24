@@ -75,6 +75,12 @@ h6 {
   --gradient-iio: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
     linear-gradient(135deg, #1f2326 0.31%, rgba(76, 85, 92, 0.75) 42.64%, rgba(146, 150, 157, 0.7) 73.58%, rgba(124, 135, 151, 0.69) 100%),
     #fff;
+  --gamedev-card: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(135deg, #8a1c46 0.31%, rgba(165, 61, 101, 0.75) 42.64%, rgba(42, 103, 164, 0.7) 73.58%, rgba(22, 90, 156, 0.69) 100%),
+    #fff;
+  --vrdev-card: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(135deg, #aabce3 0.31%, rgba(120, 145, 197, 0.75) 42.64%, rgba(42, 103, 164, 0.7) 67.81%, rgba(0, 56, 111, 0.69) 100%),
+    #fff;
 }
 
 main {

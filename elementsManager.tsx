@@ -10,6 +10,9 @@ import DivTextCards from '@/components/cards/textCard';
 import { BlockImage } from '@/components/blocks';
 import ImageAndTextCard from '@/components/cards/imageAndTextCard';
 import Images from '@/components/tables/images';
+import UsageCardTable from '@/components/cards/usageCard';
+import Style from '@/app/infrastructure/[megalaboratory]/megalaboratory.module.scss';
+import PhotoSection from '@/components/photo';
 
 export type PropsManager =
   | {
@@ -27,7 +30,7 @@ export type PropsManager =
       array: {
         numberOrImage: StaticImageData | number | string;
         heading: string;
-        text: string[];
+        text: string[] | null;
       }[];
       side: 'left' | 'center';
       background: 'white' | 'gray';
@@ -127,6 +130,18 @@ export type PropsManager =
       buttonBasic: string;
       buttonImportant: string;
       reverse: boolean;
+    }
+  | {
+      type: 'usageCardTable';
+      array: { image: StaticImageData; heading: string; style: 'vika' | 'default' | 'rostelecom' | 'iio' | 'gamedev' | 'vrdev' }[];
+    }
+  | {
+      type: 'video';
+      src: string;
+    }
+  | {
+      type: 'photoSection';
+      images: StaticImageData[];
     };
 
 export default function elementsManager(element: PropsManager, index: number, index2: number) {
@@ -205,6 +220,21 @@ export default function elementsManager(element: PropsManager, index: number, in
       );
     case 'imagesTable':
       return <Images key={'section_' + index + '_images_table_' + index2} array={data.array} titleKeyAndAlt={data.titleKeyAndAlt} />;
+    case 'usageCardTable':
+      return <UsageCardTable key={'section_' + index + '_usage_card_table_' + index2} array={data.array} />;
+    case 'video':
+      return (
+        <iframe
+          key={'section_' + index + '_iframe_video_' + index2}
+          className={Style.Video}
+          src={data.src}
+          frameBorder="0"
+          allow="clipboard-write; autoplay"
+          allowFullScreen
+        />
+      );
+    case 'photoSection':
+      return <PhotoSection key={'section_' + index + '_photo_section_' + index2} images={data.images} />;
     default:
       return <></>;
   }

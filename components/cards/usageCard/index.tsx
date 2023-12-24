@@ -8,19 +8,25 @@ type PropsUsageCard = {
   style: string;
 };
 
+const Color: {
+  default: string;
+  vika: string;
+  iio: string;
+  rostelecom: string;
+  gamedev: string;
+  vrdev: string;
+} = {
+  default: Style.CardDefault,
+  vika: Style.CardVika,
+  iio: Style.CardIio,
+  rostelecom: Style.CardRostelecom,
+  gamedev: Style.CardGameDev,
+  vrdev: Style.CardVrDev,
+};
+
 function UsageCard({ image, heading, style }: PropsUsageCard) {
   return (
-    <article
-      className={classNames(
-        Style.usageCard,
-        style === 'default'
-          ? Style.CardDefault
-          : style === 'vika'
-            ? Style.CardVika
-            : style === 'iio'
-              ? Style.CardIio
-              : Style.CardRostelecom,
-      )}>
+    <article className={classNames(Style.usageCard, Color[style as keyof typeof Color])}>
       <Image src={image} alt={heading} />
       <h2>{heading}</h2>
     </article>
