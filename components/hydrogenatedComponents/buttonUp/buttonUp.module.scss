@@ -1,0 +1,29 @@
+.ButtonUp {
+  position: fixed;
+  bottom: calc(5vw - 24px);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--iit-color);
+  transition:
+    300ms left,
+    300ms transform;
+  > img {
+    width: 36px;
+    height: 36px;
+  }
+  &:hover {
+    transform: scale(1.25);
+  }
+}
+
+.Hide {
+  left: -5vw;
+}
+
+.NoHide {
+  left: calc(5vw - 24px);
+}

@@ -71,7 +71,7 @@ export default function Modal({ image, titleProfile, titleDepartment, text, sphe
                 <h2>Сферы обучения</h2>
                 <div />
               </div>
-              <div>
+              <div className={Style.LevelInfo}>
                 <Level
                   heading={'Базовый уровень'}
                   text={'Это уровень при котором даются начальные знания по данной сфере, обычно это 1 или 2 дисциплины'}

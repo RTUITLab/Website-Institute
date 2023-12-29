@@ -21,7 +21,7 @@ import Fact2 from '@/public/image/fact2.webp';
 import Fact4 from '@/public/image/fact4.webp';
 import AdmissionImage from '@/public/image/admission.webp';
 
-export async function GET() {
+export async function GET(request: Request) {
   const data = {
     menuSection: {
       image: InstituteImage,

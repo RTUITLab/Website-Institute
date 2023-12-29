@@ -13,7 +13,7 @@ type Props = {
 
 export default function Screensaver({ linkImage, text, alt, backgroundBlack = true, id, positionUp = false }: Props) {
   return (
-    <div className={Style.Screensaver}>
+    <div className={Style.Screensaver} id={'menu'}>
       <Image className={positionUp ? Style.ImageUp : Style.ImageCenter} src={linkImage} alt={alt} />
       <div className={backgroundBlack ? Style.backgroundBlack : undefined}>
         <h1>{text}</h1>

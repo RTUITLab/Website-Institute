@@ -20,7 +20,7 @@ import EquipmentImage14 from '@/public/image/equipment/Оборудование 
 import EquipmentImage15 from '@/public/image/equipment/Оборудование 15.png';
 import Equipment from '@/public/image/Оборудование_Переход.webp';
 
-export async function GET() {
+export async function GET(request: Request) {
   const data = {
     menuSection: {
       image: Equipment,

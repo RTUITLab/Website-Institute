@@ -40,7 +40,7 @@ import ExtracurricularInfrastructure8 from '@/public/image/библиотека.
 import ExtracurricularInfrastructure10 from '@/public/image/актовый_зал.webp';
 import ExtracurricularInfrastructure9 from '@/public/image/киберзона.webp';
 
-export async function GET() {
+export async function GET(request: Request) {
   const data = {
     menuSection: {
       image: InfrastructureImage,
@@ -365,7 +365,7 @@ export async function GET() {
               },
               {
                 linkImage: ClassroomAll4,
-                heading: 'ЛЕКЦИОННЫЕ АУДИТОРИИ УНИВЕРСИТЕТА',
+                heading: 'КОМПЬЮТЕРНЫЕ АУДИТОРИИ ИНФОРМАЦИОННО-ВЫЧИСЛИТЕЛЬНОГО ЦЕНТРА',
                 position: false,
                 text: null,
               },

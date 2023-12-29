@@ -8,7 +8,7 @@ import Equipment from '@/public/image/Оборудование_Переход.we
 import Info from '@/public/svg/info.svg';
 import News from '@/public/svg/news.svg';
 import Vika from '@/public/svg/vika.svg';
-export async function GET() {
+export async function GET(request: Request) {
   const data = {
     menuSection: {
       image: AppImage,

@@ -2,9 +2,9 @@ import './globals.scss';
 import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
 import React from 'react';
-import Header from '@/components/header';
 import Cocos from '@/public/image/vw6c9iwr6rk51.webp';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
+import HydrogenatedComponents from '@/components/hydrogenatedComponents';
 
 const cocos: { image?: StaticImageData | undefined } = { image: Cocos };
 
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
       <html lang="en" className={ubuntu.className}>
         <body>
-          <Header />
+          <HydrogenatedComponents />
           {children}
         </body>
       </html>

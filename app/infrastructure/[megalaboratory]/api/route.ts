@@ -1,5 +1,4 @@
 import ImageScreensaver1 from '@/public/image/лаба_инженерка.webp';
-import { StaticImageData } from 'next/image';
 import Rostelecom_specificity_1 from '@/public/svg/ростелеком_фишка_1.svg';
 import Rostelecom_specificity_2 from '@/public/svg/ростелеком_фишка_2.svg';
 import Rostelecom_specificity_3 from '@/public/svg/ростелеком_фишка_3.svg';
@@ -163,9 +162,10 @@ import Laba4Image24 from '@/public/image/megalaboratory/4/24.webp';
 import Laba4Image25 from '@/public/image/megalaboratory/4/25.webp';
 import Laba4Image26 from '@/public/image/megalaboratory/4/26.webp';
 
-export async function GET(request: Request, { params }: { params: { data: string } }) {
+export async function POST(request: Request) {
+  const messages = await request.json();
   let data = {};
-  switch (params.data) {
+  switch (messages.megalaboratory) {
     case 'laboratory_import_substitution_of_information_technologies':
       data = {
         menuSection: {
