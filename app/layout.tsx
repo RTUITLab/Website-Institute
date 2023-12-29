@@ -29,8 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
       <html lang="en" className={ubuntu.className}>
         <body>
-          <HydrogenatedComponents />
           {children}
+          <HydrogenatedComponents />
         </body>
       </html>
     );

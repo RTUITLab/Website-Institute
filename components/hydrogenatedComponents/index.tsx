@@ -2,14 +2,13 @@
 import Header from './header';
 import ButtonUp from './buttonUp';
 import { useEffect, useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function HydrogenatedComponents() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   const [asideStatus, setAsideStatus] = useState<boolean>(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const resizeHeight = () => {
     setHeight(document.documentElement.clientHeight);
@@ -39,7 +38,7 @@ export default function HydrogenatedComponents() {
 
   useEffect(() => {
     handleHashChange();
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <>
