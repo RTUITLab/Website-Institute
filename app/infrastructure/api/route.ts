@@ -39,6 +39,9 @@ import ExtracurricularInfrastructure7 from '@/public/image/проектная_з
 import ExtracurricularInfrastructure8 from '@/public/image/библиотека.webp';
 import ExtracurricularInfrastructure10 from '@/public/image/актовый_зал.webp';
 import ExtracurricularInfrastructure9 from '@/public/image/киберзона.webp';
+import RTUITLab from '@/public/image/Лаба_Переход.webp';
+import Equipment from '@/public/image/Оборудование_Переход.webp';
+import InstituteImage from '@/public/image/институт.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -467,6 +470,11 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+      element2: { linkImage: Equipment, linkPage: '/equipment', text: 'Уникальное оборудование' },
+      element3: { linkImage: InstituteImage, linkPage: '/institute', text: 'ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ' },
+    },
   };
 
   return NextResponse.json(data, { status: 200 });

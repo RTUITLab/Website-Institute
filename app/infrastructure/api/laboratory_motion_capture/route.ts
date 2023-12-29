@@ -44,6 +44,9 @@ import Laba3Image32 from '@/public/image/megalaboratory/3/32.webp';
 import Laba3Image33 from '@/public/image/megalaboratory/3/33.webp';
 import Laba3Image34 from '@/public/image/megalaboratory/3/34.webp';
 import Laba3Image35 from '@/public/image/megalaboratory/3/35.webp';
+import ImageScreensaver2 from '@/public/image/лаба_кресла.webp';
+import ImageScreensaver4 from '@/public/image/лаба_вр.webp';
+import ImageScreensaver1 from '@/public/image/лаба_инженерка.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -233,6 +236,24 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: {
+        linkImage: ImageScreensaver2,
+        linkPage: '/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping',
+        text: 'Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования',
+      },
+      element2: {
+        linkImage: ImageScreensaver4,
+        linkPage: '/infrastructure/laboratory_immersive_technologies',
+        text: 'Лаборатория иммерсивных технологий',
+        position: true,
+      },
+      element3: {
+        linkImage: ImageScreensaver1,
+        linkPage: '/infrastructure/laboratory_import_substitution_of_information_technologies',
+        text: 'Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»',
+      },
+    },
   };
   return NextResponse.json(data, { status: 200 });
 }

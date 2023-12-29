@@ -20,6 +20,9 @@ import Fact3 from '@/public/image/fact3.webp';
 import Fact2 from '@/public/image/fact2.webp';
 import Fact4 from '@/public/image/fact4.webp';
 import AdmissionImage from '@/public/image/admission.webp';
+import DirectionsImage from '@/public/image/Направления.webp';
+import RTUITLab from '@/public/image/Лаба_Переход.webp';
+import Infrastructure from '@/public/image/Инфраструктура.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -301,6 +304,11 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: { linkImage: DirectionsImage, linkPage: '/directions', text: 'ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ' },
+      element2: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+      element3: { linkImage: Infrastructure, linkPage: '/infrastructure', text: 'КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ' },
+    },
   };
 
   return NextResponse.json(data, { status: 200 });

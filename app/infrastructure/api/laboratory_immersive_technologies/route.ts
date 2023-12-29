@@ -49,6 +49,9 @@ import Laba4Image23 from '@/public/image/megalaboratory/4/23.webp';
 import Laba4Image24 from '@/public/image/megalaboratory/4/24.webp';
 import Laba4Image25 from '@/public/image/megalaboratory/4/25.webp';
 import Laba4Image26 from '@/public/image/megalaboratory/4/26.webp';
+import ImageScreensaver3 from '@/public/image/лаба_мокап.webp';
+import ImageScreensaver1 from '@/public/image/лаба_инженерка.webp';
+import ImageScreensaver2 from '@/public/image/лаба_кресла.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -310,6 +313,23 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: {
+        linkImage: ImageScreensaver3,
+        linkPage: '/infrastructure/laboratory_motion_capture',
+        text: 'Лаборатория захвата движения',
+      },
+      element2: {
+        linkImage: ImageScreensaver1,
+        linkPage: '/infrastructure/laboratory_import_substitution_of_information_technologies',
+        text: 'Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»',
+      },
+      element3: {
+        linkImage: ImageScreensaver2,
+        linkPage: '/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping',
+        text: 'Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования',
+      },
+    },
   };
   return NextResponse.json(data, { status: 200 });
 }

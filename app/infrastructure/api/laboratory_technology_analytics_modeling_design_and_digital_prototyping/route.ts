@@ -21,6 +21,9 @@ import Laba2Image8 from '@/public/image/megalaboratory/2/DSC00674_result.webp';
 import Laba2Image9 from '@/public/image/megalaboratory/2/DSC00677_result.webp';
 import Laba2Image10 from '@/public/image/megalaboratory/2/DSC00678_result.webp';
 import Laba2Image11 from '@/public/image/megalaboratory/2/DSC00680_result.webp';
+import ImageScreensaver1 from '@/public/image/лаба_инженерка.webp';
+import ImageScreensaver3 from '@/public/image/лаба_мокап.webp';
+import ImageScreensaver4 from '@/public/image/лаба_вр.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -189,6 +192,24 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: {
+        linkImage: ImageScreensaver1,
+        linkPage: '/infrastructure/laboratory_import_substitution_of_information_technologies',
+        text: 'Учебно-научный испытательный комплекс «Импортозамещение информационных технологий»',
+      },
+      element2: {
+        linkImage: ImageScreensaver3,
+        linkPage: '/infrastructure/laboratory_motion_capture',
+        text: 'Лаборатория захвата движения',
+        position: true,
+      },
+      element3: {
+        linkImage: ImageScreensaver4,
+        linkPage: '/infrastructure/laboratory_immersive_technologies',
+        text: 'Лаборатория иммерсивных технологий',
+      },
+    },
   };
   return NextResponse.json(data, { status: 200 });
 }

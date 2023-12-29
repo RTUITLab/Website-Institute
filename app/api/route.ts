@@ -106,6 +106,7 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: null,
   };
 
   return NextResponse.json(data, { status: 200 });

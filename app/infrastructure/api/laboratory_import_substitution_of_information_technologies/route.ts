@@ -49,6 +49,9 @@ import Laba1Image29 from '@/public/image/megalaboratory/1/LR0A1554.webp';
 import Laba1Image30 from '@/public/image/megalaboratory/1/LR0A1556.webp';
 import Laba1Image31 from '@/public/image/megalaboratory/1/LR0A1560.webp';
 import Laba1Image32 from '@/public/image/megalaboratory/1/LR0A1561.webp';
+import ImageScreensaver4 from '@/public/image/лаба_вр.webp';
+import ImageScreensaver2 from '@/public/image/лаба_кресла.webp';
+import ImageScreensaver3 from '@/public/image/лаба_мокап.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -278,6 +281,23 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: {
+        linkImage: ImageScreensaver4,
+        linkPage: '/infrastructure/laboratory_immersive_technologies',
+        text: 'Лаборатория иммерсивных технологий',
+      },
+      element2: {
+        linkImage: ImageScreensaver2,
+        linkPage: '/infrastructure/laboratory_technology_analytics_modeling_design_and_digital_prototyping',
+        text: 'Универсальная учебно-научная лаборатория технологий аналитики, моделирования, проектирования и цифрового прототипирования',
+      },
+      element3: {
+        linkImage: ImageScreensaver3,
+        linkPage: '/infrastructure/laboratory_motion_capture',
+        text: 'Лаборатория захвата движения',
+      },
+    },
   };
   return NextResponse.json(data, { status: 200 });
 }

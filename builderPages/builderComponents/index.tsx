@@ -14,7 +14,7 @@ import UsageCardTable from '@/components/cards/usageCard';
 import Style from '@/app/infrastructure/[megalaboratory]/megalaboratory.module.scss';
 import PhotoSection from '@/components/photo';
 
-export type PropsManager =
+export type PropsBuilderComponents =
   | {
       type: 'transition';
       array: {
@@ -144,7 +144,7 @@ export type PropsManager =
       images: StaticImageData[];
     };
 
-export default function elementsManager(element: PropsManager, index: number, index2: number) {
+export default function BuilderComponents(element: PropsBuilderComponents, index: number, index2: number) {
   const data = element;
 
   switch (data.type) {

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import FallDown from '@/public/image/error/FallDown_result.webp';
 import { ButtonDefault, ButtonLinkDefault } from '@/components/buttons';
 import { useRouter } from 'next/navigation';
-import NotificationError from '@/api_logic/notificationError';
+import NotificationError from '@/apiLogic/notificationError';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {

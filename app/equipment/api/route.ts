@@ -19,6 +19,9 @@ import EquipmentImage13 from '@/public/image/equipment/Оборудование 
 import EquipmentImage14 from '@/public/image/equipment/Оборудование 14.png';
 import EquipmentImage15 from '@/public/image/equipment/Оборудование 15.png';
 import Equipment from '@/public/image/Оборудование_Переход.webp';
+import InstituteImage from '@/public/image/институт.webp';
+import DirectionsImage from '@/public/image/Направления.webp';
+import RTUITLab from '@/public/image/Лаба_Переход.webp';
 
 export async function GET(request: Request) {
   const data = {
@@ -180,6 +183,11 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: { linkImage: InstituteImage, linkPage: '/institute', text: 'ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ' },
+      element2: { linkImage: DirectionsImage, linkPage: '/directions', text: 'ПРОГРАММЫ ОБУЧЕНИЯ И ИХ ПРОФИЛИ' },
+      element3: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+    },
   };
 
   return NextResponse.json(data, { status: 200 });

@@ -7,8 +7,7 @@ import FactGraduates from '@/public/svg/Выпускники_Вика.svg';
 import FactPay from '@/public/svg/Платка_Вика.svg';
 import FactMilitary from '@/public/svg/Военная_кафедра_Вика.svg';
 import FactProfiles from '@/public/svg/Профили_Вика.svg';
-import getRequest from '@/api_logic/get';
-import { array } from 'prop-types';
+import getRequest from '@/apiLogic/getRequest';
 import Direction010404 from '@/public/image/01.04.04_Переход.webp';
 import Direction090401 from '@/public/image/09.04.01_Переход.webp';
 import Direction090403 from '@/public/image/09.04.03_Переход.webp';
@@ -22,6 +21,9 @@ import Direction232 from '@/public/image/2.3.2_Переход.webp';
 import Direction234 from '@/public/image/2.3.4_Переход.webp';
 import Direction235 from '@/public/image/2.3.5_Переход.webp';
 import Direction238 from '@/public/image/2.3.8_Переход.webp';
+import InstituteImage from '@/public/image/институт.webp';
+import RTUITLab from '@/public/image/Лаба_Переход.webp';
+import Infrastructure from '@/public/image/Инфраструктура.webp';
 
 async function ParserDirections(directions: string[]) {
   const array = [];
@@ -333,6 +335,11 @@ export async function GET(request: Request) {
         ],
       },
     ],
+    downTransition: {
+      element1: { linkImage: InstituteImage, linkPage: '/institute', text: 'ОБ ИНСТИТУТЕ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ' },
+      element2: { linkImage: RTUITLab, linkPage: 'https://rtuitlab.dev', text: 'IT лабораториЯ ИИТ', targetBlank: true },
+      element3: { linkImage: Infrastructure, linkPage: '/infrastructure', text: 'КАМПУС, ИНФРАСТРУКТУРА И МЕГАЛАБОРАТОРИИ' },
+    },
   };
   return Response.json(data);
 }
