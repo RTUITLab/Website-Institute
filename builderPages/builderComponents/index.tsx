@@ -13,6 +13,7 @@ import Images from '@/components/tables/images';
 import UsageCardTable from '@/components/cards/usageCard';
 import Style from '@/app/infrastructure/[megalaboratory]/megalaboratory.module.scss';
 import PhotoSection from '@/components/photo';
+import SectionProfiles from '@/components/profiles/section';
 
 export type PropsBuilderComponents =
   | {
@@ -31,6 +32,7 @@ export type PropsBuilderComponents =
         numberOrImage: StaticImageData | number | string;
         heading: string;
         text: string[] | null;
+        link?: string[] | undefined;
       }[];
       side: 'left' | 'center';
       background: 'white' | 'gray';
@@ -46,7 +48,7 @@ export type PropsBuilderComponents =
         linkPage: string;
         targetBlank?: boolean | undefined;
       }[];
-      heading?: string;
+      heading: string | null;
     }
   | {
       type: 'textCard';
@@ -142,6 +144,23 @@ export type PropsBuilderComponents =
   | {
       type: 'photoSection';
       images: StaticImageData[];
+    }
+  | {
+      type: 'sectionProfiles';
+      array: {
+        heading: string;
+        linkImage: StaticImageData;
+        direction: { title: string; link: string } | null;
+        partner: string | null;
+        text: string;
+        department: string;
+        areasStudy: {
+          imageMin?: StaticImageData | null | undefined;
+          image: StaticImageData;
+          heading: string;
+          levelBase: boolean;
+        }[];
+      }[];
     };
 
 export default function BuilderComponents(element: PropsBuilderComponents, index: number, index2: number) {
@@ -235,6 +254,8 @@ export default function BuilderComponents(element: PropsBuilderComponents, index
       );
     case 'photoSection':
       return <PhotoSection key={'section_' + index + '_photo_section_' + index2} images={data.images} />;
+    case 'sectionProfiles':
+      return <SectionProfiles key={'section_' + index + '_section_profiles_' + index2} array={data.array} />;
     default:
       return <></>;
   }

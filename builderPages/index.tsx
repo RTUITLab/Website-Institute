@@ -22,6 +22,7 @@ export type PropsBuilderPages = {
     elements: PropsBuilderComponents[];
   }[];
   downTransition: null | {
+    heading: string | null;
     element1: { linkImage: StaticImageData; linkPage: string; text: string; targetBlank?: boolean };
     element2: { linkImage: StaticImageData; linkPage: string; text: string; targetBlank?: boolean };
     element3: { linkImage: StaticImageData; linkPage: string; text: string; targetBlank?: boolean };
@@ -47,7 +48,10 @@ export default function BuilderPages(data: PropsBuilderPages, page: string) {
           </Section>
         ))}
         {data.downTransition !== null ? (
-          <DownTransition array={[data.downTransition.element1, data.downTransition.element2, data.downTransition.element3]} />
+          <DownTransition
+            array={[data.downTransition.element1, data.downTransition.element2, data.downTransition.element3]}
+            heading={data.downTransition.heading}
+          />
         ) : (
           <></>
         )}

@@ -5,3 +5,10 @@ README.md
 node_modules
 package-lock.json
 img.png
+.next
+.eslintrc.json
+Dockerfile
+.prettierignore
+.prettierrc.json
+.dockerignore
+docker-compose.yml

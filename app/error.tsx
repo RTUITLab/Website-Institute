@@ -1,6 +1,6 @@
 'use client'; // Error components must be Client Components
 import React from 'react';
-import Style from './error_and_nof_found.module.scss';
+import Style from './errorAndNofFound.module.scss';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import FallDown from '@/public/image/error/FallDown_result.webp';

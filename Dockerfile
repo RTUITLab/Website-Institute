@@ -1,7 +1,7 @@
 FROM node:20.10.0-alpine AS build
 WORKDIR /app
-COPY package.json /app
+COPY . /app
 RUN npm install
-COPY .next /app
+RUN npm run build
 EXPOSE 3000
-CMD ["next","start"]
+CMD ["npm", "run","start"]

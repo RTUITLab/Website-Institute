@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Style from './error_and_nof_found.module.scss';
+import Style from './errorAndNofFound.module.scss';
 import Image from 'next/image';
 import Question from '@/public/image/error/Question_result.webp';
 import { ButtonDefault, ButtonLinkDefault } from '@/components/buttons';

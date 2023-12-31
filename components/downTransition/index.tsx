@@ -1,7 +1,6 @@
 import { TransitionDown } from '@/components/tables/transition';
 import { StaticImageData } from 'next/image';
 import Style from './downTransition.module.scss';
-import TitleText from '@/components/titleText';
 
 type Props = {
   array: {
@@ -10,15 +9,15 @@ type Props = {
     linkPage: string;
     targetBlank?: boolean | undefined;
   }[];
-  heading?: string;
+  heading: string | null;
 };
 
-export default function DownTransition({ array, heading = 'ДРУГИЕ ТЕМАТИЧЕСКИЕ СТРАНИЦЫ' }: Props) {
+export default function DownTransition({ array, heading }: Props) {
   return (
     <section className={Style.Section}>
       <article>
         <div />
-        <h2>{heading}</h2>
+        <h2>{heading === null ? 'ДРУГИЕ СЕКЦИИ ПОРТАЛА' : heading}</h2>
         <div />
       </article>
       <TransitionDown array={array} />
