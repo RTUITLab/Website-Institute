@@ -41,13 +41,33 @@
   }
 }
 
-.Transition4 {
+.Transition7 {
+  height: 60vw;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'cell-1 cell-1 cell-2 cell-2'
+    'cell-3 cell-3 cell-4 cell-4'
+    'cell-5 cell-6 cell-6 cell-7';
+}
+
+.Transition7Reverse {
+  height: 60vw;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'cell-1 cell-2 cell-2 cell-3'
+    'cell-4 cell-4 cell-5 cell-5'
+    'cell-6 cell-6 cell-7 cell-7';
+}
+
+.Transition6 {
   height: 40vw;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    'cell-1 cell-1 cell-2 cell-2'
-    'cell-3 cell-3 cell-4 cell-4';
+    'cell-1 cell-2 cell-2 cell-3'
+    'cell-4 cell-5 cell-5 cell-6';
 }
 
 .Transition5 {
@@ -59,10 +79,29 @@
     'cell-3 cell-4 cell-4 cell-5';
 }
 
+.Transition4 {
+  height: 40vw;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'cell-1 cell-1 cell-2 cell-2'
+    'cell-3 cell-3 cell-4 cell-4';
+}
+
+.Transition5Reverse {
+  height: 40vw;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'cell-1 cell-2 cell-2 cell-3'
+    'cell-4 cell-4 cell-5 cell-5';
+}
+
 .Transition3 {
   height: 20vw;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'cell-1 cell-2 cell-2 cell-3';
 }
 
 .Transition3Left {
@@ -77,11 +116,9 @@
   grid-template-areas: 'cell-1 cell-2 cell-3 cell-3';
 }
 
-.Transition5Reverse {
-  height: 40vw;
-  grid-template-rows: repeat(2, 1fr);
+.Transition2 {
+  height: 20vw;
+  grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    'cell-1 cell-2 cell-2 cell-3'
-    'cell-4 cell-4 cell-5 cell-5';
+  grid-template-areas: 'cell-1 cell-1 cell-2 cell-2';
 }

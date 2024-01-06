@@ -17,17 +17,43 @@ type Props = {
 
 const TableCells: {
   12: string;
-  4: string;
+  7: string;
+  '7_Reverse': string;
+  6: string;
   5: string;
+  '5_Reverse': string;
+  4: string;
+  3: string;
+  2: string;
 } = {
   12: Style.Transition12,
-  4: Style.Transition4,
+  7: Style.Transition7,
+  '7_Reverse': Style.Transition7Reverse,
+  6: Style.Transition6,
   5: Style.Transition5,
+  '5_Reverse': Style.Transition5Reverse,
+  4: Style.Transition4,
+  3: Style.Transition3,
+  2: Style.Transition2,
+};
+
+const reverseCells: Record<number, boolean> = {
+  5: true,
+  7: true,
+  // Добавьте необходимые значения для других количеств ячеек, если потребуется.
 };
 
 export default function Transition({ array, reverse = false }: Props) {
+  const shouldReverse = reverseCells[array.length] || reverse;
+
   return (
-    <div className={classNames(Style.Transition, reverse ? Style.Transition5Reverse : TableCells[array.length as keyof typeof TableCells])}>
+    <div
+      className={classNames(
+        Style.Transition,
+        shouldReverse
+          ? TableCells[(array.length + '_Reverse') as keyof typeof TableCells]
+          : TableCells[array.length as keyof typeof TableCells],
+      )}>
       {array.map((elem, index) => (
         <CellTransition
           linkImage={elem.linkImage}

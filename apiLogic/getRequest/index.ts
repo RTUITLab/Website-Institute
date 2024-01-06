@@ -3,6 +3,7 @@ import dataGetEquipment from '@/app/equipment/api/dataGet';
 import dataGetInfrastructure from '@/app/infrastructure/api/dataGet';
 import dataGetInstitute from '@/app/institute/api/dataGet';
 import dataGetApp from '@/app/api/dataGet';
+import dataGetVika from '@/app/vika/api/dataGet';
 
 export default async function getRequest(url: string, mode: 'default' | 'route' = 'default') {
   try {
@@ -20,6 +21,8 @@ export default async function getRequest(url: string, mode: 'default' | 'route' 
             return await dataGetEquipment();
           case 'http://localhost:3000/institute/api':
             return await dataGetInstitute();
+          case 'http://localhost:3000/institute/vika':
+            return await dataGetVika();
           case 'http://localhost:3000/api':
             return await dataGetApp();
           default:

@@ -6,13 +6,15 @@ import Infrastructure from '@/public/image/Инфраструктура.webp';
 import Equipment from '@/public/image/Оборудование_Переход.webp';
 import Info from '@/public/svg/info.svg';
 import News from '@/public/svg/news.svg';
-import Vika from '@/public/svg/vika.svg';
+import Books from '@/public/svg/vika.svg';
+import Vika from '@/public/image/vika/vika.webp';
+import Mirea from '@/public/image/MIREA_result.webp';
 
 export default async function dataGetApp() {
   const data = {
     menuSection: {
       image: AppImage,
-      text: 'ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА (PRE-ALPHA Версия)',
+      text: 'ИНФОРМАЦИОННЫЙ портал ИНСТИТУТА ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ РТУ МИРЭА (ALPHA Версия)',
     },
     sections: [
       {
@@ -61,6 +63,20 @@ export default async function dataGetApp() {
                 linkPage: '/equipment',
                 alt: 'Оборудование',
               },
+              {
+                linkImage: Vika,
+                text: 'Вика и новости института',
+                linkPage: '/vika',
+                alt: 'Вика',
+              },
+              {
+                linkImage: Mirea,
+                text: 'Сайт РТУ МИРЭА',
+                linkPage:
+                  'https://www.mirea.ru/education/the-institutes-and-faculties/institute-of-information-technology/about-the-institute/',
+                alt: 'РТУ МИРЭА',
+                targetBlank: true,
+              },
             ],
             reverse: true,
           },
@@ -92,7 +108,7 @@ export default async function dataGetApp() {
                 text: ['Дата реализации: 14.02.24'],
               },
               {
-                numberOrImage: Vika,
+                numberOrImage: Books,
                 heading: 'Расписание и интеграция чат-ассистента “ВИКА”',
                 text: ['Дата реализации: 14.02.24'],
               },
