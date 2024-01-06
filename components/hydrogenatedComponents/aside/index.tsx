@@ -13,6 +13,7 @@ import Youtube from '@/public/svg/youtube_aside.svg';
 import TG from '@/public/svg/telegram_aside.svg';
 import Rutube from '@/public/svg/rutube_aside.svg';
 import Style from './aside.module.scss';
+import News from '@/public/svg/news.svg';
 import classNames from 'classnames';
 
 type Props = {
@@ -35,6 +36,7 @@ export default function Aside({ onClick, imageLink, hidden }: Props) {
           <ButtonAside imageLink={InfrastructurePage} link={'/infrastructure'} text={'Инфраструктура'} onClick={onClick} />
           <ButtonAside imageLink={DirectionPage} link={'/directions'} text={'Программы обучения'} onClick={onClick} />
           <ButtonAside imageLink={EquipmentPage} link={'/equipment'} text={'Уникальное оборудование'} onClick={onClick} />
+          <ButtonAside imageLink={News} link={'/vika'} text={'Вика и новости'} onClick={onClick} />
         </div>
         <div>
           <h2>Сайты</h2>

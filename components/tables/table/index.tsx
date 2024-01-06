@@ -18,12 +18,14 @@ type PropsTable = {
 };
 
 const lotTable: {
+  9: string;
   8: string;
   6: string;
   4: string;
   3: string;
   2: string;
 } = {
+  9: Style.Table9,
   8: Style.Table8,
   6: Style.Table6,
   4: Style.Table4,

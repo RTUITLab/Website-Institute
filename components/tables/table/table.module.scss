@@ -3,9 +3,14 @@
   width: 100%;
 }
 
+.Table9 {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .Table8 {
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .Table6 {

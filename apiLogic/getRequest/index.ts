@@ -21,7 +21,7 @@ export default async function getRequest(url: string, mode: 'default' | 'route' 
             return await dataGetEquipment();
           case 'http://localhost:3000/institute/api':
             return await dataGetInstitute();
-          case 'http://localhost:3000/institute/vika':
+          case 'http://localhost:3000/vika/api':
             return await dataGetVika();
           case 'http://localhost:3000/api':
             return await dataGetApp();
